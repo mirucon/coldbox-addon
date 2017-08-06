@@ -1,6 +1,6 @@
 === Coldbox Addon ===
-Contributors: @mirucon
-Donate link: http://example.com/
+Contributors: [@mirucon](https://profiles.wordpress.org/mirucon/)  
+Donate link: https://valu.is/mirucon/
 Tags: comments, spam
 Requires at least: 4.7
 Tested up to: 4.8
