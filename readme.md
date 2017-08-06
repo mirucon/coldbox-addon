@@ -1,11 +1,11 @@
 # Coldbox Addon
-**Contributors:** @mirucon
-**Donate link:** https://valu.is/mirucon/
-**Tags:** comments, spam
-**Requires at least:** 4.7
-**Tested up to:** 4.8
-**Stable tag:** 1.0.0
-**License:** GPLv2 or later
+**Contributors:** @mirucon  
+**Donate link:** https://valu.is/mirucon/  
+**Tags:** comments, spam  
+**Requires at least:** 4.7  
+**Tested up to:** 4.8  
+**Stable tag:** 1.0.0  
+**License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 The powered addon for the Coldbox theme. It brings you AMP HTML and share buttons which help increasing your website's engagement.
@@ -21,7 +21,7 @@ The addon plugin makes the most of the Coldbox theme.
 
 * **Share Button** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
 
-*Require the [SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin to use share button.*
+  * *Require the [SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin to use share button.*
 
 
 ## Installation Instructions ==
@@ -43,7 +43,8 @@ If you want them outside of the content, use `<?php cd_addon_sns_buttons_list();
 
 If you don't want the buttons to show at the end if article content, go to customizer and uncheck "Use social buttons" option. You can still call the buttons using shortcode or the function.
 
-## Changelog ==
+## Changelog
 
-= 1.0 =
+1.0
+
 * Initial Release
