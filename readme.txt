@@ -1,5 +1,5 @@
 === Coldbox Addon ===
-Contributors: [@mirucon](https://profiles.wordpress.org/mirucon/)
+Contributors: mirucon
 Donate link: https://valu.is/mirucon/
 Tags: coldbox, coldbox-theme
 Requires at least: 4.7
