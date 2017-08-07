@@ -2,6 +2,8 @@ sudo: false
 
 language: php
 
+dist: precise
+
 notifications:
   email:
     on_success: never
