@@ -57,6 +57,7 @@ script:
       phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')
     fi
 
+
 after_success:
   # Run npm build task.
   - bash ./bin/deploy.sh
