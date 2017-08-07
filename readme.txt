@@ -1,14 +1,14 @@
 === Coldbox Addon ===
-Contributors: [@mirucon](https://profiles.wordpress.org/mirucon/)  
+Contributors: [@mirucon](https://profiles.wordpress.org/mirucon/)
 Donate link: https://valu.is/mirucon/
-Tags: comments, spam
+Tags: coldbox, coldbox-theme
 Requires at least: 4.7
 Tested up to: 4.8
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The powered addon for the Coldbox theme. It brings you AMP HTML and share buttons which help increasing your website's engagement.
+The powered addon for the Coldbox theme. It brings you AMP HTML and share buttons which help increasing your website's engagement. It is degined for the Coldbox theme. Lightweight and safety.
 
 
 == Description ==

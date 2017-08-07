@@ -13,10 +13,6 @@
  *  Requires "SNS Count Cache" Plugin installed and enabled
  *  Followed SNS : Twitter, Hatena Bookmark, Facebook, Google Plus, Pocket, Feedly.
  *  Reference: https://coldbox.miruc.co/addons/share-buttons/
- *  JAPANESE:
- *    SNS Count Cache プラグインと連携した、Coldbox テーマ用のSNSボタンアドオンです。SNS Count Cache プラグインが必要です。
- *    次のSNSに対応しています : Twitter, はてなブックマーク, Facebook, Google Plus, Pocket, Feedly
- *    詳細はこちら: https://coldbox.miruc.co/ja/addons/share-buttons/
  * -----------------------------------------------------------------------------
  */
 
@@ -270,12 +266,9 @@ if ( cd_use_snsb() || cd_use_snsb_hatena() || cd_use_snsb_feedly() ) {
  * Defines the function that output social buttons
  *
  * @since 1.0.0
+ * @param string $class (optional) Custom class.
  */
-function cd_addon_sns_buttons_list() {
-
-	if ( ! cd_use_snsb() ) {
-		return;
-	}
+function cd_addon_sns_buttons_list( $class = null ) {
 
 	if ( function_exists( 'scc_get_share_total' ) ) :
 
@@ -285,7 +278,7 @@ function cd_addon_sns_buttons_list() {
 		$title_encode = rawurlencode( $title );
 		$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '' ;
 		?>
-		<section id="social-links" class="content-box">
+		<section id="sns-buttons" class="sns-buttons<?php echo ' ' . $class; ?>">
 			<h4 id="sns-btn-bottom-head"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h4>
 			<ul class="share-list-container">
 
@@ -384,3 +377,13 @@ function cd_addon_sns_buttons_list() {
 	<?php
 	endif;
 }
+
+/**
+ * Adds social buttons shortcode
+ *
+ * @since 1.0.0
+ */
+function sns_buttons_shortcode() {
+	return cd_addon_sns_buttons_list();
+}
+add_shortcode( 'sns_buttons', 'sns_buttons_shortcode' );
