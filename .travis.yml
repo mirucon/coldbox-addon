@@ -2,6 +2,8 @@ sudo: false
 
 language: php
 
+dist: precise
+
 notifications:
   email:
     on_success: never
@@ -10,10 +12,10 @@ notifications:
 env:
   global:
     - GIT_COMMITTER_NAME=travis-ci
-    - GIT_COMMITTER_EMAIL=Githubに出るメールアドレス
+    - GIT_COMMITTER_EMAIL=i@miruc.co
     - GIT_AUTHOR_NAME=travis-ci
-    - GIT_AUTHOR_EMAIL=Githubに出るメールアドレス
-    - secure: "aJpg/RLHSo/PPn4Nxk9NUJy0S2J3yc67OXVTqcdK+F4cLWTGj7OzHJA7ON7xm/LM5sUTo2zunLgNdC/AQO8QC4+MDMqcQkhIFVNrrKpIM8k80vDnvMR81rucmmshyaz2QARQc9nDKY1ujPc+xgORyXoAlQlF/i3rKqnEbGi0TsT7HfPxt6dG6XNcDRQisPgBdAS//CQ1G/sG2ARJs7+R0GcaTB7treKrn+DvfwGhIzC6JuVmV5YXyfOckv+ahR+G8oSPIpMfeJ+4qfHuYaQqy8ZW44rycs5Q+mqfPwmI5p3gI3ERNXjsxs6ymFdZpDjowQQFXKl3Tsrtv5paWglkLI2/5f1qWwIHPLZWtioSmnzEqQXV6EKIwhKYMgdhLRQ3rgQxXlXkEkvqXf5U6R7pEHnZdW4W2T5RvTtSmuH+cZjp6P8ygP9WcMicqYx9FVtk2GGCSxgHnR38RSrLRQBu3mhEJskTzogmCCmwDdKNoI6pgeiznx+qgOV7FrmKd/0JSp95vEjV/3xs1Suy/+dLKxzt3/nPJRvO8+WQUc0H9TxRkFmEOSx3el4XYt5p65xZWVay4qOTEtL0Fm5eKNYdRjAHksK30hCeOJuhy3BggOp1cRwzVRpg24/XEoacGP3lOMEaXGPpwhdFi5KfHQbmfK16GSS9Vor4ymJSlkyE+Ho="
+    - GIT_AUTHOR_EMAIL=i@miruc.co
+    - secure: "gvr7TYHmYg/REqxkDC22F1RCLNT5c9/0fIbkCU06pRqqkvg/r/LBLKcxO13e6K3ry9B692GA5otFcAKMSgbrNMy9NfkMPSECag1DDRIltuf0tCsMInWZ7nE+FmwXC4ejhF1vPxT9pxd5DXnal+W6mul/7w9goyPVNKNwaYSK1XtyYW4LU2or+4pyUXt2X2Oo0KTk5mDy/BqpIvBRRpjaO0bTfEECLl5JfFrGqEVsZdfdW6Og/jdNzpJ33pF3nDMB28iCy5Lb/IiuqNuV4CPXbYEthIXe3nhpvKiu0GXorrkES6qfvLJ+0Whxz+9nf3wL1x8Gm2I/J6lvMZjdKOz4eimq4mjtyMOC0ETwnISFZkb/F6J3LRUjOro571fgG+CrGxBo3avGFwaQ/sTLrKHnnkBFJdbPzhIJaisoWYL2GGKPTgiU4RnfWotdNbDg55/MzB1WjbHbutoEDY+VUrKBVrR0Jjq2LsU9ljVW/v1253OwG4jNi/di70oquMFVeajcd9OSMBNXeSpOtcSPZ9SKoRgCfSUzZg1xlJZs0FqhVCo4b2K9s5tP+N4WtyzklsbPIWl/s9/wBcbGMo6l/H6sYU+WXwdl7pSuLVM+UpYVg/17xT1hvFicgnLuTDSYSogNHmcaIhkKAAHrBzKddZms4akyYnDXizas6h2KCWpIRtQ="
 
 branches:
   only:
