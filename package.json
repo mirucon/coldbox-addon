@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/Mirucon/coldbox-addon"
   },
-  "license": "GPL",
+  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/Mirucon/coldbox-addon/issues"
   },
