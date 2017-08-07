@@ -24,7 +24,7 @@ The addon plugin makes the most of the Coldbox theme.
   * *Require the [SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin to use share buttons.*
 
 
-## Installation Instructions ==
+## Installation Instructions
 
 1. You may install the Coldbox Addon plugin via the WordPress.org plugin directory, or by uploading the files to /wp-content/plugins/ directory at your server.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
