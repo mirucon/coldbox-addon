@@ -1,7 +1,7 @@
 # Coldbox Addon
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Donate link:** https://valu.is/mirucon/  
-**Tags:** comments, spam  
+**Tags:** coldbox, coldbox-theme 
 **Requires at least:** 4.7  
 **Tested up to:** 4.8  
 **Stable tag:** 1.0.0  
