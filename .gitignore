@@ -1,6 +1,5 @@
 *.DS_Store
 *.editorconfig
-package-lock.json
 phpcs.xml
 Thumbs.db
 wp-cli.local.yml
