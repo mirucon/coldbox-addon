@@ -31,6 +31,10 @@ add_action( 'cd_addon_amp_head', 'cd_addon_amp_ampad_script' );
  */
 function cd_addon_amp_ads_single_bottom( $contents ) {
 
+	if ( ! cd_is_amp() ) {
+		return;
+	}
+
 	if ( ! empty( cd_addon_amp_adsense_client() ) && ! empty( cd_addon_amp_adsense_unit_after() ) ) {
 
 		$contents = '<div class="content-box"><amp-ad layout="responsive" width="300" height="250" type="adsense" data-ad-client="' . cd_addon_amp_adsense_client() . '" data-ad-slot="' . cd_addon_amp_adsense_unit_after() . '"></amp-ad></div>';
@@ -67,6 +71,10 @@ add_filter( 'cd_single_after_contents', 'cd_addon_amp_ads_single_bottom' );
  * @return string The contents will be output middle of the single articles.
  */
 function cd_addon_amp_ads_single_middle( $contents ) {
+
+	if ( ! cd_is_amp() ) {
+		return;
+	}
 
 	if ( ! empty( cd_addon_amp_adsense_client() ) && ! empty( cd_addon_amp_adsense_unit_middle() ) ) {
 
