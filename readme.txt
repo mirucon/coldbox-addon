@@ -13,9 +13,9 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and share button
 
 == Description ==
 
-The addon plugin makes the most of the Coldbox theme. 
+The powered addon for the Coldbox theme. It brings you AMP HTML and share buttons which help increasing your website's engagement. It has been degined for the Coldbox theme. Lightweight and safety.
 
-= Features =
+== Features ==
 
 * **AMP Pages** - The fastest HTML format - AMP. The plugin is the easiest way to use AMP pages unless any setting or coding.
 
