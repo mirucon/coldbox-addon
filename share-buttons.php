@@ -180,6 +180,7 @@ add_action( 'customize_register', 'cd_addon_sns_buttons' );
  * Checks social buttons are used
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb() {
 	return ( get_theme_mod( 'use_sns_buttons', true ) );
@@ -189,6 +190,7 @@ function cd_use_snsb() {
  * Checks Twitter button is set
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb_twitter() {
 	return ( get_theme_mod( 'sns_button_twitter', true ) );
@@ -198,6 +200,7 @@ function cd_use_snsb_twitter() {
  * Checks Facebook button is set
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb_facebook() {
 	return ( get_theme_mod( 'sns_button_facebook', true ) );
@@ -207,6 +210,7 @@ function cd_use_snsb_facebook() {
  * Checks Hatena Bookmark button is set
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb_hatena() {
 	return ( get_theme_mod( 'sns_button_hatena', true ) );
@@ -216,6 +220,7 @@ function cd_use_snsb_hatena() {
  * Checks Google Plus button is set
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb_googleplus() {
 	return ( get_theme_mod( 'sns_button_googleplus', true ) );
@@ -225,6 +230,7 @@ function cd_use_snsb_googleplus() {
  * Checks Pocket button is set
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb_pocket() {
 	return ( get_theme_mod( 'sns_button_pocket', true ) );
@@ -234,6 +240,7 @@ function cd_use_snsb_pocket() {
  * Checks Feedly button is set
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_use_snsb_feedly() {
 	return ( get_theme_mod( 'sns_button_feedly', true ) );
@@ -243,6 +250,7 @@ function cd_use_snsb_feedly() {
  * Return the Twitter username
  *
  * @since 1.0.0
+ * @return bool True or false
  */
 function cd_twitter_username() {
 	return ( get_theme_mod( 'twitter_username', '' ) );
