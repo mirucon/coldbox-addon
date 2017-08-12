@@ -4,7 +4,7 @@ Donate link: https://valu.is/mirucon/
 Tags: coldbox, coldbox-theme
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,10 +47,14 @@ If you don't want the buttons to show at the end if article content, go to custo
 == Screenshots ==
 
 1. Share Buttons sample
-2. AMP page sample\
+2. AMP page sample
 
 
 == Changelog ==
+
+= 1.0.1 =
+* Improved: AMP HTML format
+* Added: A custmizer option to select whether or not uses AMP pages
 
 = 1.0 =
 * Initial Release
