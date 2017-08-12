@@ -41,7 +41,7 @@ You may access AMP page by adding "?amp=1" at last of the URLs. When visitors us
 ### Where are the share buttons shown?
 
 By default, the share buttons are shown at the end of article content. You may use `sns_buttons` shortcode when you want to show them at beginning or midst of the content.  
-You can also call the buttons anywhere by using the `<?php cd_addon_sns_buttons_list(); ?>` function.
+You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them on any template files.
 
 If you don't want the buttons to show at the end of article content, go to customizer and uncheck "Use social buttons" option. You can still call the buttons using shortcode or the function.
 

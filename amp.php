@@ -15,7 +15,7 @@
  */
 function cd_is_amp_addon( $is_amp ) {
 
-	if ( is_single( cd_addon_amp_no_generate() ) ) {
+	if ( ! cd_addon_use_amp_pages() || is_single( cd_addon_amp_no_generate() ) ) {
 		return false;
 	}
 
@@ -259,6 +259,10 @@ function cd_addon_amp_img( $content ) {
 		// Remove vspace attrs.
 		$content = preg_replace( '/ +vspace=["][^"]*?["]/i', '', $content );
 		$content = preg_replace( '/ +vspace=[\'][^\']*?[\']/i', '', $content );
+		
+		// Remove contenteditable attrs.
+		$content = preg_replace( '/ +contenteditable=["][^"]*?["]/i', '', $content );
+		$content = preg_replace( '/ +contenteditable=[\'][^\']*?[\']/i', '', $content );
 
 		// Remove font tags.
 		$content = preg_replace( '/<font[^>]+?>/i', '', $content );

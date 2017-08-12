@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Coldbox Addon
- * Plugin URI:      PLUGIN SITE HERE
+ * Plugin URI:      https://coldbox.miruc.co/addon/
  * Description:     The official addon plugin for the Coldbox theme.
  * Author:          Toshihiro Kanai (Mirucon)
  * Author URI:      https://miruc.co/

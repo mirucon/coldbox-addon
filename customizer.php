@@ -20,6 +20,17 @@ function cd_addon_czr( $wp_customize ) {
 		'priority' => 13,
 	));
 
+	// Whether or not use AMP pages.
+	$wp_customize->add_setting( 'use_amp', array(
+		'default'  => true,
+		'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+	));
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'use_amp', array(
+		'label'    => __( 'Use AMP pages', 'coldbox-addon' ),
+		'section'  => 'amp_section',
+		'type'     => 'checkbox',
+	)));
+
 	// Pages you don't want to generate AMP.
 	$wp_customize->add_setting( 'no_amp_pages', array(
 		'default'  => '',
@@ -83,7 +94,7 @@ function cd_addon_czr( $wp_customize ) {
 add_action( 'customize_register', 'cd_addon_czr' );
 
 /**
- * Set the page IDs not to be AMP page.
+ * Set the page IDs not to be AMP page as a function.
  *
  * @since 1.0.0
  */
@@ -91,6 +102,15 @@ function cd_addon_amp_no_generate() {
 	$ids_raw = get_theme_mod( 'no_amp_pages', '' );
 	$ids = array_map( 'trim', explode( ',', $ids_raw ) );
 	return $ids;
+}
+
+/**
+ * Set the status of whether using AMP pages as a function.
+ *
+ * @since 1.0.1
+ */
+function cd_addon_use_amp_pages() {
+	return get_theme_mod( 'use_amp', true );
 }
 
 

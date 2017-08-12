@@ -39,18 +39,15 @@ You may access AMP page by adding "?amp=1" at last of the URLs. When visitors us
 = Where are the share buttons shown? =
 
 By default, the share buttons are shown at the end of article content. You may use `sns_buttons` shortcode when you want to show them at beginning or midst of the content.
-If you want them outside of the content, use `<?php cd_addon_sns_buttons_list(); ?>` function.
+You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them on any template files.
 
 If you don't want the buttons to show at the end if article content, go to customizer and uncheck "Use social buttons" option. You can still call the buttons using shortcode or the function.
 
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Share Buttons sample
+2. AMP page sample\
 
 
 == Changelog ==
