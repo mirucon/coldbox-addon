@@ -47,6 +47,10 @@ If you don't want the buttons to show at the end of article content, go to custo
 
 ## Changelog
 
+1.0.1
+* Improved: AMP HTML format
+* Added: A custmizer option to select whether or not uses AMP pages
+
 1.0
 
 * Initial Release
