@@ -7,7 +7,7 @@
  * Author URI:      https://miruc.co/
  * Text Domain:     coldbox-addon
  * Domain Path:     /languages
- * Version:         1.0.1
+ * Version:         1.0.2
  *
  * @package         Coldbox_Addon
  */
@@ -17,7 +17,7 @@
  *
  * @since 1.0.0
  * @param bool $is_active Whether or not addon plugin is active.
- * @return Return true so that says addon is active.
+ * @return bool Return true so that says addon is active.
  */
 function cd_addon_is_active_addon( $is_active ) {
 	$is_active = true;

@@ -11,7 +11,7 @@
  *
  * @since 1.0.0
  * @param bool $is_amp To distinguish AMP pages.
- * @return Is AMP page or not.
+ * @return bool Is AMP page or not.
  */
 function cd_is_amp_addon( $is_amp ) {
 
@@ -29,6 +29,26 @@ function cd_is_amp_addon( $is_amp ) {
 }
 add_filter( 'cd_is_amp', 'cd_is_amp_addon' );
 
+/**
+ * Declare the `cd_is_amp` function for in case of the Coldbox theme is not activated
+ *
+ * @since 1.0.2
+ */
+function cd_addon_is_amp_force() {
+
+	if ( ! function_exists( 'cd_is_amp' ) ) {
+
+		/**
+		 * Declare the `cd_is_amp` function for in case of the Coldbox theme is not activated
+		 *
+		 * @since 1.0.3
+		 */
+		function cd_is_amp() {
+			return false;
+		}
+	}
+}
+add_action( 'wp', 'cd_addon_is_amp_force', 1 );
 
 /**
  * Output the header part of AMP HTML.
@@ -259,7 +279,7 @@ function cd_addon_amp_img( $content ) {
 		// Remove vspace attrs.
 		$content = preg_replace( '/ +vspace=["][^"]*?["]/i', '', $content );
 		$content = preg_replace( '/ +vspace=[\'][^\']*?[\']/i', '', $content );
-		
+
 		// Remove contenteditable attrs.
 		$content = preg_replace( '/ +contenteditable=["][^"]*?["]/i', '', $content );
 		$content = preg_replace( '/ +contenteditable=[\'][^\']*?[\']/i', '', $content );
@@ -331,7 +351,7 @@ function cd_addon_amp_embeded_tweets() {
 		}
 	}
 }
-add_action( 'wp', 'cd_addon_amp_embeded_tweets' );
+add_action( 'wp', 'cd_addon_amp_embeded_tweets', 12 );
 
 /**
  * Check whether embeded YouTube videos are used or not.
@@ -347,7 +367,7 @@ function cd_addon_amp_embeded_youtube() {
 		}
 	}
 }
-add_action( 'wp', 'cd_addon_amp_embeded_youtube' );
+add_action( 'wp', 'cd_addon_amp_embeded_youtube', 12 );
 
 /**
  * Check whether iframe tags are used or not.
@@ -365,7 +385,7 @@ function cd_addon_amp_iframe() {
 		}
 	}
 }
-add_action( 'wp', 'cd_addon_amp_iframe' );
+add_action( 'wp', 'cd_addon_amp_iframe', 12 );
 
 /**
  * Load required scripts when needed.

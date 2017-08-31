@@ -4,7 +4,8 @@ Donate link: https://valu.is/mirucon/
 Tags: coldbox, coldbox-theme
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 1.0.1
+Requires PHP: 5.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +52,10 @@ If you don't want the buttons to show at the end if article content, go to custo
 
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed: Undefined function error when the Coldbox theme is inactive
+* Added: Specific PHP version
 
 = 1.0.1 =
 * Improved: AMP HTML format
