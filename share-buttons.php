@@ -165,8 +165,8 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'twitter_username', array(
-				'label'    => 'Twitter Username',
-				'description' => 'Enter your Twitter username without "@" suffix. The username will be shown in tweets.',
+				'label'    => __( 'Twitter Username', 'coldbox-addon' ),
+				'description' => __( 'Enter your Twitter username without "@" suffix. The username will be shown in tweets.', 'coldbox-addon' ),
 				'section'  => 'sns_buttons',
 				'type'     => 'text',
 			)
