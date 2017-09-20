@@ -50,7 +50,6 @@ If you don't want the buttons to show at the end if article content, go to custo
 1. Share Buttons sample
 2. AMP page sample
 
-
 == Changelog ==
 
 = 1.0.2 =
