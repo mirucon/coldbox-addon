@@ -11,7 +11,7 @@
  *
  * @since 1.0.0
  * @param bool $is_amp To distinguish AMP pages.
- * @return bool Is AMP page or not.
+ * @return bool Whether this is AMP page or not.
  */
 function cd_is_amp_addon( $is_amp ) {
 
@@ -455,19 +455,23 @@ function cd_addon_amp_remove_comments( $template ) {
 }
 add_filter( 'cd_comments_template', 'cd_addon_amp_remove_comments' );
 
-/**
- * Remove sidebar on AMP pages.
- *
- * @since 1.0.0
- * @param bool $is_active_sidebar Hook the `is_active_sidebar` so that it always returns false.
- */
-function cd_addon_amp_remove_sidebar( $is_active_sidebar ) {
-	if ( cd_is_amp() ) {
-		return false;
+
+if ( function_exists( 'cd_is_amp' ) ) {
+
+	/**
+	 * Remove sidebar on AMP pages.
+	 *
+	 * @since 1.0.0
+	 * @param bool $is_active_sidebar Hook the `is_active_sidebar` so that it always returns false.
+	 */
+	function cd_addon_amp_remove_sidebar( $is_active_sidebar ) {
+		if ( cd_is_amp() ) {
+			return false;
+		}
+		return $is_active_sidebar;
 	}
-	return $is_active_sidebar;
+	add_filter( 'is_active_sidebar', 'cd_addon_amp_remove_sidebar' );
 }
-add_filter( 'is_active_sidebar', 'cd_addon_amp_remove_sidebar' );
 
 
 /**
