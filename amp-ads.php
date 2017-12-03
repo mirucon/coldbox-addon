@@ -16,7 +16,9 @@
 function cd_addon_amp_ampad_script( $head_items ) {
 
 	if ( ! empty( cd_addon_amp_adsense_client() ) && ! empty( cd_addon_amp_adsense_unit_after() ) || ! empty( cd_addon_amp_adsense_unit_middle() ) ) {
+		// @codingStandardsIgnoreStart
 		$head_items .= '<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>';
+		// @codingStandardsIgnoreEnd
 	}
 	return $head_items;
 }
@@ -41,20 +43,20 @@ function cd_addon_amp_ads_single_bottom( $contents ) {
 
 	}
 	$allowed_html = array(
-		'amp-ad' => array(
+		'amp-ad'          => array(
 			'data-ad-client' => array(),
-			'data-ad-slot' => array(),
-			'layout' => array(),
-			'type' => array(),
-			'height' => array(),
-			'width' => array(),
-			'class' => array(),
+			'data-ad-slot'   => array(),
+			'layout'         => array(),
+			'type'           => array(),
+			'height'         => array(),
+			'width'          => array(),
+			'class'          => array(),
 		),
 		'i-amphtml-sizer' => array(
 			'style' => array(),
 			'class' => array(),
 		),
-		'div' => array(
+		'div'             => array(
 			'class' => array(),
 		),
 	);
@@ -81,20 +83,20 @@ function cd_addon_amp_ads_single_middle( $contents ) {
 		$contents .= '<amp-ad layout="fixed-height" height="100" type="adsense" data-ad-client="' . cd_addon_amp_adsense_client() . '" data-ad-slot="' . cd_addon_amp_adsense_unit_middle() . '"></amp-ad>';
 
 		$allowed_html = array(
-			'amp-ad' => array(
+			'amp-ad'          => array(
 				'data-ad-client' => array(),
-				'data-ad-slot' => array(),
-				'layout' => array(),
-				'type' => array(),
-				'height' => array(),
-				'width' => array(),
-				'class' => array(),
+				'data-ad-slot'   => array(),
+				'layout'         => array(),
+				'type'           => array(),
+				'height'         => array(),
+				'width'          => array(),
+				'class'          => array(),
 			),
 			'i-amphtml-sizer' => array(
 				'style' => array(),
 				'class' => array(),
 			),
-			'div' => array(
+			'div'             => array(
 				'class' => array(),
 			),
 		);
@@ -114,7 +116,9 @@ add_filter( 'cd_single_middle_contents', 'cd_addon_amp_ads_single_middle' );
 function cd_addon_amp_analytics_script( $head_items ) {
 
 	if ( ! empty( cd_addon_amp_analytics_id() ) ) {
+		// @codingStandardsIgnoreStart
 		$head_items .= '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>';
+		// @codingStandardsIgnoreEnd
 	}
 	return $head_items;
 }

@@ -36,13 +36,13 @@ function cd_addon_languages() {
 add_action( 'plugins_loaded', 'cd_addon_languages' );
 
 // Load the Social Buttons part.
-require_once( 'share-buttons.php' );
+require_once 'share-buttons.php';
 
 // Load the customizer part.
-require_once( 'customizer.php' );
+require_once 'customizer.php';
 
 // Load the AMP part.
-require_once( 'amp.php' );
+require_once 'amp.php';
 
 // Load the amp ads part.
-require_once( 'amp-ads.php' );
+require_once 'amp-ads.php';
