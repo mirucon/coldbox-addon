@@ -38,137 +38,137 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	// Adds the section for the social buttons.
 	$wp_customize->add_section(
 		'sns_buttons', array(
-			'title'  => __( 'Coldbox Add-on: Social Buttons', 'coldbox-addon' ),
+			'title'    => __( 'Coldbox Add-on: Social Buttons', 'coldbox-addon' ),
 			'priority' => 10,
 		)
 	);
 	// Whether or not use the share buttons.
 	$wp_customize->add_setting(
 		'use_sns_buttons', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'use_sns_buttons', array(
-				'label'    => __( 'Use Social Buttons', 'coldbox-addon' ),
+				'label'       => __( 'Use Social Buttons', 'coldbox-addon' ),
 				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Requied the %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'section'     => 'sns_buttons',
+				'type'        => 'checkbox',
 			)
 		)
 	);
 	// Twitter.
 	$wp_customize->add_setting(
 		'sns_button_twitter', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_twitter', array(
-				'label'    => __( ' - Twitter', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'label'   => __( ' - Twitter', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
 	// Facebook.
 	$wp_customize->add_setting(
 		'sns_button_facebook', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_facebook', array(
-				'label'    => __( ' - Facebook', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'label'   => __( ' - Facebook', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
 	// hatena Bookmark.
 	$wp_customize->add_setting(
 		'sns_button_hatena', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_hatena', array(
-				'label'    => __( ' - Hatena Bookmark', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'label'   => __( ' - Hatena Bookmark', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
 	// Google Plus.
 	$wp_customize->add_setting(
 		'sns_button_googleplus', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_googleplus', array(
-				'label'    => __( ' - Google Plus', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'label'   => __( ' - Google Plus', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
 	// Pocket.
 	$wp_customize->add_setting(
 		'sns_button_pocket', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_pocket', array(
-				'label'    => __( ' - Pocket', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'label'   => __( ' - Pocket', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
 	// Feedly.
 	$wp_customize->add_setting(
 		'sns_button_feedly', array(
-			'default'  => true,
+			'default'           => true,
 			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_feedly', array(
-				'label'    => __( ' - Feedly', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'checkbox',
+				'label'   => __( ' - Feedly', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
 	// Twitter username.
 	$wp_customize->add_setting(
 		'twitter_username', array(
-			'default'  => '',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'twitter_username', array(
-				'label'    => __( 'Twitter Username', 'coldbox-addon' ),
+				'label'       => __( 'Twitter Username', 'coldbox-addon' ),
 				'description' => __( 'Enter your Twitter username without "@" suffix. The username will be shown in tweets.', 'coldbox-addon' ),
-				'section'  => 'sns_buttons',
-				'type'     => 'text',
+				'section'     => 'sns_buttons',
+				'type'        => 'text',
 			)
 		)
 	);
@@ -280,13 +280,13 @@ function cd_addon_sns_buttons_list( $class = null ) {
 
 	if ( function_exists( 'scc_get_share_total' ) ) :
 
-		$canonical_url = get_permalink();
-		$title = wp_title( '', false, 'right' ) . '| ' . get_bloginfo( 'name' );
-		$canonical_url_encode = rawurlencode( $canonical_url );
-		$title_encode = rawurlencode( $title );
-		$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '' ;
+		$canonical_url           = get_permalink();
+		$title                   = wp_title( '', false, 'right' ) . '| ' . get_bloginfo( 'name' );
+		$canonical_url_encode    = rawurlencode( $canonical_url );
+		$title_encode            = rawurlencode( $title );
+		$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '';
 		?>
-		<section id="sns-buttons" class="sns-buttons<?php echo ' ' . $class; ?>">
+		<section id="sns-buttons" class="sns-buttons<?php echo ' ' . esc_attr( $class ); ?>">
 			<h4 id="sns-btn-bottom-head"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h4>
 			<ul class="share-list-container">
 
