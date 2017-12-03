@@ -1,0 +1,16 @@
+{
+    "name": "mirucon/coldbox-addon",
+    "description": "The powered addon for the Coldbox theme.",
+    "type": "wordpress-plugin",
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "mirucon",
+            "email": "i@miruc.co"
+        }
+    ],
+    "minimum-stability": "dev"
+}
