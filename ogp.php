@@ -47,13 +47,16 @@ function cd_addon_meta_ogp() {
 	}
 	$type = apply_filters( 'cd_addon_ogp_type', $type );
 
+	$card = 'summary_large_image';
+	$card = apply_filters( 'cd_addon_ogp_card_type', $card );
+
 	$ogp  = '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>';
 	$ogp .= '<meta property="og:description" content="' . esc_attr( $description ) . '"/>';
 	$ogp .= '<meta property="og:type" content="' . esc_attr( $type ) . '"/>';
 	$ogp .= '<meta property="og:url" content="' . esc_url( get_permalink() ) . '"/>';
 	$ogp .= '<meta property="og:site_name" content="' . esc_attr( get_bloginfo() ) . '"/>';
 	$ogp .= '<meta property="og:image" content="' . esc_url( $image ) . '"/>';
-	$ogp .= '<meta name="twitter:card" content="summary_large_image" />';
+	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />';
 	$ogp .= '<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />';
 
 	if ( ! empty( cd_ogp_twitter_username() ) ) {
