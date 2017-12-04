@@ -30,7 +30,7 @@ function cd_addon_meta_ogp() {
 		if ( has_post_thumbnail() ) {
 			$image = get_the_post_thumbnail_url();
 		}
-	} elseif ( has_custom_header() ) {
+	} elseif ( has_custom_logo() ) {
 		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 		$image = $custom_logo[0];
 	} elseif ( has_site_icon() ) {
@@ -74,6 +74,8 @@ function cd_addon_meta_ogp() {
 	}
 }
 add_action( 'wp_head', 'cd_addon_meta_ogp' );
+
+
 /**
  * Register customizer contents for OGP settings.
  *
@@ -142,6 +144,7 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'cd_addon_meta_ogp_customizer' );
+
 
 /**
  * Checks if ogp tags are enabled.
