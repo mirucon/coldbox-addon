@@ -21,7 +21,7 @@
  *
  * @since 1.0.0
  *
- * @param object $wp_customize Hooks WP customizer contents to register customizer.
+ * @param WP_Customize_Manager $wp_customize Hooks WP customizer contents to register customizer.
  */
 function cd_addon_sns_buttons( $wp_customize ) {
 
