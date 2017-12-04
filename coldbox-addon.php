@@ -46,3 +46,6 @@ require_once 'amp.php';
 
 // Load the amp ads part.
 require_once 'amp-ads.php';
+
+// Load the ogp meta tags.
+require_once 'ogp.php';
