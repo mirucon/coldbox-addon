@@ -15,7 +15,11 @@
  */
 function cd_addon_amp_ampad_script( $head_items ) {
 
-	if ( ! empty( cd_addon_amp_adsense_client() ) && ! empty( cd_addon_amp_adsense_unit_after() ) || ! empty( cd_addon_amp_adsense_unit_middle() ) ) {
+    $adsense_client     = cd_addon_amp_adsense_client();
+    $adsense_unit_after = cd_addon_amp_adsense_unit_after();
+    $unit_middle        = cd_addon_amp_adsense_unit_middle();
+
+	if ( ! empty( $adsense_client ) && ! empty( $adsense_unit_after ) || ! empty( $unit_middle ) ) {
 		// @codingStandardsIgnoreStart
 		$head_items .= '<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>';
 		// @codingStandardsIgnoreEnd
