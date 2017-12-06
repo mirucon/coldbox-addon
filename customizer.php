@@ -10,7 +10,7 @@
  * Adding sections for the addon settings.
  *
  * @since 1.0.0
- * @param array $wp_customize Hook the wp customizer contents.
+ * @param WP_Customize_Manager $wp_customize Hook the wp customizer contents.
  */
 function cd_addon_czr( $wp_customize ) {
 
