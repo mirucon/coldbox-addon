@@ -15,9 +15,9 @@
  */
 function cd_addon_amp_ampad_script( $head_items ) {
 
-    $adsense_client     = cd_addon_amp_adsense_client();
-    $adsense_unit_after = cd_addon_amp_adsense_unit_after();
-    $unit_middle        = cd_addon_amp_adsense_unit_middle();
+	$adsense_client     = cd_addon_amp_adsense_client();
+	$adsense_unit_after = cd_addon_amp_adsense_unit_after();
+	$unit_middle        = cd_addon_amp_adsense_unit_middle();
 
 	if ( ! empty( $adsense_client ) && ! empty( $adsense_unit_after ) || ! empty( $unit_middle ) ) {
 		// @codingStandardsIgnoreStart
@@ -125,7 +125,7 @@ add_filter( 'cd_single_middle_contents', 'cd_addon_amp_ads_single_middle' );
  */
 function cd_addon_amp_analytics_script( $head_items ) {
 
-    $analytics_id = cd_addon_amp_analytics_id();
+	$analytics_id = cd_addon_amp_analytics_id();
 
 	if ( ! empty( $analytics_id ) ) {
 		// @codingStandardsIgnoreStart
@@ -145,7 +145,7 @@ add_action( 'cd_addon_amp_head', 'cd_addon_amp_analytics_script' );
  */
 function cd_addon_amp_analytics( $body_items ) {
 
-    $analytics_id = cd_addon_amp_analytics_id();
+	$analytics_id = cd_addon_amp_analytics_id();
 
 	if ( ! empty( $analytics_id ) ) {
 		$body_items .= '<amp-analytics type="googleanalytics">

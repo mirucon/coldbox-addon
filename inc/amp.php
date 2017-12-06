@@ -196,7 +196,7 @@ function cd_addon_amp_ogp( $head_items ) {
 		$thumbnail_src = get_theme_file_uri( '/img/thumb-medium.png' );
 	endif;
 
-	$head_items .= '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '"/>
+	$head_items      .= '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '"/>
 		<meta property="og:description" content="' . esc_attr( get_the_excerpt() ) . '"/>
 		<meta property="og:type" content="article"/>
 		<meta property="og:url" content="' . esc_url( get_the_permalink() ) . '"/>
@@ -477,7 +477,7 @@ if ( function_exists( 'cd_is_amp' ) ) {
 	 *
 	 * @since 1.0.0
 	 * @param bool $is_active_sidebar Hook the `is_active_sidebar` so that it always returns false.
-     * @return bool
+	 * @return bool
 	 */
 	function cd_addon_amp_remove_sidebar( $is_active_sidebar ) {
 		if ( cd_is_amp() ) {
