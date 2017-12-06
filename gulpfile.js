@@ -17,7 +17,7 @@ gulp.task( 'default', ['browser-sync'], function () {
 
 gulp.task( 'copy', function() {
   return gulp.src(
-    [ '*.php', 'readme.txt' ],
+    [ '*.php', 'inc/*.php', 'readme.txt' ],
     { base: '.' }
   )
   .pipe( gulp.dest( 'dist' ) );

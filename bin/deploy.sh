@@ -15,6 +15,13 @@ fi
 git clone -b dist --quiet "https://github.com/${TRAVIS_REPO_SLUG}.git" dist
 npm run dist
 cd dist
-git add -A
+git rm amp.php
+gir rm amp-ad.php
+git rm customizer.php
+git rm meta.php
+git rm ogp.php
+git rm share-buttons.php
+git add inc/*.php
+git add readme.txt
 git commit -m "Update from travis $TRAVIS_COMMIT"
 git push --quiet "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" dist 2> /dev/null
