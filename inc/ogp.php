@@ -58,8 +58,7 @@ function cd_addon_meta_ogp() {
 	$ogp .= '<meta property="og:image" content="' . esc_url( $image ) . '"/>';
 	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />';
 	$ogp .= '<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />';
-	$ogp .= '<!-- /Coldbox Addon OGP -->';
-	$ogp .= '<meta name="description" content="' . esc_attr( $description ) . '"/>';
+	$ogp .= '<meta property="og:locale" content="' . esc_attr( get_bloginfo( 'language' ) ) . '" />';
 
 	$twitter_username = cd_ogp_twitter_username();
 	$facebook_id      = cd_ogp_facebook_id();
@@ -71,6 +70,9 @@ function cd_addon_meta_ogp() {
 	if ( ! empty( $facebook_id ) ) {
 		$ogp .= '<meta property="fb:admins" content="' . esc_attr( $facebook_id ) . '" />';
 	}
+
+	$ogp .= '<meta name="description" content="' . esc_attr( $description ) . '"/>';
+	$ogp .= '<!-- /Coldbox Addon Open Graph -->';
 
 	if ( cd_use_ogp() ) {
 		echo apply_filters( 'cd_addon_meta_ogp_single', $ogp ); // WPCS: XSS OK.
