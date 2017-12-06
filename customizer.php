@@ -18,7 +18,7 @@ function cd_addon_czr( $wp_customize ) {
 	$wp_customize->add_section(
 		'amp_section', array(
 			'title'    => __( 'Coldbox Add-on: AMP', 'coldbox-addon' ),
-			'priority' => 13,
+			'priority' => 10,
 		)
 	);
 
@@ -26,7 +26,7 @@ function cd_addon_czr( $wp_customize ) {
 	$wp_customize->add_setting(
 		'use_amp', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(

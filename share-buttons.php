@@ -25,28 +25,18 @@
  */
 function cd_addon_sns_buttons( $wp_customize ) {
 
-	/**
-	 * Define the sanitization function for checkboxes.
-	 *
-	 * @since 1.0.0
-	 * @param string $checked The strings that will be checked.
-	 */
-	function cd_addon_sanitize_checkbox( $checked ) {
-		return ( ( isset( $checked ) && true === $checked ) ? true : false );
-	}
-
 	// Adds the section for the social buttons.
 	$wp_customize->add_section(
 		'sns_buttons', array(
 			'title'    => __( 'Coldbox Add-on: Social Buttons', 'coldbox-addon' ),
-			'priority' => 10,
+			'priority' => 11,
 		)
 	);
 	// Whether or not use the share buttons.
 	$wp_customize->add_setting(
 		'use_sns_buttons', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
@@ -63,7 +53,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sns_button_twitter', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
@@ -79,7 +69,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sns_button_facebook', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
@@ -95,7 +85,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sns_button_hatena', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
@@ -111,7 +101,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sns_button_googleplus', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
@@ -127,7 +117,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sns_button_pocket', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
@@ -143,7 +133,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sns_button_feedly', array(
 			'default'           => true,
-			'sanitize_callback' => 'cd_addon_sanitize_checkbox',
+			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
