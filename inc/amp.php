@@ -204,7 +204,8 @@ function cd_addon_amp_ogp( $head_items ) {
 		<meta property="og:image" content="' . $thumbnail_src . '"/>
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />';
-	if ( ! empty( cd_twitter_username() ) ) {
+	$twitter_username = cd_twitter_username();
+	if ( ! empty( $twitter_username ) ) {
 		$head_items .= '<meta name="twitter:site" content="' . esc_attr( cd_twitter_username() ) . '" />
 			<meta name="twitter:creator" content="' . esc_attr( cd_twitter_username() ) . '" />';
 	}
