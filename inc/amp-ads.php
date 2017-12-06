@@ -11,7 +11,7 @@
  *
  * @since 1.0.0
  * @param string $head_items Hook the filter to add contents to inside of head.
- * @return The head contents will be output.
+ * @return string The head contents will be output.
  */
 function cd_addon_amp_ampad_script( $head_items ) {
 
@@ -33,7 +33,7 @@ add_action( 'cd_addon_amp_head', 'cd_addon_amp_ampad_script' );
  *
  * @since 1.0.0
  * @param string $contents Hook the filter to add ads to after the single article.
- * @return The contents will be output after the single articles.
+ * @return string The contents will be output after the single articles.
  */
 function cd_addon_amp_ads_single_bottom( $contents ) {
 
@@ -41,7 +41,10 @@ function cd_addon_amp_ads_single_bottom( $contents ) {
 		return;
 	}
 
-	if ( ! empty( cd_addon_amp_adsense_client() ) && ! empty( cd_addon_amp_adsense_unit_after() ) ) {
+	$adsense_client     = cd_addon_amp_adsense_client();
+	$adsense_unit_after = cd_addon_amp_adsense_unit_after();
+
+	if ( ! empty( $adsense_client ) && ! empty( $adsense_unit_after ) ) {
 
 		$contents = '<div class="content-box"><amp-ad layout="responsive" width="300" height="250" type="adsense" data-ad-client="' . cd_addon_amp_adsense_client() . '" data-ad-slot="' . cd_addon_amp_adsense_unit_after() . '"></amp-ad></div>';
 
@@ -82,7 +85,10 @@ function cd_addon_amp_ads_single_middle( $contents ) {
 		return;
 	}
 
-	if ( ! empty( cd_addon_amp_adsense_client() ) && ! empty( cd_addon_amp_adsense_unit_middle() ) ) {
+	$adsense_client = cd_addon_amp_adsense_client();
+	$adsense_unit   = cd_addon_amp_adsense_unit_middle();
+
+	if ( ! empty( $adsense_client ) && ! empty( $adsense_unit ) ) {
 
 		$contents .= '<amp-ad layout="fixed-height" height="100" type="adsense" data-ad-client="' . cd_addon_amp_adsense_client() . '" data-ad-slot="' . cd_addon_amp_adsense_unit_middle() . '"></amp-ad>';
 
@@ -119,7 +125,9 @@ add_filter( 'cd_single_middle_contents', 'cd_addon_amp_ads_single_middle' );
  */
 function cd_addon_amp_analytics_script( $head_items ) {
 
-	if ( ! empty( cd_addon_amp_analytics_id() ) ) {
+    $analytics_id = cd_addon_amp_analytics_id();
+
+	if ( ! empty( $analytics_id ) ) {
 		// @codingStandardsIgnoreStart
 		$head_items .= '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>';
 		// @codingStandardsIgnoreEnd
@@ -133,11 +141,13 @@ add_action( 'cd_addon_amp_head', 'cd_addon_amp_analytics_script' );
  *
  * @since 1.0.0
  * @param string $body_items Hook the filter to add contents to inside of body.
- * @return The contents will be output after the body tag.
+ * @return string The contents will be output after the body tag.
  */
 function cd_addon_amp_analytics( $body_items ) {
 
-	if ( ! empty( cd_addon_amp_analytics_id() ) ) {
+    $analytics_id = cd_addon_amp_analytics_id();
+
+	if ( ! empty( $analytics_id ) ) {
 		$body_items .= '<amp-analytics type="googleanalytics">
 			<script type="application/json">
 			{
