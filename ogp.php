@@ -17,7 +17,8 @@ function cd_addon_meta_ogp() {
 	if ( is_singular() ) {
 		global $post;
 		setup_postdata( $post );
-		$description = get_the_excerpt();
+		$content = get_the_content();
+        $description = wp_trim_words( $content, 95, '...' );
 		wp_reset_postdata();
 	} elseif ( is_front_page() ) {
 		$description = get_bloginfo( 'description' );
@@ -26,10 +27,8 @@ function cd_addon_meta_ogp() {
 	}
 	$description = apply_filters( 'cd_addon_ogp_type', $description );
 
-	if ( is_singular() ) {
-		if ( has_post_thumbnail() ) {
-			$image = get_the_post_thumbnail_url();
-		}
+	if ( is_singular() && has_post_thumbnail() ) {
+	    $image = get_the_post_thumbnail_url();
 	} elseif ( has_custom_logo() ) {
 		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 		$image = $custom_logo[0];
@@ -79,6 +78,23 @@ add_action( 'wp_head', 'cd_addon_meta_ogp' );
 
 
 /**
+ * Add ogp prefix to <html> tag.
+ *
+ * @since 1.1.0
+ * @param string $output HTML attributes will be output.
+ * @return string
+ */
+function cd_addon_ogp_html( $output ) {
+    if ( ! cd_use_ogp() ) {
+        return;
+    }
+    $output .= ' prefix="og: http://ogp.me/ns#"';
+    return $output;
+}
+add_filter( 'language_attributes', 'cd_addon_ogp_html' );
+
+
+/**
  * Register customizer contents for OGP settings.
  *
  * @since 1.1.0
@@ -116,7 +132,7 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 	// Twitter username.
 	$wp_customize->add_setting(
 		'ogp_twitter_username', array(
-			'default'           => true,
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -125,14 +141,14 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 			$wp_customize, 'ogp_twitter_username', array(
 				'label'   => __( 'Twitter username', 'coldbox-addon' ),
 				'section' => 'meta_ogp',
-				'type'    => 'checkbox',
+				'type'    => 'text',
 			)
 		)
 	);
 	// Facebook ID.
 	$wp_customize->add_setting(
 		'ogp_facebook_id', array(
-			'default'           => true,
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -141,7 +157,7 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 			$wp_customize, 'ogp_facebook_id', array(
 				'label'   => __( 'Facebook page ID', 'coldbox-addon' ),
 				'section' => 'meta_ogp',
-				'type'    => 'checkbox',
+				'type'    => 'text',
 			)
 		)
 	);
@@ -166,7 +182,7 @@ function cd_use_ogp() {
  * @return string
  */
 function cd_ogp_twitter_username() {
-	return get_theme_mod( 'ogp_twitter_username', true );
+	return get_theme_mod( 'ogp_twitter_username', '' );
 }
 
 /**
@@ -176,5 +192,5 @@ function cd_ogp_twitter_username() {
  * @return string
  */
 function cd_ogp_facebook_id() {
-	return get_theme_mod( 'ogp_facebook_id', true );
+	return get_theme_mod( 'ogp_facebook_id', '' );
 }
