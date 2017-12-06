@@ -29,7 +29,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_section(
 		'sns_buttons', array(
 			'title'    => __( 'Coldbox Add-on: Social Buttons', 'coldbox-addon' ),
-			'priority' => 10,
+			'priority' => 11,
 		)
 	);
 	// Whether or not use the share buttons.
