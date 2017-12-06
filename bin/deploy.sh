@@ -16,7 +16,7 @@ git clone -b dist --quiet "https://github.com/${TRAVIS_REPO_SLUG}.git" dist
 npm run dist
 cd dist
 git rm amp.php
-gir rm amp-ad.php
+git rm amp-ad.php
 git rm customizer.php
 git rm meta.php
 git rm ogp.php
