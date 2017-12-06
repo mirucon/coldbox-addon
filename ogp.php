@@ -50,7 +50,8 @@ function cd_addon_meta_ogp() {
 	$card = 'summary_large_image';
 	$card = apply_filters( 'cd_addon_ogp_card_type', $card );
 
-	$ogp  = '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>';
+	$ogp  = '<!-- Coldbox Addon OGP -->';
+	$ogp .= '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>';
 	$ogp .= '<meta property="og:description" content="' . esc_attr( $description ) . '"/>';
 	$ogp .= '<meta property="og:type" content="' . esc_attr( $type ) . '"/>';
 	$ogp .= '<meta property="og:url" content="' . esc_url( get_permalink() ) . '"/>';
@@ -58,6 +59,7 @@ function cd_addon_meta_ogp() {
 	$ogp .= '<meta property="og:image" content="' . esc_url( $image ) . '"/>';
 	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />';
 	$ogp .= '<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />';
+    $ogp .= '<!-- /Coldbox Addon OGP -->';
 
 	if ( ! empty( cd_ogp_twitter_username() ) ) {
 		$ogp .= '<meta name="twitter:site" content="' . esc_attr( cd_ogp_twitter_username() ) . '" />';
@@ -84,11 +86,12 @@ add_action( 'wp_head', 'cd_addon_meta_ogp' );
  * @param WP_Customize_Manager $wp_customize Customizer content to register.
  */
 function cd_addon_meta_ogp_customizer( $wp_customize ) {
+
 	// Register OGP tags section.
 	$wp_customize->add_section(
 		'meta_ogp', array(
-			'title'    => __( 'Coldbox Add-on: OGP Tags', 'coldbox-addon' ),
-			'priority' => 10,
+			'title'    => __( 'Coldbox Add-on: OGP/Meta Settings', 'coldbox-addon' ),
+			'priority' => 11,
 		)
 	);
 

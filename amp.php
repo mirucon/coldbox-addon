@@ -186,8 +186,8 @@ add_action( 'cd_addon_amp_head', 'cd_addon_amp_favicon' );
  * Adds OGP meta tags to head.
  *
  * @since 1.0.0
- * @return The head contents will be output.
  * @param string $head_items Hook the filter to add contents to inside of head.
+ * @return string
  */
 function cd_addon_amp_ogp( $head_items ) {
 	if ( has_post_thumbnail() ) :
@@ -240,6 +240,7 @@ function cd_addon_amp_footer() {
  *
  * @since 1.0.0
  * @param string $content The actual contents of the article.
+ * @return string
  */
 function cd_addon_amp_img( $content ) {
 
@@ -343,11 +344,11 @@ function cd_addon_amp_post_content() {
 }
 
 /**
- * Check whether embeded tweets are used or not.
+ * Check whether embedded tweets are used or not.
  *
  * @since 1.0.0
  */
-function cd_addon_amp_embeded_tweets() {
+function cd_addon_amp_embedded_tweets() {
 	if ( cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
 		if ( strpos( $post_content, 'twitter-tweet' ) !== false ||
@@ -357,14 +358,14 @@ function cd_addon_amp_embeded_tweets() {
 		}
 	}
 }
-add_action( 'wp', 'cd_addon_amp_embeded_tweets', 12 );
+add_action( 'wp', 'cd_addon_amp_embedded_tweets', 12 );
 
 /**
- * Check whether embeded YouTube videos are used or not.
+ * Check whether embedded YouTube videos are used or not.
  *
  * @since 1.0.0
  */
-function cd_addon_amp_embeded_youtube() {
+function cd_addon_amp_embedded_youtube() {
 	if ( cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
 		if ( preg_match( '<iframe.+?src="https:\/\/www.youtube.com\/embed\/(.+?)(\?feature=oembed)?".*?>', $post_content ) !== 0 ||
@@ -373,7 +374,7 @@ function cd_addon_amp_embeded_youtube() {
 		}
 	}
 }
-add_action( 'wp', 'cd_addon_amp_embeded_youtube', 12 );
+add_action( 'wp', 'cd_addon_amp_embedded_youtube', 12 );
 
 /**
  * Check whether iframe tags are used or not.
@@ -398,6 +399,7 @@ add_action( 'wp', 'cd_addon_amp_iframe', 12 );
  *
  * @since 1.0.0
  * @param string $head_items Hook the filter to add contents to inside of head.
+ * @return string
  */
 function cd_addon_amp_requied_scripts( $head_items ) {
 
@@ -422,6 +424,7 @@ add_action( 'cd_addon_amp_head', 'cd_addon_amp_requied_scripts' );
  *
  * @since 1.0.0
  * @param string $thumbnail The thumbnail images.
+ * @return string
  */
 function cd_addon_amp_related_posts( $thumbnail ) {
 	if ( cd_is_amp() ) {
@@ -437,6 +440,7 @@ add_filter( 'cd_middle_thumbnail', 'cd_addon_amp_related_posts' );
  *
  * @since 1.0.0
  * @param string $menu The menu items.
+ * @return string
  */
 function cd_addon_amp_menu( $menu ) {
 
@@ -454,6 +458,7 @@ add_filter( 'cd_header_menu', 'cd_addon_amp_menu' );
  *
  * @since 1.0.0
  * @param string $template The comments template hooked.
+ * @return bool
  */
 function cd_addon_amp_remove_comments( $template ) {
 	if ( cd_is_amp() ) {
@@ -471,6 +476,7 @@ if ( function_exists( 'cd_is_amp' ) ) {
 	 *
 	 * @since 1.0.0
 	 * @param bool $is_active_sidebar Hook the `is_active_sidebar` so that it always returns false.
+     * @return bool
 	 */
 	function cd_addon_amp_remove_sidebar( $is_active_sidebar ) {
 		if ( cd_is_amp() ) {
@@ -487,6 +493,7 @@ if ( function_exists( 'cd_is_amp' ) ) {
  *
  * @since 1.0.0
  * @param string $author The author's avatar.
+ * @return string
  */
 function cd_addon_amp_avatar( $author ) {
 	if ( cd_is_amp() ) {
