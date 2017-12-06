@@ -36,19 +36,19 @@ function cd_addon_languages() {
 add_action( 'plugins_loaded', 'cd_addon_languages' );
 
 // Load the Social Buttons part.
-require_once 'share-buttons.php';
+require_once 'inc/share-buttons.php';
 
 // Load the customizer part.
-require_once 'customizer.php';
+require_once 'inc/customizer.php';
 
 // Load the AMP part.
-require_once 'amp.php';
+require_once 'inc/amp.php';
 
 // Load the amp ads part.
-require_once 'amp-ads.php';
+require_once 'inc/amp-ads.php';
 
 // Load ogp part.
-require_once 'ogp.php';
+require_once 'inc/ogp.php';
 
 // Load meta part.
-require_once 'meta.php';
+require_once 'inc/meta.php';
