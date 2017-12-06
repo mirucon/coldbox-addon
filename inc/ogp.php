@@ -59,6 +59,7 @@ function cd_addon_meta_ogp() {
 	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />';
 	$ogp .= '<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />';
     $ogp .= '<!-- /Coldbox Addon OGP -->';
+    $ogp .= '<meta name="description" content="' . esc_attr( $description ) . '"/>';
 
 	if ( ! empty( cd_ogp_twitter_username() ) ) {
 		$ogp .= '<meta name="twitter:site" content="' . esc_attr( cd_ogp_twitter_username() ) . '" />';
