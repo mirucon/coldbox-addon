@@ -47,6 +47,78 @@ function cd_addon_google_site_verification() {
 add_action( 'wp_head', 'cd_addon_google_analytics' );
 
 /**
+ * Remove WP default prev/next tags.
+ */
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );
+
+/**
+ * Getting prev/next page link for multiple page.
+ *
+ * @see Based on `_wp_link_page()` https://developer.wordpress.org/reference/functions/_wp_link_page/
+ * @param string $rel Whether 'prev' or 'next' to getting the link.
+ * @since 1.1.0
+ * @return string
+ */
+function cd_addon_wp_link_page( $rel ) {
+	global $multipage;
+	global $page;
+	global $pages;
+	global $wp_rewrite;
+	$post       = get_post();
+	$i          = 'prev' === $rel ? $page - 1 : $page + 1;
+	$total_page = count( $pages );
+
+	if ( $i > 0 && $i <= $total_page && $multipage ) {
+		if ( '' == get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ) ) ) {
+			$url = add_query_arg( 'page', $i, get_permalink() );
+		} elseif ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) === $post->ID ) {
+			$url = trailingslashit( get_permalink() ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
+		} else {
+			$url = trailingslashit( get_permalink() ) . user_trailingslashit( $i, 'single_paged' );
+		}
+	} else {
+		return false;
+	}
+
+	return esc_url( $url );
+}
+
+/**
+ * Output prev/next tags in pages where articles have more than one page, and archives.
+ */
+function cd_addon_meta_prev_next() {
+	global $multipage;
+	$meta = '';
+
+	if ( $multipage ) {
+		$prev = cd_addon_wp_link_page( 'prev' );
+		$next = cd_addon_wp_link_page( 'next' );
+
+		if ( $prev ) {
+			$meta .= '<link rel="prev" href="' . esc_url( $prev ) . '" />';
+		}
+		if ( $next ) {
+			$meta .= '<link rel="next" href="' . esc_url( $next ) . '" />';
+		}
+		$meta = apply_filters( 'cd_addon_meta_prev_next', $meta );
+	} else {
+		$prev = get_previous_posts_page_link();
+		$next = get_next_posts_page_link();
+
+		if ( get_previous_posts_link() ) {
+			$meta .= '<link rel="prev" href="' . esc_url( $prev ) . '" />';
+		}
+		if ( get_next_posts_link() ) {
+			$meta .= '<link rel="next" href="' . esc_url( $next ) . '" />';
+		}
+	}
+	echo $meta; // WPCS: XSS OK.
+	return $meta;
+}
+
+add_action( 'wp_head', 'cd_addon_meta_prev_next' );
+
+/**
  * Register customizer contents for meta settings.
  *
  * @since 1.1.0

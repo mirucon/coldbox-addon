@@ -65,7 +65,7 @@ function cd_addon_meta_ogp() {
 
 	if ( ! empty( $twitter_username ) ) {
 		$ogp .= '<meta name="twitter:site" content="@' . esc_attr( $twitter_username ) . '" />';
-		$ogp .= '<meta name="twitter:creator" content="' . esc_attr( cd_ogp_twitter_username() ) . '" />';
+		$ogp .= '<meta name="twitter:creator" content="' . esc_attr( $twitter_username ) . '" />';
 	}
 	if ( ! empty( $facebook_id ) ) {
 		$ogp .= '<meta property="fb:admins" content="' . esc_attr( $facebook_id ) . '" />';
