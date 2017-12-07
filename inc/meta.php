@@ -19,10 +19,7 @@ function cd_addon_google_analytics() {
 	if ( empty( $tracking_code ) ) {
 		return;
 	}
-	$ga = "<script type=\"text/javascript\">
-           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},
-           i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })
-           (window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', '" . esc_js( $tracking_code ) . "', 'auto'); ga('send', 'pageview');</script>";
+	$ga = "<script type=\"text/javascript\">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', '" . esc_js( $tracking_code ) . "', 'auto'); ga('send', 'pageview');</script>" . PHP_EOL;
 
 	echo apply_filters( 'cd_addon_google_analytics', $ga ); // WPCS: XSS OK.
 	return apply_filters( 'cd_addon_google_analytics', $ga );
@@ -40,7 +37,7 @@ function cd_addon_google_site_verification() {
 	if ( empty( $tracking_code ) ) {
 		return;
 	}
-	$verify = '<meta name="google-site-verification" content="' . esc_attr( $verification_code ) . '" />';
+	$verify = '<meta name="google-site-verification" content="' . esc_attr( $verification_code ) . '" />' . PHP_EOL;
 	echo apply_filters( 'cd_addon_google_site_verification', $verify ); // WPCS: XSS OK.
 	return apply_filters( 'cd_addon_google_site_verification', $verify );
 }
@@ -69,7 +66,8 @@ function cd_addon_wp_link_page( $rel ) {
 	$total_page = count( $pages );
 
 	if ( $i > 0 && $i <= $total_page && $multipage ) {
-		if ( '' == get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ) ) ) {
+		// @codingStandardsIgnoreStart
+		if ( '' === get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ) ) ) {  // @codingStandardsIgnoreEnd
 			$url = add_query_arg( 'page', $i, get_permalink() );
 		} elseif ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) === $post->ID ) {
 			$url = trailingslashit( get_permalink() ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
@@ -91,27 +89,42 @@ function cd_addon_meta_prev_next() {
 	$meta = '';
 
 	if ( $multipage ) {
+		$meta = PHP_EOL . '<!-- Coldbox Addon next/prev tag -->' . PHP_EOL;
+
 		$prev = cd_addon_wp_link_page( 'prev' );
 		$next = cd_addon_wp_link_page( 'next' );
 
 		if ( $prev ) {
-			$meta .= '<link rel="prev" href="' . esc_url( $prev ) . '" />';
+			$meta .= '<link rel="prev" href="' . esc_url( $prev ) . '" />' . PHP_EOL;
 		}
 		if ( $next ) {
-			$meta .= '<link rel="next" href="' . esc_url( $next ) . '" />';
+			$meta .= '<link rel="next" href="' . esc_url( $next ) . '" />' . PHP_EOL;
 		}
-		$meta = apply_filters( 'cd_addon_meta_prev_next', $meta );
+
+		$meta .= '<!-- Coldbox Addon next/prev tag -->' . PHP_EOL . PHP_EOL;
+
 	} else {
+
+		if ( get_previous_posts_link() || get_next_posts_link() ) {
+			$meta = PHP_EOL . '<!-- Coldbox Addon next/prev tag -->' . PHP_EOL;
+		}
+
 		$prev = get_previous_posts_page_link();
 		$next = get_next_posts_page_link();
 
 		if ( get_previous_posts_link() ) {
-			$meta .= '<link rel="prev" href="' . esc_url( $prev ) . '" />';
+			$meta .= '<link rel="prev" href="' . esc_url( $prev ) . '" />' . PHP_EOL;
 		}
 		if ( get_next_posts_link() ) {
-			$meta .= '<link rel="next" href="' . esc_url( $next ) . '" />';
+			$meta .= '<link rel="next" href="' . esc_url( $next ) . '" />' . PHP_EOL;
+		}
+
+		if ( get_previous_posts_link() || get_next_posts_link() ) {
+			$meta .= '<!-- Coldbox Addon next/prev tag -->' . PHP_EOL . PHP_EOL;
 		}
 	}
+
+	$meta = apply_filters( 'cd_addon_meta_prev_next', $meta );
 	echo $meta; // WPCS: XSS OK.
 	return $meta;
 }

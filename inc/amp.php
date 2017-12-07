@@ -297,14 +297,14 @@ function cd_addon_amp_img( $content ) {
 		// Replace img tags to <amp-img>.
 		$content = preg_replace( '/<img/i', '<amp-img layout="responsive"', $content );
 
-		// Replace embeded tweets to <amp-twitter>.
+		// Replace embedded tweets to <amp-twitter>.
 		// @codingStandardsIgnoreStart
 		$pattern = '/<blockquote class="twitter-tweet".*?>.+?<a href="https:\/\/twitter.com\/.*?\/status\/(.*?)">.+?<\/blockquote>.*?<script async src="\/\/platform.twitter.com\/widgets.js" charset="utf-8"><\/script>/is';
 		$append  = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
 		$content = preg_replace( $pattern, $append, $content );
 		// @codingStandardsIgnoreEnd
 
-		// Replace embeded YouTube videos to <amp-youtube>.
+		// Replace embedded YouTube videos to <amp-youtube>.
 		$pattern = '/<iframe.+?src="https:\/\/www.youtube.com\/embed\/(.+?)(\?feature=oembed)?".*?><\/iframe>/is';
 		$append  = '<amp-youtube layout="responsive" data-videoid="$1" width="800" height="450"></amp-youtube>';
 		$content = preg_replace( $pattern, $append, $content );
@@ -405,10 +405,10 @@ add_action( 'wp', 'cd_addon_amp_iframe', 12 );
 function cd_addon_amp_requied_scripts( $head_items ) {
 
 	// @codingStandardsIgnoreStart
-	if ( cd_addon_amp_embeded_tweets() ) {
+	if ( cd_addon_amp_embedded_tweets()) {
 		$head_items .= '<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>';
 	}
-	if ( cd_addon_amp_embeded_youtube() ) {
+	if ( cd_addon_amp_embedded_youtube() ) {
 		$head_items .= '<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>';
 	}
 	if ( cd_addon_amp_iframe() ) {
@@ -512,9 +512,10 @@ add_filter( 'cd_get_avatar', 'cd_addon_amp_avatar' );
  */
 function cd_addon_amp_meta() {
 	if ( ! cd_is_amp() && is_single() && ! is_single( cd_addon_amp_no_generate() ) ) {
-		?>
-			<link rel="amphtml" href="<?php echo esc_url( get_the_permalink() ) . '?amp=1'; ?>">
-		<?php
+
+		$tag = '<link rel="amphtml" href="' . esc_url( get_the_permalink() ) . '?amp=1">' . PHP_EOL;
+		echo $tag; // WPCS: XSS OK.
+
 	}
 }
 add_action( 'wp_head', 'cd_addon_amp_meta' );

@@ -49,30 +49,37 @@ function cd_addon_meta_ogp() {
 	$card = 'summary_large_image';
 	$card = apply_filters( 'cd_addon_ogp_card_type', $card );
 
-	$ogp  = '<!-- Coldbox Addon OGP -->';
-	$ogp .= '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>';
-	$ogp .= '<meta property="og:description" content="' . esc_attr( $description ) . '"/>';
-	$ogp .= '<meta property="og:type" content="' . esc_attr( $type ) . '"/>';
-	$ogp .= '<meta property="og:url" content="' . esc_url( get_permalink() ) . '"/>';
-	$ogp .= '<meta property="og:site_name" content="' . esc_attr( get_bloginfo() ) . '"/>';
-	$ogp .= '<meta property="og:image" content="' . esc_url( $image ) . '"/>';
-	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />';
-	$ogp .= '<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />';
-	$ogp .= '<meta property="og:locale" content="' . esc_attr( get_bloginfo( 'language' ) ) . '" />';
+	$ogp  = PHP_EOL . '<!-- Coldbox Addon OGP -->' . PHP_EOL;
+	$ogp .= '<meta name="description" content="' . esc_attr( $description ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:description" content="' . esc_attr( $description ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:type" content="' . esc_attr( $type ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:url" content="' . esc_url( get_permalink() ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:site_name" content="' . esc_attr( get_bloginfo() ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:image" content="' . esc_url( $image ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />' . PHP_EOL;
+	$ogp .= '<meta name="twitter:domain" content="' . esc_url( home_url() ) . '" />' . PHP_EOL;
+	$ogp .= '<meta property="og:locale" content="' . esc_attr( get_bloginfo( 'language' ) ) . '" />' . PHP_EOL;
 
 	$twitter_username = cd_ogp_twitter_username();
 	$facebook_id      = cd_ogp_facebook_id();
 
 	if ( ! empty( $twitter_username ) ) {
-		$ogp .= '<meta name="twitter:site" content="@' . esc_attr( $twitter_username ) . '" />';
-		$ogp .= '<meta name="twitter:creator" content="' . esc_attr( $twitter_username ) . '" />';
+		$ogp .= '<meta name="twitter:site" content="@' . esc_attr( $twitter_username ) . '" />' . PHP_EOL;
+		$ogp .= '<meta name="twitter:creator" content="' . esc_attr( $twitter_username ) . '" />' . PHP_EOL;
 	}
 	if ( ! empty( $facebook_id ) ) {
-		$ogp .= '<meta property="fb:admins" content="' . esc_attr( $facebook_id ) . '" />';
+		$ogp .= '<meta property="fb:admins" content="' . esc_attr( $facebook_id ) . '" />' . PHP_EOL;
 	}
 
-	$ogp .= '<meta name="description" content="' . esc_attr( $description ) . '"/>';
-	$ogp .= '<!-- /Coldbox Addon Open Graph -->';
+	if ( is_single() ) {
+		$ogp .= '<meta property="article:published_time" content="' . esc_attr( get_the_time( 'c' ) ) . '" />' . PHP_EOL;
+		if ( get_the_time() !== get_the_modified_time() ) {
+			$ogp .= '<meta property="article:modified_time" content="' . esc_attr( get_the_modified_time( 'c' ) ) . '" />' . PHP_EOL;
+		}
+	}
+
+	$ogp .= '<!-- /Coldbox Addon Open Graph -->' . PHP_EOL . PHP_EOL;
 
 	if ( cd_use_ogp() ) {
 		echo apply_filters( 'cd_addon_meta_ogp_single', $ogp ); // WPCS: XSS OK.
