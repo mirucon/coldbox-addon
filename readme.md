@@ -1,6 +1,6 @@
 # Coldbox Addon
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
-**Donate link:** https://valu.is/mirucon/  
+**Donate link:** Bitcoin: 1FRoTiS4kFVP9oK8cWqrJhvAu1tC1PqVxx  
 **Tags:** coldbox, coldbox-theme  
 **Requires at least:** 4.7  
 **Tested up to:** 4.9  
@@ -19,11 +19,17 @@ The addon plugin makes the most of the Coldbox theme.
 
 ### Features
 
-* **AMP Pages** - The fastest HTML format - AMP. The plugin is the easiest way to use AMP pages unless any setting or coding.
+* **AMP Pages** - The fastest HTML format - AMP. The plugin is the easiest way to use AMP pages unless any setting or coding. Of course, you can use Google Analytics, Adsense etc. in AMP pages, so that you won't loose any opportunities.
 
 * **Share Buttons** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
 
-  * *Require the [SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin to use share buttons.*
+  * *[SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to use share buttons.*
+  
+* **Open Graph tags** - The most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
+
+* **Other meta tags** - Not only open graph tags, it supports even more meta features, like Google Analytics, and other SEO-related tags! The way, you can simply
+
+* (Coming soon) **Google AdSense** -  
 
 
 ## Installation Instructions
@@ -47,13 +53,21 @@ If you don't want the buttons to show at the end of article content, go to custo
 
 ## Changelog
 
+1.1.0
+
+* Added: Open Graph tags
+* Added: Google Analytics, and other meta integrations
+* Added: SEO-related meta tags, such as `rel=next`, `rel=prev` tags
+* Fixed: Plugin wasn't working with old PHP versions
+* Improved: Formatting/ brushing up codes
+
 1.0.2
-* Fixed: Undefined function error when the Coldbox theme is inactive
 * Added: Specific PHP version
+* Fixed: Undefined function error when the Coldbox theme is inactive
 
 1.0.1
+* Added: A customizer option to select whether or not uses AMP pages
 * Improved: AMP HTML format
-* Added: A custmizer option to select whether or not uses AMP pages
 
 1.0
 

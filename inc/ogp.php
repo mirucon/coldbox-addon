@@ -49,7 +49,7 @@ function cd_addon_meta_ogp() {
 	$card = 'summary_large_image';
 	$card = apply_filters( 'cd_addon_ogp_card_type', $card );
 
-	$ogp  = PHP_EOL . '<!-- Coldbox Addon OGP -->' . PHP_EOL;
+	$ogp  = '<!-- Coldbox Addon Open Graph -->' . PHP_EOL;
 	$ogp .= '<meta name="description" content="' . esc_attr( $description ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta property="og:description" content="' . esc_attr( $description ) . '"/>' . PHP_EOL;
@@ -79,7 +79,7 @@ function cd_addon_meta_ogp() {
 		}
 	}
 
-	$ogp .= '<!-- /Coldbox Addon Open Graph -->' . PHP_EOL . PHP_EOL;
+	$ogp .= '<!-- /Coldbox Addon Open Graph -->' . PHP_EOL;
 
 	if ( cd_use_ogp() ) {
 		echo apply_filters( 'cd_addon_meta_ogp_single', $ogp ); // WPCS: XSS OK.
