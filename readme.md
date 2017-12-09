@@ -1,21 +1,19 @@
-# Coldbox Addon
+# Coldbox Addon v1.1.0
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Donate link:** Bitcoin: 1FRoTiS4kFVP9oK8cWqrJhvAu1tC1PqVxx  
 **Tags:** coldbox, coldbox-theme  
 **Requires at least:** 4.7  
 **Tested up to:** 4.9  
-**Stable tag:** 1.0.3  
+**Stable tag:** 1.1.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
-
-The powered addon for the Coldbox theme. It brings you AMP HTML and share buttons which help increasing your website's engagement. It is degined for the Coldbox theme. Lightweight and safety.
 
 This plugin is now available on the WP.org directory! [https://wordpress.org/plugins/coldbox-addon/](https://wordpress.org/plugins/coldbox-addon/)
 
 
 ## Description
 
-The addon plugin makes the most of the Coldbox theme. 
+The powered addon for the Coldbox theme. It brings you AMP HTML and social features which help increasing your website's engagement. It is designed just for the Coldbox theme. Lightweight and safety, works perfectly with the theme!
 
 ### Features
 
@@ -29,7 +27,7 @@ The addon plugin makes the most of the Coldbox theme.
 
 * **Other meta tags** - Not only open graph tags, it supports even more meta features, like Google Analytics, and other SEO-related tags! The way, you can simply
 
-* (Coming soon) **Google AdSense** -  
+* (Coming soon) **Google AdSense**
 
 
 ## Installation Instructions
@@ -42,14 +40,14 @@ The addon plugin makes the most of the Coldbox theme.
 
 ### What URL do the AMP pages use?
 
-You may access AMP page by adding "?amp=1" at last of the URLs. When visitors use Google search, they automatically access to your AMP page.
+You may access AMP page by adding "?amp=1" at the end of your URL. When visitors use Google search on mobile, they will automatically access to your AMP page.
 
 ### Where are the share buttons shown?
 
-By default, the share buttons are shown at the end of article content. You may use `sns_buttons` shortcode when you want to show them at beginning or midst of the content.  
+By default, the share buttons are shown at the end of article content. You may use `sns_buttons` shortcode when you want to show them at the beginning or midst of the content.
 You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them on any template files.
 
-If you don't want the buttons to show at the end of article content, go to customizer and uncheck "Use social buttons" option. You can still call the buttons using shortcode or the function.
+If you don't want the buttons to show at the end of content, go and uncheck "Use social buttons" option in the theme customizer. You can still call the buttons using shortcode and the function.
 
 ## Changelog
 
@@ -58,7 +56,6 @@ If you don't want the buttons to show at the end of article content, go to custo
 * Added: Open Graph tags
 * Added: Google Analytics, and other meta integrations
 * Added: SEO-related meta tags, such as `rel=next`, `rel=prev` tags
-* Fixed: Plugin wasn't working with old PHP versions
 * Improved: Formatting/ brushing up codes
 
 1.0.2
