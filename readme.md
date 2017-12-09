@@ -1,10 +1,10 @@
-# Coldbox Addon v1.1.0
+# Coldbox Addon v1.1.1
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Donate link:** Bitcoin: 1FRoTiS4kFVP9oK8cWqrJhvAu1tC1PqVxx  
 **Tags:** coldbox, coldbox-theme  
 **Requires at least:** 4.7  
 **Tested up to:** 4.9  
-**Stable tag:** 1.1.0  
+**Stable tag:** 1.1.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,10 @@ You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them o
 If you don't want the buttons to show at the end of content, go and uncheck "Use social buttons" option in the theme customizer. You can still call the buttons using shortcode and the function.
 
 ## Changelog
+
+1.1.1
+
+* Bug fix
 
 1.1.0
 
