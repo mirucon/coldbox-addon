@@ -15,12 +15,6 @@ fi
 git clone -b dist --quiet "https://github.com/${TRAVIS_REPO_SLUG}.git" dist
 npm run dist
 cd dist
-git rm amp.php
-git rm amp-ads.php
-git rm customizer.php
-git rm meta.php
-git rm ogp.php
-git rm share-buttons.php
 git add inc/*.php
 git add coldbox-addon.php
 git add readme.txt
