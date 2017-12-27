@@ -25,7 +25,7 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
   
 * **Open Graph tags** - The most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
 
-* **Other meta tags** - Not only open graph tags, it supports even more meta features, like Google Analytics, and other SEO-related tags! The way, you can simply
+* **Other meta tags** - Not only open graph tags, but it supports even more meta features, like Google Analytics, and other SEO-related tags too!
 
 * (Coming soon) **Google AdSense**
 
