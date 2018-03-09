@@ -21,7 +21,7 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
 
 * **Share Buttons** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
 
-  * *Currently [SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to show share buttons.*
+  * *[SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to **show share counts.***
   
 * **Open Graph tags** - It's the most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
 

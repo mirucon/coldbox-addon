@@ -2,6 +2,11 @@ sudo: false
 language: php
 dist: precise
 notifications:
+  slack:
+    rooms:
+     - secure: "BCI/YuKccXBrcJgErArKAsgQI0oePQ63hWLw5+x5dQoYOmfyyfeEatC5EyUEPhw6URpFnHJyM0jifrhFHKdGrNfBJrclxSA9j5+oRucsmQ87ImFLi/wXfMyf9KsZSdPGKL6IAQNbS/rZCzbzd1BCrxTbslUb+RcQScy6C8hmnJ+eo0mRvALMIJ2WrigKHh7zqcDlOsv61UzoXKID5QkIXQ2fOxgndtfjkVphGsHYM+e2J1fAgcxvvPvM0d5jrvBHKajeDeIy6GZOgqsqOWa8VXfmvaIkCqaOE83aeRaom/sL7MYU3GRUdDBVm5s1c+2wbe8ax7moL7kPue6OGuO5YuBnzclZSv8kl4HbjktoLFnnbAafJR8aMAc2yGK5oHy4oWRPtsS7PwRad+SsqnwgWXibQ6+EhdVo/xIf3EKCqtQVwoIwQsQfAppfWryBIXaMCfty80pfzf7L0Gjq+IQ5K2pt5MR8l6MYkCDE1mCzGyfQwQXLH7Fa5EqJE8G7LrYpdiNlovLWObXkGjO+Tma9eaeD39Xa4flFGgxTb4G0iD4cEhpB+VXx/XMMO6fyicTwlLW2+sFEH3ViNBEvcx8AQBFGCFXU/JLExGJLrtCO02nJsOGxxnSKgI8nCy4lltSH7FcDyiLH2jYpTXLXoShQe/wAghcgvpIiTHYjhKwHUoo="
+    on_success: always
+    on_failure: change
   email:
     on_success: never
     on_failure: change
