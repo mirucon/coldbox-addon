@@ -5,7 +5,7 @@ gulp.task( 'browser-sync', function () {
   browserSync({
     open: 'external',
     notify: false,
-    proxy: "http://coldbox.vccw/",
+    proxy: "http://coldbox.vccw/"
   });
 });
 gulp.task( 'bs-reload', function () {
