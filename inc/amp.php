@@ -322,7 +322,7 @@ function cd_addon_amp_img( $content ) {
 		$append  = '';
 		$content = preg_replace( $pattern, $append, $content );
 
-	} // End if().
+	} // End if.
 
 	return $content;
 }
@@ -402,7 +402,7 @@ add_action( 'wp', 'cd_addon_amp_iframe', 12 );
  * @param string $head_items Hook the filter to add contents to inside of head.
  * @return string
  */
-function cd_addon_amp_requied_scripts( $head_items ) {
+function cd_addon_amp_required_scripts( $head_items ) {
 
 	// @codingStandardsIgnoreStart
 	if ( cd_addon_amp_embedded_tweets()) {
@@ -417,7 +417,7 @@ function cd_addon_amp_requied_scripts( $head_items ) {
 	return $head_items;
 	// @codingStandardsIgnoreEnd
 }
-add_action( 'cd_addon_amp_head', 'cd_addon_amp_requied_scripts' );
+add_action( 'cd_addon_amp_head', 'cd_addon_amp_required_scripts' );
 
 
 /**

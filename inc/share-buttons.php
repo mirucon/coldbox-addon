@@ -43,7 +43,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 		new WP_Customize_Control(
 			$wp_customize, 'use_sns_buttons', array(
 				'label'       => __( 'Use Social Buttons', 'coldbox-addon' ),
-				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Requied the %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
+				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Required the %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
 				'section'     => 'sns_buttons',
 				'type'        => 'checkbox',
 			)
@@ -268,112 +268,121 @@ if ( cd_use_snsb() || cd_use_snsb_hatena() || cd_use_snsb_feedly() ) {
  */
 function cd_addon_sns_buttons_list( $class = null ) {
 
-	if ( function_exists( 'scc_get_share_total' ) ) :
+	$canonical_url           = get_permalink();
+	$title                   = wp_title( '', false, 'right' ) . '| ' . get_bloginfo( 'name' );
+	$canonical_url_encode    = rawurlencode( $canonical_url );
+	$title_encode            = rawurlencode( $title );
+	$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '';
+	?>
+	<section id="sns-buttons" class="sns-buttons<?php echo ' ' . esc_attr( $class ); ?>">
+		<h4 id="sns-btn-bottom-head"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h4>
+		<ul class="share-list-container">
 
-		$canonical_url           = get_permalink();
-		$title                   = wp_title( '', false, 'right' ) . '| ' . get_bloginfo( 'name' );
-		$canonical_url_encode    = rawurlencode( $canonical_url );
-		$title_encode            = rawurlencode( $title );
-		$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '';
-		?>
-		<section id="sns-buttons" class="sns-buttons<?php echo ' ' . esc_attr( $class ); ?>">
-			<h4 id="sns-btn-bottom-head"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h4>
-			<ul class="share-list-container">
-
-				<?php if ( function_exists( 'scc_get_share_twitter' ) && cd_use_snsb_twitter() ) : ?>
-					<li class="twitter balloon-btn">
-						<div class="share">
-							<a class="share-inner" href="http://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank">
-								<i class="icon-twitter fa fa-twitter"></i>
-							</a>
-						</div>
+			<?php if ( cd_use_snsb_twitter() ) : ?>
+				<li class="twitter balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="http://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank">
+							<i class="icon-twitter fa fa-twitter"></i>
+						</a>
+					</div>
+					<?php if ( function_exists( 'scc_get_share_twitter' ) ) : ?>
 						<span class="count">
 							<a class="count-inner" href="http://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton" target="_blank">
 								<?php echo absint( scc_get_share_twitter() ); ?>
 							</a>
 						</span>
-					</li>
-				<?php endif; ?>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 
-				<?php if ( function_exists( 'scc_get_share_hatebu' ) && cd_use_snsb_hatena() && ! cd_is_amp() ) : ?>
-					<li class="hatena balloon-btn">
-						<div class="share">
-							<a class="share-inner" href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-								<i class="icon-hatena"></i>
-							</a>
-						</div>
+			<?php if ( cd_use_snsb_hatena() && ! cd_is_amp() ) : ?>
+				<li class="hatena balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+							<i class="icon-hatena"></i>
+						</a>
+					</div>
+					<?php if ( function_exists( 'scc_get_share_hatebu' ) ) : ?>
 						<span class="count">
 							<a class="count-inner" href="http://b.hatena.ne.jp/entry/<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
 								<?php echo absint( scc_get_share_hatebu() ); ?>
 							</a>
 						</span>
-					</li>
-				<?php endif; ?>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 
-				<?php if ( function_exists( 'scc_get_share_facebook' ) && cd_use_snsb_facebook() ) : ?>
-					<li class="facebook balloon-btn">
-						<div class="share">
-							<a class="share-inner" href="http://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-								<i class="icon-facebook fa fa-facebook"></i>
-							</a>
-						</div>
+			<?php if ( cd_use_snsb_facebook() ) : ?>
+				<li class="facebook balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="http://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+							<i class="icon-facebook fa fa-facebook"></i>
+						</a>
+					</div>
+					<?php if ( function_exists( 'scc_get_share_facebook' ) ) : ?>
 						<span class="count">
 							<a class="count-inner" href="http://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
 								<?php echo absint( scc_get_share_facebook() ); ?>
 							</a>
 						</span>
-					</li>
-				<?php endif; ?>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 
-				<?php if ( function_exists( 'scc_get_share_gplus' ) && cd_use_snsb_googleplus() ) : ?>
-					<li class="googleplus balloon-btn">
-						<div class="share">
-							<a class="share-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
-								<i class="icon-googleplus fa fa-google-plus"></i>
-							</a>
-						</div>
+			<?php if ( cd_use_snsb_googleplus() ) : ?>
+				<li class="googleplus balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
+							<i class="icon-googleplus fa fa-google-plus"></i>
+						</a>
+					</div>
+					<?php if ( function_exists( 'scc_get_share_gplus' ) ) : ?>
 						<span class="count">
 							<a class="count-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
 								<?php echo absint( scc_get_share_gplus() ); ?>
 							</a>
 						</span>
-					</li>
-				<?php endif; ?>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 
-				<?php if ( function_exists( 'scc_get_share_pocket' ) && cd_use_snsb_pocket() ) : ?>
-					<li class="pocket balloon-btn">
-						<div class="share">
-							<a class="share-inner" href="https://getpocket.com/edit?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-								<i class="icon-pocket fa fa-get-pocket"></i>
-							</a>
-						</div>
+			<?php if ( cd_use_snsb_pocket() ) : ?>
+				<li class="pocket balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="https://getpocket.com/edit?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+							<i class="icon-pocket fa fa-get-pocket"></i>
+						</a>
+					</div>
+					<?php if ( function_exists( 'scc_get_share_pocket' ) ) : ?>
 						<span class="count">
 							<a class="count-inner" href="https://getpocket.com/edit?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
 								<?php echo absint( scc_get_share_pocket() ); ?>
 							</a>
 						</span>
-					</li>
-				<?php endif; ?>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 
-				<?php if ( function_exists( 'scc_get_follow_feedly' ) && cd_use_snsb_feedly() && ! cd_is_amp() ) : ?>
-					<li class="feedly balloon-btn">
-						<div class="share">
-							<a class="share-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
-								<i class="icon-feedly"></i>
-							</a>
-						</div>
+			<?php if ( cd_use_snsb_feedly() && ! cd_is_amp() ) : ?>
+				<li class="feedly balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
+							<i class="icon-feedly"></i>
+						</a>
+					</div>
+					<?php if ( function_exists( 'scc_get_follow_feedly' ) ) : ?>
 						<span class="count">
 							<a class="count-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
 								<?php echo absint( scc_get_follow_feedly() ); ?>
 							</a>
 						</span>
-					</li>
-				<?php endif; ?>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 
-			</ul>
-		</section>
+		</ul>
+	</section>
 	<?php
-	endif;
 }
 
 /**
