@@ -8,22 +8,22 @@
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin is now available on the WP.org directory! [https://wordpress.org/plugins/coldbox-addon/](https://wordpress.org/plugins/coldbox-addon/)
+Now available from the WordPress plugin directory! [https://wordpress.org/plugins/coldbox-addon/](https://wordpress.org/plugins/coldbox-addon/)
 
 
 ## Description
 
-The powered addon for the Coldbox theme. It brings you AMP HTML and social features which help increasing your website's engagement. It is designed just for the Coldbox theme. Lightweight and safety, works perfectly with the theme!
+The powered addon for the Coldbox theme. It brings you AMP HTML and social features which help increasing your website's engagements. It is designed just for the Coldbox theme. Lightweight and safety, works perfectly with the theme.
 
 ### Features
 
-* **AMP Pages** - The fastest HTML format - AMP. The plugin is the easiest way to use AMP pages unless any setting or coding. Of course, you can use Google Analytics, Adsense etc. in AMP pages, so that you won't loose any opportunities.
+* **AMP Pages** - The fastest HTML format - AMP. The plugin provides the easiest way to use AMP pages without any setting or coding. You can still use Google Analytics, Adsense etc. in the AMP pages.
 
 * **Share Buttons** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
 
-  * *[SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to use share buttons.*
+  * *Currently [SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to show share buttons.*
   
-* **Open Graph tags** - The most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
+* **Open Graph tags** - It's the most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
 
 * **Other meta tags** - Not only open graph tags, but it supports even more meta features, like Google Analytics, and other SEO-related tags too!
 
@@ -38,16 +38,16 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
 
 ## Frequently Asked Questions
 
-### What URL do the AMP pages use?
+### How can I access to AMP pages?
 
-You may access AMP page by adding "?amp=1" at the end of your URL. When visitors use Google search on mobile, they will automatically access to your AMP page.
+You may access AMP page by adding "?amp=1" at the end of your articles URL. When visitors use Google search on mobile, they will automatically access to your AMP pages.
 
 ### Where are the share buttons shown?
 
-By default, the share buttons are shown at the end of article content. You may use `sns_buttons` shortcode when you want to show them at the beginning or midst of the content.
+By default, share buttons will be shown at the end of article content. Use `sns_buttons` shortcode to show them wherever you want in an article.
 You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them on any template files.
 
-If you don't want the buttons to show at the end of content, go and uncheck "Use social buttons" option in the theme customizer. You can still call the buttons using shortcode and the function.
+If you don't want the buttons to show at the end of content automatically, go and uncheck "Use social buttons" option in the theme customizer. You can call the share buttons using the shortcode function in that case.
 
 ## Changelog
 
