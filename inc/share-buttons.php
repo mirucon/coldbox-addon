@@ -43,7 +43,6 @@ function cd_addon_sns_buttons( $wp_customize ) {
 		new WP_Customize_Control(
 			$wp_customize, 'use_sns_buttons', array(
 				'label'       => __( 'Use Social Buttons', 'coldbox-addon' ),
-				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Required the %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
 				'section'     => 'sns_buttons',
 				'type'        => 'checkbox',
 			)
@@ -145,6 +144,25 @@ function cd_addon_sns_buttons( $wp_customize ) {
 			)
 		)
 	);
+
+	// Whether show count badges or not.
+	$wp_customize->add_setting(
+		'sns_button_count_badges', array(
+			'default'           => true,
+			'sanitize_callback' => 'wp_validate_boolean',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'sns_button_count_badges', array(
+				'label'   => __( 'Show count badges', 'coldbox-addon' ),
+				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Requires %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
+			)
+		)
+	);
+
 	// Twitter username.
 	$wp_customize->add_setting(
 		'twitter_username', array(
@@ -237,6 +255,22 @@ function cd_use_snsb_feedly() {
 }
 
 /**
+ * Checks whether it shows count badges or not.
+ *
+ * @since 1.1.2
+ * @return bool True or false
+ */
+function cd_addon_show_count_badge() {
+	$czr_option = get_theme_mod( 'sns_button_count_badges', true );
+	if ( $czr_option && function_exists( 'scc_get_share_total' ) ) {
+		$count_badge = true;
+	} else {
+		$count_badge = false;
+	}
+	return apply_filters( 'cd_addon_show_count_badge', $count_badge );
+}
+
+/**
  * Return the Twitter username
  *
  * @since 1.0.0
@@ -285,7 +319,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							<i class="icon-twitter fa fa-twitter"></i>
 						</a>
 					</div>
-					<?php if ( function_exists( 'scc_get_share_twitter' ) ) : ?>
+					<?php if ( function_exists( 'scc_get_share_twitter' ) && cd_addon_show_count_badge() ) : ?>
 						<span class="count">
 							<a class="count-inner" href="http://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton" target="_blank">
 								<?php echo absint( scc_get_share_twitter() ); ?>
