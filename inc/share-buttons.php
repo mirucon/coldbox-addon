@@ -42,9 +42,9 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'use_sns_buttons', array(
-				'label'       => __( 'Use Social Buttons', 'coldbox-addon' ),
-				'section'     => 'sns_buttons',
-				'type'        => 'checkbox',
+				'label'   => __( 'Use Social Buttons', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
 			)
 		)
 	);
@@ -155,10 +155,10 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize, 'sns_button_count_badges', array(
-				'label'   => __( 'Show count badges', 'coldbox-addon' ),
+				'label'       => __( 'Show count badges', 'coldbox-addon' ),
 				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Requires %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
-				'section' => 'sns_buttons',
-				'type'    => 'checkbox',
+				'section'     => 'sns_buttons',
+				'type'        => 'checkbox',
 			)
 		)
 	);
