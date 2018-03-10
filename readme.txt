@@ -5,7 +5,7 @@ Tags: coldbox, coldbox-theme
 Requires at least: 4.7
 Tested up to: 4.9
 Requires PHP: 5.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,9 +27,6 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
 * **Open Graph tags** - It's the most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
 
 * **Other meta tags** - Not only open graph tags, but it supports even more meta features, like Google Analytics, and other SEO-related tags too!
-
-* (Coming soon) **Google AdSense**
-
 
 == Installation Instructions ==
 
@@ -57,6 +54,10 @@ If you don't want the buttons to show at the end of content automatically, go an
 2. AMP page sample
 
 == Changelog ==
+
+= 1.1.2 =
+
+* Improved: No more SNS Count Cache plugin to show social buttons (It's still required to show count badges)
 
 = 1.1.1 =
 
