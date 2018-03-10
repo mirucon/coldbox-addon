@@ -1,11 +1,11 @@
 {
   "name": "coldbox-addon",
   "description": "The powered addon for the Coldbox theme.",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "main": "gulpfile.js",
   "author": "Mirucon",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1"
   },
   "scripts": {
@@ -21,5 +21,5 @@
   "bugs": {
     "url": "https://github.com/Mirucon/coldbox-addon/issues"
   },
-  "homepage": "https://coldbox.miruc.co/addon/"
+  "homepage": "https://coldbox.miruc.co/"
 }
