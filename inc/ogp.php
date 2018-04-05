@@ -35,7 +35,7 @@ function cd_addon_meta_ogp() {
 	} elseif ( has_site_icon() ) {
 		$image = esc_url( get_site_icon_url( 500 ) );
 	} else {
-		$image = esc_url( get_theme_file_uri( '/img/thumb-standard.png' ) );
+		$image = esc_url( get_theme_file_uri( 'assets/img/thumb-standard.png' ) );
 	}
 	$image = apply_filters( 'cd_addon_ogp_type', $image );
 

@@ -115,7 +115,7 @@ function cd_addon_amp_head() {
 						<?php
 					else :
 						?>
-						"url": "<?php echo esc_url( get_theme_file_uri( '/img/thumb-standard.png' ) ); ?>",
+						"url": "<?php echo esc_url( get_theme_file_uri( 'assets/img/thumb-standard.png' ) ); ?>",
 						<?php
 					endif;
 					?>
@@ -133,7 +133,7 @@ function cd_addon_amp_head() {
 					<?php
 				else :
 					?>
-					"url": "<?php echo esc_url( get_theme_file_uri( '/img/thumb-medium.png' ) ); ?>",
+					"url": "<?php echo esc_url( get_theme_file_uri( 'assets/img/thumb-medium.png' ) ); ?>",
 					<?php
 				endif;
 				?>
@@ -193,7 +193,7 @@ function cd_addon_amp_ogp( $head_items ) {
 	if ( has_post_thumbnail() ) :
 		$thumbnail_src = get_the_post_thumbnail_url( 'cd-medium' );
 	else :
-		$thumbnail_src = get_theme_file_uri( '/img/thumb-medium.png' );
+		$thumbnail_src = get_theme_file_uri( 'assets/img/thumb-medium.png' );
 	endif;
 
 	$head_items      .= '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '"/>
