@@ -289,7 +289,7 @@ if ( cd_use_snsb() || cd_use_snsb_hatena() || cd_use_snsb_feedly() ) {
 	 * @since 1.0.0
 	 */
 	function cd_addon_load_icomoon() {
-		wp_enqueue_style( 'icomoon', get_template_directory_uri() . 'assets/fonts/icomoon/icomoon.min.css' );
+		wp_enqueue_style( 'icomoon', get_theme_file_uri( 'assets/fonts/icomoon/icomoon.min.css' ) );
 	}
 	add_action( 'wp_enqueue_scripts', 'cd_addon_load_icomoon' );
 }
