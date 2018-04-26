@@ -276,7 +276,6 @@ function cd_addon_amp_img( $content ) {
 		$content = preg_replace( '/<font[^>]+?>/i', '', $content );
 		$content = preg_replace( '/<\/font>/i', '', $content );
 
-
 		// Replace img tags to <amp-img>.
 		$content = preg_replace( '/<img/i', '<amp-img layout="responsive"', $content );
 
@@ -328,7 +327,7 @@ function cd_addon_amp_post_content() {
 }
 
 /**
- * Check whether embedded tweets are used or not.
+ * Check whether Twitter are embedded or not in an article.
  *
  * @since 1.0.0
  */
@@ -420,7 +419,7 @@ add_filter( 'cd_middle_thumbnail', 'cd_addon_amp_related_posts' );
 
 
 /**
- * Replace related posts thumbnails to AMP HTML tag.
+ * Remove menus on AMP pages.
  *
  * @since 1.0.0
  * @param string $menu The menu items.
@@ -503,10 +502,27 @@ function cd_addon_amp_meta() {
 }
 add_action( 'wp_head', 'cd_addon_amp_meta' );
 
+
+/**
+ * Replace img to amp-img in the logo.
+ *
+ * @since 1.1.4
+ * @param string $logo HTML of logo to filter.
+ * @return string
+ */
+function cd_addon_amp_replace_logo_tag( $logo ) {
+	if ( ! cd_is_amp() ) {
+		return $logo;
+	}
+	$logo = preg_replace( '/<img/i', '<amp-img layout="responsive"', $logo, 1 );
+	return $logo;
+}
+add_filter( 'cd_custom_logo', 'cd_addon_amp_replace_logo_tag' );
+
 /**
  * Adds Google Analytics for AMP pages.
  *
- * @since 1.0.0
+ * @since 1.1.0
  */
 function cd_addon_amp_analytics() {
 
@@ -531,3 +547,26 @@ function cd_addon_amp_analytics() {
 	}
 }
 add_action( 'cd_addon_amp_body_action', 'cd_addon_amp_analytics' );
+
+
+/**
+ * Allow AMP-specific HTML tags in `wp_kses_post()`.
+ *
+ * @param array $allowedposttags The list of tags allowed.
+ * @return array.
+ */
+function cd_addon_amp_allow_amp_tags( $allowedposttags ) {
+	$amp_img         = array(
+		'amp-img' => array(
+			'class'  => true,
+			'layout' => true,
+			'src'    => true,
+			'alt'    => true,
+			'width'  => true,
+			'height' => true,
+		),
+	);
+	$allowedposttags = $allowedposttags + $amp_img;
+	return $allowedposttags;
+}
+add_filter( 'wp_kses_allowed_html', 'cd_addon_amp_allow_amp_tags' );
