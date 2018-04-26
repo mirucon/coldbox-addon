@@ -276,6 +276,9 @@ function cd_addon_amp_img( $content ) {
 		$content = preg_replace( '/<font[^>]+?>/i', '', $content );
 		$content = preg_replace( '/<\/font>/i', '', $content );
 
+		// Remove font tags.
+		$content = preg_replace( '/<style.*>.*<\/style>/i', '', $content );
+
 		// Replace img tags to <amp-img>.
 		$content = preg_replace( '/<img/i', '<amp-img layout="responsive"', $content );
 
@@ -290,6 +293,9 @@ function cd_addon_amp_img( $content ) {
 		$pattern = '/<iframe.+?src="https:\/\/www.youtube.com\/embed\/(.+?)(\?feature=oembed)?".*?><\/iframe>/is';
 		$append  = '<amp-youtube layout="responsive" data-videoid="$1" width="800" height="450"></amp-youtube>';
 		$content = preg_replace( $pattern, $append, $content );
+
+		// Replace video tags to <amp-video>.
+		$content = preg_replace( '/<video/i', '<amp-video layout="responsive"', $content );
 
 		// Replace iframe tags to <amp-iframe>.
 		$pattern = '/<iframe/i';
@@ -378,6 +384,23 @@ function cd_addon_amp_iframe() {
 add_action( 'wp', 'cd_addon_amp_iframe', 12 );
 
 /**
+ * Check whether iframe tags are used or not.
+ *
+ * @since 1.0.0
+ */
+function cd_addon_amp_video() {
+	if ( cd_is_amp() ) {
+		$post_content = cd_addon_amp_post_content();
+		if ( strpos( $post_content, '<video' ) !== false ||
+			 strpos( $post_content, '[video' ) !== false ||
+			 strpos( $post_content, '<amp-video' ) !== false ) {
+			return true;
+		}
+	}
+}
+add_action( 'wp', 'cd_addon_amp_video', 12 );
+
+/**
  * Load required scripts when needed.
  *
  * @since 1.0.0
@@ -395,6 +418,9 @@ function cd_addon_amp_required_scripts( $head_items ) {
 	}
 	if ( cd_addon_amp_iframe() ) {
 		$head_items .= '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>';
+	}
+	if ( cd_addon_amp_video() ) {
+		$head_items .= '<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>';
 	}
 	return $head_items;
 	// @codingStandardsIgnoreEnd
