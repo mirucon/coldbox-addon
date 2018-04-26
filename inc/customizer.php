@@ -75,59 +75,6 @@ function cd_addon_czr( $wp_customize ) {
 		)
 	);
 
-	// Adds AdSense settings for AMP pages.
-	$wp_customize->add_setting(
-		'amp_adsense_client', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'amp_adsense_client', array(
-				'label'   => __( 'AdSense Client ID (data-ad-client)', 'coldbox-addon' ),
-				'section' => 'amp_section',
-				'type'    => 'text',
-			)
-		)
-	);
-
-	// Adds AdSense settings for AMP pages.
-	$wp_customize->add_setting(
-		'amp_adsense_unit_after', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'amp_adsense_unit_after', array(
-				'label'       => __( 'AdSense Ad Unit ID 1 (data-ad-slot)', 'coldbox-addon' ),
-				'description' => __( 'The ad unit will be shown at the end of the content. If you do not want to show ads, just keep it blank.', 'coldbox-addon' ),
-				'section'     => 'amp_section',
-				'type'        => 'text',
-			)
-		)
-	);
-
-	// Adds AdSense settings for AMP pages.
-	$wp_customize->add_setting(
-		'amp_adsense_unit_middle', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'amp_adsense_unit_middle', array(
-				'label'       => __( 'AdSense Ad Unit ID 2 (data-ad-slot)', 'coldbox-addon' ),
-				'description' => __( 'The ad unit will be shown at midst of the content.', 'coldbox-addon' ),
-				'section'     => 'amp_section',
-				'type'        => 'text',
-			)
-		)
-	);
-
 }
 add_action( 'customize_register', 'cd_addon_czr' );
 

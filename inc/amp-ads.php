@@ -10,23 +10,26 @@
  * Load the script for amp-ad for AMP pages.
  *
  * @since 1.0.0
- * @param string $head_items Hook the filter to add contents to inside of head.
- * @return string The head contents will be output.
  */
-function cd_addon_amp_ampad_script( $head_items ) {
+function cd_addon_amp_ampad_script() {
 
-	$adsense_client     = cd_addon_amp_adsense_client();
-	$adsense_unit_after = cd_addon_amp_adsense_unit_after();
-	$unit_middle        = cd_addon_amp_adsense_unit_middle();
+	$adsense_client      = cd_addon_amp_adsense_client();
+	$adsense_unit_after  = cd_addon_amp_adsense_unit_after();
+	$unit_middle         = cd_addon_amp_adsense_unit_middle();
+	$client_for_auto_ads = cd_addon_amp_auto_ads_client_id();
 
 	if ( ! empty( $adsense_client ) && ! empty( $adsense_unit_after ) || ! empty( $unit_middle ) ) {
 		// @codingStandardsIgnoreStart
-		$head_items .= '<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>';
+		echo '<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>';
 		// @codingStandardsIgnoreEnd
 	}
-	return $head_items;
+	if ( $client_for_auto_ads ) {
+		// @codingStandardsIgnoreStart
+		echo '<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>';
+		// @codingStandardsIgnoreEnd
+	}
 }
-add_action( 'cd_addon_amp_head', 'cd_addon_amp_ampad_script' );
+add_action( 'cd_addon_amp_head_action', 'cd_addon_amp_ampad_script' );
 
 /**
  * Adds amp-ad on after the content for AMP pages.
@@ -136,34 +139,109 @@ function cd_addon_amp_analytics_script( $head_items ) {
 }
 add_action( 'cd_addon_amp_head', 'cd_addon_amp_analytics_script' );
 
+
 /**
- * Adds Google Analytics for AMP pages.
+ * Adds AdSense auto ads support for AMP pages.
  *
- * @since 1.0.0
- * @param string $body_items Hook the filter to add contents to inside of body.
- * @return string The contents will be output after the body tag.
+ * @since 1.1.4
  */
-function cd_addon_amp_analytics( $body_items ) {
-
-	$analytics_id = cd_addon_amp_analytics_id();
-
-	if ( ! empty( $analytics_id ) ) {
-		$body_items .= '<amp-analytics type="googleanalytics">
-			<script type="application/json">
-			{
-				"vars": {
-					"account": "' . cd_addon_amp_analytics_id() . '"
-				},
-				"triggers": {
-					"trackPageviews": {
-						"on": "visible",
-						"request": "pageview"
-					}
-				}
-			}
-			</script>
-		</amp-analytics>';
+function cd_addon_amp_auto_ads() {
+	if ( cd_addon_amp_auto_ads_client_id() ) {
+		echo '<amp-auto-ads type="adsense" data-ad-client="' . esc_attr( cd_addon_amp_auto_ads_client_id() ) . '"></amp-auto-ads>';
 	}
-	return $body_items;
 }
-add_action( 'cd_addon_amp_body', 'cd_addon_amp_analytics' );
+add_action( 'cd_addon_amp_body_action', 'cd_addon_amp_auto_ads' );
+
+/**
+ * Adds a customizer option to input the client ID for auto-ads.
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer hook.
+ * @since 1.1.0
+ */
+function cd_addon_amp_auto_ads_customizer( $wp_customize ) {
+
+	// Client id input.
+	$wp_customize->add_setting(
+		'amp_adsense_client', array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'amp_adsense_client', array(
+				'label'   => __( 'AdSense Client ID (data-ad-client)', 'coldbox-addon' ),
+				'section' => 'amp_section',
+				'type'    => 'text',
+			)
+		)
+	);
+
+	// Whether enable auto-ads or not.
+	$wp_customize->add_setting(
+		'amp_auto_ads', array(
+			'default'           => false,
+			'sanitize_callback' => 'wp_validate_boolean',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'amp_auto_ads', array(
+				'label'   => __( 'Enable auto-ads on AMP pages.', 'coldbox' ),
+				'section' => 'amp_section',
+				'type'    => 'checkbox',
+			)
+		)
+	);
+
+	// Slot id for ad 1.
+	$wp_customize->add_setting(
+		'amp_adsense_unit_after', array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'amp_adsense_unit_after', array(
+				'label'       => __( 'AdSense Ad Unit ID 1 (data-ad-slot)', 'coldbox-addon' ),
+				'description' => __( 'The ad unit will be shown at the end of the content. If you do not want to show ads, just leave it blank.', 'coldbox-addon' ),
+				'section'     => 'amp_section',
+				'type'        => 'text',
+			)
+		)
+	);
+
+	// Slot id for ad 2.
+	$wp_customize->add_setting(
+		'amp_adsense_unit_middle', array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'amp_adsense_unit_middle', array(
+				'label'       => __( 'AdSense Ad Unit ID 2 (data-ad-slot)', 'coldbox-addon' ),
+				'description' => __( 'The ad unit will be shown at midst of the content.', 'coldbox-addon' ),
+				'section'     => 'amp_section',
+				'type'        => 'text',
+			)
+		)
+	);
+}
+add_action( 'customize_register', 'cd_addon_amp_auto_ads_customizer' );
+
+
+/**
+ * Return client ID for auto-ads from Customizer.
+ *
+ * @since 1.1.4
+ */
+function cd_addon_amp_auto_ads_client_id() {
+	$client_id = apply_filters( 'cd_addon_amp_auto_ads_client_id', get_theme_mod( 'amp_adsense_client', '' ) );
+	if ( ! $client_id || ! get_theme_mod( 'amp_auto_ads', false ) ) {
+		return false;
+	}
+	return wp_kses_data( $client_id );
+}
