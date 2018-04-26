@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+var stylus = require('gulp-stylus');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task( 'browser-sync', function () {
   browserSync({
@@ -22,3 +25,19 @@ gulp.task( 'copy', function() {
   )
   .pipe( gulp.dest( 'dist' ) );
 } );
+
+gulp.task( 'styl', ['stylus'], function () {
+	return gulp.src('inc/amp-style.css')
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('inc/'))
+})
+
+gulp.task( 'stylus', function () {
+	return gulp.src('inc/amp-style.styl')
+		.pipe(stylus())
+		.pipe(autoprefixer({
+			browsers: ['>100%'],
+			cascade: false
+		}))
+		.pipe(gulp.dest('inc/'))
+})
