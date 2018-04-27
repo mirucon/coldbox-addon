@@ -1,1689 +1,1222 @@
 button, h1, h2, h3, h4, h5, h6, input, select, textarea
-	font: inherit
-
-.container, .post-meta
+	font inherit
 
 iframe, img
-	vertical-align: middle
+	vertical-align middle
 
 a, button, input, select, textarea
-	-webkit-tap-highlight-color: rgba(68, 68, 68, 0.3)
+	-webkit-tap-highlight-color rgba(68, 68, 68, 0.3)
 
 .container, .container-outer, abbr
-	position: relative
+	position relative
 
 a, abbr
-	text-decoration: none
-
-.container, .post-meta, .title-box-inner
+	text-decoration none
 
 .entry abbr::after, .entry table
-	text-align: center
+	text-align center
 
 .gallery-caption, .gallery-icon.landscape, .post-nav .nav-title, .social-links a::after, .wp-caption
-	text-align: center
+	text-align center
 
 *
-	margin: 0
-	padding: 0
-	box-sizing: border-box
+	margin 0
+	padding 0
+	box-sizing border-box
 
 .entry dt, b, strong
-	font-weight: 700
+	font-weight 700
 
 .entry blockquote, address, cite, em, q, var
-	font-style: italic
+	font-style italic
 
 a
 	&:active, &:hover
-		outline-width: 0
+		outline-width 0
 
 table
-	border-collapse: collapse
-	border-spacing: 0
-	overflow: auto
+	border-collapse collapse
+	border-spacing 0
+	overflow auto
 
 ol, ul
-	list-style: none
+	list-style none
 
 html
-	font-size: 62.5%
+	font-size 62.5%
 
 body
-	background-color: #f8f8f8
-	color: #333
-	word-wrap: break-word
-	font-size: 15px
-	line-height: 1.4
-	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
-	-webkit-text-size-adjust: 100%
+	background-color #f8f8f8
+	color #333
+	word-wrap break-word
+	font-size 15px
+	line-height 1.4
+	font-family "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	-webkit-text-size-adjust 100%
 
 #main
-	margin-bottom: 40px
-	transition: all 0.4s
+	margin-bottom 40px
+	transition all 0.4s
 
 .container
-	display: flex
-	flex-flow: row wrap
-	max-width: 1140px
-	padding: 0 10px
-	margin: 0 auto
+	display block
+	max-width 800px
+	padding 0
+	margin 0 auto
 
 .post-meta, .site-title, amp-img, iframe, img
-	max-width: 100%
-
-@media screen and (max-width: 980px) and (min-width: 641px)
-	.container
-		display: block
-
-@media screen and (max-width: 640px)
-	.container
-		display: block
-		padding: 0
-
-@media screen and (min-width: 961px)
-	.content
-		min-height: 80vh
-		width: 100%
+	max-width 100%
 
 .content-inner
-	padding: 10px
-	background-color: #fafafa
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05)
-
-@media screen and (max-width: 640px)
-	.content-inner
-		padding: 5px
-
-::-webkit-scrollbar
-	height: 12px
-	background-color: transparent
-
-::-webkit-scrollbar-thumb
-	background-color: #888
-	&:hover
-		background-color: #777
-
-::-moz-selection, ::selection
-	background: #00619f
-	color: #fff
-	text-shadow: none
+	padding 5px 0
+	background-color #fafafa
+	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.05)
 
 img
-	height: auto
-	border-style: none
+	height auto
+	border-style none
 
 a
-	color: inherit
-	transition: all 0.2s
+	color inherit
+	transition all 0.2s
 
 big
-	font-size: larger
+	font-size larger
 
 small, sub, sup
-	font-size: smaller
+	font-size smaller
 
 hr
-	height: 0
-	overflow: visible
-	border: 1px solid #f0f0f0
+	height 0
+	overflow visible
+	border 1px solid #f0f0f0
 
 .entry
 	blockquote, code
-		border-radius: 1px
+		border-radius 1px
 
 sub
-	vertical-align: sub
+	vertical-align sub
 
 sup
-	vertical-align: super
+	vertical-align super
 
 ins
-	text-decoration: underline
+	text-decoration underline
 
 h1, h2, h3, h4, h5, h6
-	color: #111
-	line-height: 1.4
-	letter-spacing: -0.03em
+	color #111
+	line-height 1.4
+	letter-spacing -0.03em
 
 h1
-	font-size: 1.875em
+	font-size 1.875em
 
 h2
-	font-size: 1.56em
+	font-size 1.56em
 
 h3
-	font-size: 1.43em
+	font-size 1.43em
 
 h4
-	font-size: 1.34em
+	font-size 1.34em
 
 h5
-	font-size: 1.25em
+	font-size 1.25em
 
 h6
-	font-size: 1.12em
+	font-size 1.12em
 
 .entry
-	line-height: 1.6
+	line-height 1.6
 	a
-		color: #00619f
-		box-shadow: 0 1px 0 0 currentColor
+		color #00619f
+		box-shadow 0 1px 0 0 currentColor
 		&:hover
-			color: #2e4453
-			box-shadow: 0 2px 0 0 #000
+			color #2e4453
+			box-shadow 0 2px 0 0 #000
 	dd
-		margin-bottom: 1em
+		margin-bottom 1em
 	hr
-		margin: 1em 0
+		margin 1em 0
 	iframe
-		margin-bottom: 1em
+		margin-bottom 1em
 	p
-		margin-bottom: 1em
-		> iframe
-			margin-bottom: 0
+		margin-bottom 1em
+		& > iframe
+			margin-bottom 0
 	.mejs-container
-		margin-bottom: 1em
+		margin-bottom 1em
 	abbr
-		text-decoration: dotted
+		text-decoration dotted
 		&::after
-			content: attr(title)
-			display: block
-			visibility: hidden
-			position: absolute
-			top: -26px
-			right: -7px
-			z-index: 999
-			padding: 0.1875em 0.75em
-			border-radius: 1px
-			background-color: #f8f8f8
-			color: #666
-			font-size: 0.88em
-			font-weight: 300
-			white-space: nowrap
-			box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2)
+			content attr(title)
+			display block
+			visibility hidden
+			position absolute
+			top -26px
+			right -7px
+			z-index 999
+			padding 0.1875em 0.75em
+			border-radius 1px
+			background-color #f8f8f8
+			color #666
+			font-size 0.88em
+			font-weight 300
+			white-space nowrap
+			box-shadow 0 0 6px 0 rgba(0, 0, 0, 0.2)
 		&:hover::after
-			visibility: visible
+			visibility visible
 	h1, h2, h3, h4, h5, h6
-		font-weight: 700
+		font-weight 700
 	h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child
-		margin-top: 0
+		margin-top 0
 	h1
-		margin: 1.8em 0 1em
+		margin 1.8em 0 1em
 	h2
-		margin: 1.6em 0 1em
+		margin 1.6em 0 1em
 	h3
-		margin: 1.5em 0 1em
+		margin 1.5em 0 1em
 	h4
-		margin: 1.4em 0 0.9em
+		margin 1.4em 0 0.9em
 	h5
-		margin: 1.3em 0 0.8em
+		margin 1.3em 0 0.8em
 	h6
-		margin: 1.2em 0 0.8em
+		margin 1.2em 0 0.8em
 	ol
-		margin-bottom: 1em
-		padding-left: 30px
-		position: relative
+		margin-bottom 1em
+		padding-left 30px
+		position relative
 	ul
-		margin-bottom: 1em
-		padding-left: 30px
-		position: relative
-		list-style: square
+		margin-bottom 1em
+		padding-left 30px
+		position relative
+		list-style square
 	ol
-		list-style: decimal
+		list-style decimal
 		li
 			ol, ul
-				margin-bottom: 0.5em
-				margin-top: 0.5em
+				margin-bottom 0.5em
+				margin-top 0.5em
 	ul li
 		ol, ul
-			margin-bottom: 0.5em
-			margin-top: 0.5em
+			margin-bottom 0.5em
+			margin-top 0.5em
 	blockquote
-		position: relative
-		margin-bottom: 1em
-		padding: 1em 1em 1em 3.2em
-		color: #666
-		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1)
+		position relative
+		margin-bottom 1em
+		padding 1em 1em 1em 3.2em
+		color #666
+		box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.1)
 		&::before
-			content: "\f10d"
-			display: block
-			position: absolute
-			top: 15px
-			left: 16px
-			color: #aaa
-			font-family: FontAwesome
-			font-weight: 300
-			font-size: 1.6em
-			line-height: 1
-			font-style: normal
+			content "\f10d"
+			display block
+			position absolute
+			top 15px
+			left 16px
+			color #aaa
+			font-family FontAwesome
+			font-weight 300
+			font-size 1.6em
+			line-height 1
+			font-style normal
 	address
-		font-style: italic
+		font-style italic
 
-.gallery-caption, .hljs-emphasis
-	font-style: italic
+.gallery-caption
+	font-style italic
 
 .entry
 	blockquote > :last-child
-		margin-bottom: 0
+		margin-bottom 0
 	pre
-		position: relative
-		margin: 1.1em 0
-		padding: 1em 1.2em
-		background: #44463b
-		color: #e5e5eb
-		white-space: pre
-		overflow-x: auto
-		overflow-y: hidden
-		font-size: 0.96em
-		line-height: 1.4
-		font-family: 'Source Code Pro', Monaco, Menlo, 'Courier New', Consolas, monospace
-		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1)
+		position relative
+		margin 1.1em 0
+		padding 1em 1.2em
+		background #44463b
+		color #e5e5eb
+		white-space pre
+		overflow-x auto
+		overflow-y hidden
+		font-size 0.96em
+		line-height 1.4
+		font-family 'Source Code Pro', Monaco, Menlo, 'Courier New', Consolas, monospace
+		box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.1)
 		h1, h2, h3, h4, h5, h6
-			color: currentColor
-		> code
-			display: block
-			padding: 0
-			background: 0 0
-			color: inherit
-			white-space: inherit
+			color currentColor
+		& > code
+			display block
+			padding 0
+			background 0 0
+			color inherit
+			white-space inherit
 	code
-		background-color: #f0f0f0
-		padding: 0 0.3em
-		margin: 0 0.05em
-		font-size: 0.96em
-		font-family: 'Source Code Pro', Monaco, Menlo, 'Courier New', Consolas, monospace
+		background-color #f0f0f0
+		padding 0 0.3em
+		margin 0 0.05em
+		font-size 0.96em
+		font-family 'Source Code Pro', Monaco, Menlo, 'Courier New', Consolas, monospace
 	kbd
-		background-color: #f0f0f0
-		padding: 0 0.3em
-		margin: 0 0.05em
-		font-size: 0.96em
-		font-family: 'Source Code Pro', Monaco, Menlo, 'Courier New', Consolas, monospace
-		border: 1px solid #44463b
-		border-radius: 1px
+		background-color #f0f0f0
+		padding 0 0.3em
+		margin 0 0.05em
+		font-size 0.96em
+		font-family 'Source Code Pro', Monaco, Menlo, 'Courier New', Consolas, monospace
+		border 1px solid #44463b
+		border-radius 1px
 	table
-		width: 100%
-		margin-bottom: 1em
-		font-size: 0.95em
-		overflow-x: auto
-		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08)
+		width 100%
+		margin-bottom 1em
+		font-size 0.95em
+		overflow-x auto
+		box-shadow 0 1px 1px 0 rgba(0, 0, 0, 0.08)
 		tr:nth-of-type(even)
-			background-color: #fbfbfb
+			background-color #fbfbfb
 		td
-			border-bottom: 1px solid #ddd
+			border-bottom 1px solid #ddd
 		th
-			border-bottom: 1px solid #ddd
-			padding: 7px 10px
-			border-top: 1px solid #ddd
-			background: #f6f6f6
-			font-weight: 700
+			border-bottom 1px solid #ddd
+			padding 7px 10px
+			border-top 1px solid #ddd
+			background #f6f6f6
+			font-weight 700
 		td
-			padding: 6px
-			vertical-align: middle
+			padding 6px
+			vertical-align middle
 	address
-		margin-bottom: 1em
+		margin-bottom 1em
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.entry
-		padding-right: 15px
-		padding-left: 15px
+		padding-right 15px
+		padding-left 15px
 
 .entry-inner::after
-	content: ""
-	display: block
-	clear: both
+	content ""
+	display block
+	clear both
 
 .content-inside
-	background-color: #fff
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1)
+	background-color #fff
+	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.1)
 
 .content-box, .sns-buttons.single-bottom
-	padding: 2em 40px
-	border-bottom: 1px solid #eaeaea
+	padding 2em 40px
+	border-bottom 1px solid #eaeaea
 
 .content-box:last-child, .sns-buttons.single-bottom:last-child
-	border-bottom: 0
+	border-bottom 0
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.content-box, .sns-buttons.single-bottom
-		padding-right: 20px
-		padding-left: 20px
+		padding-right 20px
+		padding-left 20px
 
 .title-box
-	position: relative
-	padding: 1.4em
-	background-color: #f8f8f8
-	font-weight: 300
-	font-family: Lato, Arial, sans-serif
+	position relative
+	padding 1.4em
+	background-color #f8f8f8
+	font-weight 300
+	font-family Lato, Arial, sans-serif
 
 .title-box-inner
-	flex-flow: column wrap
-	padding: 40px
+	flex-flow column wrap
+	padding 40px
 
 .title-box
 	.post-date
-		position: relative
-		color: #777
-		line-height: 1
+		position relative
+		color #777
+		line-height 1
 	h1
-		margin: 0
-		font-size: 3rem
+		margin 0
+		font-size 3rem
 	a:hover
-		color: #00619f
+		color #00619f
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.title-box-inner
-		padding-right: 10px
-		padding-left: 10px
+		padding-right 10px
+		padding-left 10px
 
 .action-bar
-	display: block
-	position: absolute
-	bottom: -2px
-	left: 0
-	width: auto
-	height: 2px
-	background-color: #00619f
-	pointer-events: none
-	transition: all 0.2s
+	display block
+	position absolute
+	bottom -2px
+	left 0
+	width auto
+	height 2px
+	background-color #00619f
+	pointer-events none
+	transition all 0.2s
 
 .author-box
-	display: -ms-flexbox
+	display flex
 
 .post-meta
-	display: flex
-	flex-flow: row wrap
-	align-items: center
-	position: relative
-	padding-top: 1em
-	padding-bottom: 1em
-	color: #666
-	font-size: 0.8em
-	line-height: 1.6
-	text-transform: uppercase
-
-.author-box .author-infomation
+	display flex
+	flex-flow row wrap
+	align-items center
+	position relative
+	padding-top 1em
+	padding-bottom 1em
+	color #666
+	font-size 0.8em
+	line-height 1.6
+	text-transform uppercase
 
 .post-meta
 	a
-		white-space: nowrap
+		white-space nowrap
 		&:hover
-			color: #00619f
-	> [class^=post-]
-		display: inline-block
-		padding-right: 10px
+			color #00619f
+	& > [class^=post-]
+		display inline-block
+		padding-right 10px
 	.post-comment a::before, > [class^=post-]::before
-		padding-right: 0.2em
-		font-family: FontAwesome
-		line-height: 1
-		display: inline-block
-		position: relative
+		padding-right 0.2em
+		font-family FontAwesome
+		line-height 1
+		display inline-block
+		position relative
 	.post-date::before
-		content: "\f017"
+		content "\f017"
 	.post-category::before
-		content: "\f07b"
+		content "\f07b"
 	.post-modified::before
-		content: "\f1da"
+		content "\f1da"
 	.post-tag::before
-		content: "\f02b"
+		content "\f02b"
 	.post-author::before
-		content: "\f007"
+		content "\f007"
 	.post-edit::before
-		content: "\f040"
+		content "\f040"
 	.post-update::before
-		content: "\f021"
+		content "\f021"
 	.post-comment a::before
-		content: "\f075"
+		content "\f075"
 	&.content-box a, &.sns-buttons.single-bottom a
-		color: #333
-		box-shadow: 0 1px 0 0 currentColor
+		color #333
+		box-shadow 0 1px 0 0 currentColor
 	&.content-box a:hover, &.sns-buttons.single-bottom a:hover
-		color: #00619f
+		color #00619f
 	&.content-box .post-category a, &.sns-buttons.single-bottom .post-category a
-		margin: 0 0 0.3em
+		margin 0 0 0.3em
 	&.content-box .post-category a:hover, &.sns-buttons.single-button .post-category a:hover
-		box-shadow: 0 2px 0 0 rgba(216, 87, 25, 0.4)
+		box-shadow 0 2px 0 0 rgba(216, 87, 25, 0.4)
 	&.content-box .post-author a:hover, &.sns-buttons.single-bottom .post-author a:hover
-		box-shadow: 0 2px 0 0 rgba(0, 97, 159, 0.4)
+		box-shadow 0 2px 0 0 rgba(0, 97, 159, 0.4)
 	&.content-box .post-comment a:hover, &.sns-buttons.single-button .post-comment a:hover
-		box-shadow: 0 2px 0 0 rgba(10, 74, 18, 0.4)
+		box-shadow 0 2px 0 0 rgba(10, 74, 18, 0.4)
 
 .entry .post-meta
-	margin-bottom: 3em
+	margin-bottom 3em
 
 .btm-post-meta
-	margin-top: 3em
-	clear: both
+	margin-top 3em
+	clear both
 
 p
 	&.post-btm-cats, &.post-btm-tags
-		position: relative
-		margin-bottom: 0.1em
-		font-size: 0.88em
-		line-height: 1.6
+		position relative
+		margin-bottom 0.1em
+		font-size 0.88em
+		line-height 1.6
 	&.post-btm-cats .fa, &.post-btm-tags .fa
-		margin-right: 0.2em
-		width: 16px
+		margin-right 0.2em
+		width 16px
 	&.post-btm-cats a, &.post-btm-tags a
-		display: inline-block
-		margin: 0 0.4em 0.3em 0
-		color: currentColor
-		white-space: nowrap
+		display inline-block
+		margin 0 0.4em 0.3em 0
+		color currentColor
+		white-space nowrap
 	&.post-btm-cats a:hover, &.post-btm-tags a:hover
-		color: #00619f
+		color #00619f
 
 .meta-label
-	margin-right: 0.4em
-	color: #111
-	font-size: 1.1em
-	font-weight: 300
+	margin-right 0.4em
+	color #111
+	font-size 1.1em
+	font-weight 300
 
 .post-btm-cats a:hover
-	box-shadow: 0 2px 0 0 rgba(216, 87, 25, 0.4)
+	box-shadow 0 2px 0 0 rgba(216, 87, 25, 0.4)
 
 .post-btm-tags a:hover
-	box-shadow: 0 2px 0 0 rgba(25, 216, 49, 0.4)
+	box-shadow 0 2px 0 0 rgba(25, 216, 49, 0.4)
 
 .author-box
-	display: flex
-	flex-flow: row wrap
-	margin-top: 2em
-	padding: 1em
-	border-radius: 2px
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14)
+	display flex
+	flex-flow row wrap
+	margin-top 2em
+	padding 1em
+	border-radius 2px
+	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.14)
 	.author-thumbnail
-		flex-shrink: 1
+		flex-shrink 1
 		img
-			border-radius: 50%
+			border-radius 50%
 	.author-content
-		flex: 1
-		padding-left: 1em
+		flex 1
+		padding-left 1em
 	.author-infomation
-		display: flex
-		flex-flow: row wrap
-		align-items: center
-		margin-bottom: 0.3em
+		display flex
+		flex-flow row wrap
+		align-items center
+		margin-bottom 0.3em
 
 .header-inner, .related-posts .related-posts-list
-	flex-flow:row wrap;
+	flex-flowrow wrap;
 
 .author-box
 	.author-name
-		display: inline-block
-		margin-bottom: 0
-		font-size: 1.2em
+		display inline-block
+		margin-bottom 0
+		font-size 1.2em
 	.author-description
-		margin-bottom: 0
-		font-size: 0.94em
-		font-weight: 300
+		margin-bottom 0
+		font-size 0.94em
+		font-weight 300
 	.author-links
-		margin-left: 0.7em
+		margin-left 0.7em
 		.social-links
-			list-style-type: none
-			margin-bottom: 0
-			font-size: 0.82em
+			list-style-type none
+			margin-bottom 0
+			font-size 0.82em
 			a
 				> i
-					color: #777
+					color #777
 				&:hover > i
-					color: #222
+					color #222
 		a
 			&::after, &::before
-				content: none
+				content none
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.author-box
 		.author-infomation
-			display: block
+			display block
 		.author-links
-			margin-left: 0
+			margin-left 0
 
 .content-box > h4, .sns-buttons.single-bottom > h4
-	position: relative
-	margin: 0.2em 0 0.7em
-	text-transform: capitalize
-	font-weight: 300
+	position relative
+	margin 0.2em 0 0.7em
+	text-transform capitalize
+	font-weight 300
 
 .related-posts
 	.related-posts-list
-		display: flex
-		flex-flow: row wrap
-		margin-left: 1%
+		display flex
+		flex-flow row wrap
+		margin-left 1%
 	.related-article
-		position: relative
-		width: 33%
-		margin-bottom: 16px
+		position relative
+		width 33%
+		margin-bottom 16px
 	.post
-		height: auto
-		padding: 0 0.02em
-		background-color: #fff
-		transition: all 0.4s
+		height auto
+		padding 0 0.02em
+		background-color #fff
+		transition all 0.4s
 	.post-thumbnail
-		overflow: hidden
+		overflow hidden
 		a
-			display: block
-			height: 100%
+			display block
+			height 100%
 		img
-			display: block
-			width: 100%
-			height: auto
-			overflow: hidden
-			transition: all 0.4s ease-out
+			display block
+			width 100%
+			height auto
+			overflow hidden
+			transition all 0.4s ease-out
 	.post-content
-		flex-flow: column nowrap
-		padding: 0.5625em 0.75em
+		flex-flow column nowrap
+		padding 0.5625em 0.75em
 	.post-category
-		margin-bottom: 0.25em
-		font-size: 0.8125em
-		color: #666
+		margin-bottom 0.25em
+		font-size 0.8125em
+		color #666
 		a
-			color: #00619f
+			color #00619f
 			&:hover
-				color: #444
+				color #444
 	.post-title
-		font-size: 0.9625em
-		line-height: 1.3
-		font-family: Lato, Arial, sans-serif
-		letter-spacing: 0
-		overflow: hidden
-		transition: all 0.2s
+		font-size 0.9625em
+		line-height 1.3
+		font-family Lato, Arial, sans-serif
+		letter-spacing 0
+		overflow hidden
+		transition all 0.2s
 		a
-			display: block
-			height: 100%
+			display block
+			height 100%
 	.post:hover
-		box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15)
+		box-shadow 0 3px 3px 0 rgba(0, 0, 0, 0.15)
 		.post-thumbnail img
-			opacity: 0.8
+			opacity 0.8
 		.post-title
-			color: #00619f
+			color #00619f
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.related-posts
 		.related-posts-list
-			flex-flow: row wrap
-			margin-left: 0
+			flex-flow row wrap
+			margin-left 0
 			.related-article
-				width: 50%
+				width 50%
 		.related a:hover .post-thumbnail img
-			transform: none
-			opacity: 0.9
+			transform none
+			opacity 0.9
 
 .post-nav
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1)
+	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.1)
 	ul
-		display: flex
+		display flex
 	.next, .prev
-		position: relative
-		overflow: hidden
-		flex: 1
+		position relative
+		overflow hidden
+		flex 1
 	.next a, .prev a
-		display: block
-		min-height: 100%
-		background: rgba(0, 0, 0, 0.6)
-		transition: background-color 0.4s
+		display block
+		min-height 100%
+		background rgba(0, 0, 0, 0.6)
+		transition background-color 0.4s
 	.next a
-		padding: 12px 40px 12px 24px
+		padding 12px 40px 12px 24px
 	.prev a
-		padding: 12px 24px 12px 40px
-	.post-thumbnail
-		position: absolute
-		top: 0
-		right: 0
-		bottom: 0
-		left: 0
-		margin: auto
-		background-size: cover
-		background-repeat: no-repeat
-		background-position: center
-		overflow: hidden
-		opacity: 0.5
-		filter: blur(3px)
-		transition: all 0.4s
+		padding 12px 24px 12px 40px
 	.nav-title
-		position: relative
-		margin-bottom: 0.4em
-		color: #f0f0f0
-		text-transform: uppercase
-		text-shadow: 0 0 2px rgba(0, 0, 0, 0.6)
-		font-size: 14px
-		font-family: Lato, Arial, sans-serif
+		position relative
+		margin-bottom 0.4em
+		color #f0f0f0
+		text-transform uppercase
+		text-shadow 0 0 2px rgba(0, 0, 0, 0.6)
+		font-size 14px
+		font-family Lato, Arial, sans-serif
 	.post-title
-		position: relative
-		color: #fff
-		text-shadow: 1px 1px rgba(0, 0, 0, 0.5)
-		line-height: 1.6
+		position relative
+		color #fff
+		text-shadow 1px 1px rgba(0, 0, 0, 0.5)
+		line-height 1.6
 	.chevron-left
-		position: absolute
-		top: calc(50% - 10px)
-		width: 16px
-		height: 16px
-		background: 0 0
+		position absolute
+		top calc(50% - 10px)
+		width 16px
+		height 16px
+		background 0 0
 	.chevron-right
-		position: absolute
-		top: calc(50% - 10px)
-		width: 16px
-		height: 16px
-		background: 0 0
-		right: 14px
-		border-right: 1px solid #fff
-		border-top: 1px solid #fff
-		transform: rotate(45deg)
-		transition: all 0.4s
+		position absolute
+		top calc(50% - 10px)
+		width 16px
+		height 16px
+		background 0 0
+		right 14px
+		border-right 1px solid #fff
+		border-top 1px solid #fff
+		transform rotate(45deg)
+		transition all 0.4s
 	.chevron-left
-		left: 14px
-		border-left: 1px solid #fff
-		border-bottom: 1px solid #fff
-		transform: rotate(45deg)
-		transition: all 0.4s
+		left 14px
+		border-left 1px solid #fff
+		border-bottom 1px solid #fff
+		transform rotate(45deg)
+		transition all 0.4s
 	.next a:hover, .prev a:hover
-		background: rgba(0, 0, 0, 0.55)
+		background rgba(0, 0, 0, 0.55)
 
 .post-pages
-	border-bottom: 2px solid #ddd
-	position: relative
+	border-bottom 2px solid #ddd
+	position relative
 	span
-		border-bottom: 2px solid #ddd
-		position: relative
+		border-bottom 2px solid #ddd
+		position relative
 
 .post-nav
 	.next .nav-title
-		right: -8px
+		right -8px
 	.prev .nav-title
-		left: -8px
+		left -8px
 	.next a:hover
 		.post-thumbnail
-			filter: blur(2px)
+			filter blur(2px)
 		.chevron-right
-			right: 18px
+			right 18px
 	.prev a:hover
 		.post-thumbnail
-			filter: blur(2px)
+			filter blur(2px)
 		.chevron-left
-			left: 18px
+			left 18px
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.post-nav ul
-		display: block
+		display block
 	.next a, .prev a
-		padding: 12px 40px
+		padding 12px 40px
 	#header
-		background-position: center
-
-.post-pages, .share-list-container
-	display: -ms-flexbox
+		background-position center
 
 .post-pages
-	display: flex
-	align-items: center
-	justify-content: center
-	width: 100%
-	margin: 10px auto
-	color: #00619f
-	font-weight: 700
+	display flex
+	align-items center
+	justify-content center
+	width 100%
+	margin 10px auto
+	color #00619f
+	font-weight 700
 	span
-		display: inline-block
-		bottom: -2px
-		padding: 6px 10px
-		transition: border 0.4s
->, a:hover > span, span
-	   border-bottom: 2px solid #00619f
+		display inline-block
+		bottom -2px
+		padding 6px 10px
+		transition border 0.4s
+	a:hover > span, & > span
+		border-bottom 2px solid #00619f
+	& > span
+		color #000
+
 li > *
-	display: block
-	transition: border 0.4s
-> span
-	color: #000
+	display block
+	transition border 0.4s
 
 .sns-buttons ul
-	margin-bottom: 0
-	padding-left: 0
-	list-style: none
+	margin-bottom 0
+	padding-left 0
+	list-style none
 
 .share-list-container
-	display: flex
-
-.balloon-btn .share-inner, .post-password-form p:last-child
-	display: -ms-flexbox
+	display flex
 
 .balloon-btn
-	flex-grow: 1
-	position: relative
+	flex-grow 1
+	position relative
 	.share
-		transition: all 0.4s
+		transition all 0.4s
 		i
-			position: relative
-			left: calc(50% - 1.2rem)
-			z-index: 999
-			font-size: 2.4rem
+			position relative
+			left calc(50% - 1.2rem)
+			z-index 999
+			font-size 2.4rem
 	.share-inner
-		display: flex
-		padding: 0.4em 0.6em
-		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2)
-		color: #fff
+		display flex
+		padding 0.4em 0.6em
+		box-shadow 0 1px 1px 0 rgba(0, 0, 0, 0.2)
+		color #fff
 	.count
-		position: absolute
-		right: 0
-		bottom: 0
-		transition: all 0.4s
+		position absolute
+		right 0
+		bottom 0
+		transition all 0.4s
 	.count-inner
-		display: inline-flex
-		align-items: center
-		justify-content: center
-		position: absolute
-		bottom: 0
-		right: 0
-		min-height: 1.2em
-		min-width: 1.1em
-		padding: 0.4em
-		border-radius: 1px
-		background-color: #444
-		color: rgba(255, 255, 255, 0.7)
-		font-size: 0.9em
-		line-height: 1
-		font-family: Lato, Arial, sans-serif
-		font-weight: 700
-		transition: all 0.4s
+		display inline-flex
+		align-items center
+		justify-content center
+		position absolute
+		bottom 0
+		right 0
+		min-height 1.2em
+		min-width 1.1em
+		padding 0.4em
+		border-radius 1px
+		background-color #444
+		color rgba(255, 255, 255, 0.7)
+		font-size 0.9em
+		line-height 1
+		font-family Lato, Arial, sans-serif
+		font-weight 700
+		transition all 0.4s
 	.share-inner:hover
-		opacity: 0.8
-		box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1) inset
+		opacity 0.8
+		box-shadow 0 2px 3px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1) inset
 	.count-inner:hover
-		color: #fff
+		color #fff
 	&.twitter .share-inner
-		background-color: #6bace2
+		background-color #6bace2
 	&.facebook .share-inner
-		background-color: #445d93
+		background-color #445d93
 	&.googleplus .share-inner
-		background-color: #d36054
+		background-color #d36054
 	&.hatena .share-inner
-		background-color: #4c7ec6
+		background-color #4c7ec6
 	&.pocket .share-inner
-		background-color: #e15c69
+		background-color #e15c69
 	&.line .share-inner
-		background-color: #50c150
+		background-color #50c150
 	&.feedly .share-inner
-		background-color: #94be61
+		background-color #94be61
 	&:first-of-type .share-inner
-		border-radius: 2px 0 0 2px
+		border-radius 2px 0 0 2px
 	&:last-of-type .share-inner
-		border-radius: 0 2px 2px 0
+		border-radius 0 2px 2px 0
 
-@media only screen and (max-width: 767px)
+@media only screen and (max-width 767px)
 	.share-list-container
-		justify-content: center
-
-.post-password-form p:last-child
-	display: flex
-	flex-flow: row nowrap
+		justify-content center
 
 .header-inner
-	display: -ms-flexbox
-
-.post-password-form p:last-child label
-	display: -ms-flexbox
-	flex-grow: 1
-	display: flex
-	align-items: center
-
-.format-aside .post-title-box, .header-searchbar .search-submit
-	display: none
-
-.post-password-form p:last-child input
-	&[type=password]
-		flex-grow: 1
-		border-right-width: 0
-	&[type=submit]
-		flex-shrink: 1
-		padding: 4px 10px
+	display flex
 
 .format-aside .post-format::before
-	content: "\f111"
+	content "\f111"
 
 .format-gallery .post-format::before
-	content: "\f1c5"
+	content "\f1c5"
 
 .format-link .post-format::before
-	content: "\f0c1"
+	content "\f0c1"
 
 .format-image .post-format::before
-	content: "\f03e"
+	content "\f03e"
 
 .format-quote .post-format::before
-	content: "\f10d"
+	content "\f10d"
 
 .format-status .post-format::before
-	content: "\f005"
+	content "\f005"
 
 .format-video .post-format::before
-	content: "\f008"
+	content "\f008"
 
 .format-audio .post-format::before
-	content: "\f028"
+	content "\f028"
 
 .format-chat .post-format::before
-	content: "\f086"
+	content "\f086"
 
 .entry-content::after, .entry-footer::after, .entry-header::after
-	content: ""
-	display: block
-	clear: both
+	content ""
+	display block
+	clear both
 
 #header
-	position: relative
-	top: 0
-	right: 0
-	left: 0
-	z-index: 1000
-	width: 100%
-	background-color: #fff
-	transition: box-shadow 0.4s, filter 0.4s
-	box-shadow: 1px 0 1px 0 rgba(0, 0, 0, 0.4)
+	position relative
+	top 0
+	right 0
+	left 0
+	z-index 1000
+	width 100%
+	background-color #fff
+	transition box-shadow 0.4s, filter 0.4s
+	box-shadow 1px 0 1px 0 rgba(0, 0, 0, 0.4)
 
 .nav-toggle, .site-info
-	-webkit-transition: all 0.4s
-
-#header.sticky
-	position: fixed
-	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2)
+	-webkit-transition all 0.4s
 
 .header-inner
-	display: flex
-	flex-flow: row wrap
-	align-items: center
-	padding-right: 50px
-	font-size: 0.94em
-	font-weight: 300
+	display flex
+	flex-flow row wrap
+	align-items center
+	padding-right 0
+	font-size 0.94em
+	font-weight 300
 
 .site-info
-	display: flex
-	flex-flow: row wrap
-	flex-grow: 1
-	align-items: center
-	padding: 30px 20px
-	transition: all 0.4s
+	display flex
+	flex-flow row wrap
+	flex-grow 1
+	align-items center
+	padding 30px 20px
+	transition all 0.4s
 
 .site-title
-	display: inline-block
-	font-size: 1.875em
-	color: #444
-	font-weight: 600
-	line-height: 1.2
+	display inline-block
+	font-size 1.875em
+	color #444
+	font-weight 600
+	line-height 1.2
 	a
-		display: block
+		display block
 	img
-		display: block
-		max-height: 60%
-		height: auto
-		margin: 0 auto
+		display block
+		max-height 60%
+		height auto
+		margin 0 auto
 
 .site-description
-	display: inline-block
-	max-width: 100%
-	padding: 0 2rem
-	color: #666
-	font-weight: 300
+	display inline-block
+	max-width 100%
+	padding 0.4em 1em 0
+	color #666
+	font-weight 300
 
-@media screen and (min-width: 768px) and (max-width: 768px)
+@media screen and (max-width 767px)
 	.site-info
-		flex-flow: row wrap
+		display block
+		text-align center
+		width calc(100% - 50px)
+		max-width calc(100% - 50px)
 	.site-description
-		padding: 0.4em 1em 0
-
-@media screen and (max-width: 767px)
-	.header-inner
-		padding-right: 0
-	.site-info
-		display: block
-		text-align: center
-		width: calc(100% - 50px)
-		max-width: calc(100% - 50px)
-	.site-description
-		padding: 0 0.75em
-		line-height: 1.6
-
-@media screen and (min-width: 768px)
-	.header-column
-		.site-info
-			align-self: flex-start
-			width: 100%
-		.header-inner
-			flex-flow: column wrap
-	.header-row
-		.search-toggle
-			height: 100%
-		.header-inner
-			flex-flow: row nowrap
-		#header-menu
-			width: auto
-
-.header-row .sticky .site-info
-	padding: 15px 20px
-
-@media screen and (min-width: 768px) and (max-width: 782px)
-	body.admin-bar.header-row #header.sticky
-		padding-top: 46px
-
-@media screen and (min-width: 783px)
-	body.admin-bar.header-row #header.sticky
-		padding-top: 32px
-
-@media screen and (max-width: 640px)
-	.site-info
-		padding-right: 20px
-		padding-left: 20px
+		padding 0 0.75em
+		line-height 1.6
 
 #header-menu
-	align-self: center
-	width: 100%
+	align-self center
+	width 100%
 
-.gallery-columns-1
-
+#amp-sidebar
+	background-color #51575d
+	top 0
+	height 120vh
+	width 100%
+	@media screen and (min-width 641px)
+		max-width 420px
+#header-nav
+	padding-top 6em
+	overflow-y auto
+	&.menu-container
+		a
+			color #fff
+		&:hover
+			color #00619f
 .menu-container
-	display: flex
-	flex-flow: row wrap
-	position: relative
-	width: 100%
+	display block
 	li
-		display: inline-block
-		position: relative
-		max-width: 100%
-
-@media screen and (min-width: 768px)
-	.menu-container
-		&#top-nav
-			padding-right: 50px
-		a
-			display: block
-			padding: 15px 12px
-			line-height: 20px
-			transition: color 0.2s, background-color 0.2s
-		li:hover > a
-			color: #000
-		.sub-menu
-			display: none
-			width: 200px
-			position: absolute
-			top: 0
-			left: 0
-			z-index: 1000
-			padding: 4px 0
-			background-color: #fff
-			color: #555
-			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2)
-			li
-				width: 100%
-				> a
-					padding: 8px 14px
-		li
-			&:hover > .sub-menu
-				display: block
-				top: 50px
-			> .sub-menu > li:hover > .sub-menu
-				top: -4px
-				left: 200px
-		.sub-menu li:hover > a
-			background-color: #4b4b4b
-			color: #fff
-		> li
-			> a::before
-				content: ""
-				position: absolute
-				right: 50%
-				bottom: 11px
-				left: 50%
-				width: 0
-				border-bottom: 1px solid currentColor
-				transition: all 0.2s
-			&:hover > a::before
-				right: 15px
-				left: 15px
-				width: calc(100% - 30px)
-				overflow: hidden
-			&.menu-item-has-children
-				li.menu-item-has-children > a::after
-					content: ''
-					display: inline-block
-					position: relative
-					width: 6px
-					height: 6px
-					border-bottom: 1px solid currentColor
-					border-right: 1px solid currentColor
-					background-color: transparent
-					float: right
-					top: 6px
-					left: 2px
-					transform: rotate(-45deg)
-					transition: all 0.4s
-				> a::after
-					content: ''
-					display: inline-block
-					position: relative
-					width: 6px
-					height: 6px
-					border-bottom: 1px solid currentColor
-					border-right: 1px solid currentColor
-					background-color: transparent
-					top: -3px
-					left: 3px
-					transform: rotate(45deg)
-					transition: all 0.2s
-				&:hover > a::after
-					top: 0
-					transform: rotate(225deg)
-
-@media screen and (max-width: 767px)
-	#amp-sidebar, #header-menu
-		background-color: #51575d
-		top: 0
-		height: 120vh
-		width: 100%
-	#header-nav
-		padding-top: 6em
-		overflow-y: auto
-		&.menu-container
-			a
-				color: #fff
-			&:hover
-				color: #00619f
-	.menu-container
-		display: block
-		li
-			display: block
-		a
-			display: block
-			padding: 0.8em 0.9em
-			&:hover
-				background: rgba(68, 68, 68, 0.1)
-				color: #000
-		li > a
-			border-top: 1px solid rgba(119, 119, 119, 0.7)
-		> li:last-child > a
-			border-bottom: 1px solid rgba(119, 119, 119, 0.7)
-		.sub-menu
-			display: block
-			margin-left: 2em
-		> li > a
-			font-weight: 700
-		li.menu-item-has-children > a::after
-			content: ''
-			display: inline-block
-			position: relative
-			top: 2px
-			left: 2px
-			border: 4px solid transparent
-			border-top-color: currentColor
-	.menu-overlay
-		position: fixed
-		top: 0
-		width: 100%
-		height: 100vh
+		display block
+	a
+		display block
+		padding .8em 1em
+		&:hover
+			background rgba(68, 68, 68, 0.1)
+			color #000
+	li > a
+		border-top 1px solid rgba(119, 119, 119, 0.7)
+	& > li:last-child > a
+		border-bottom 1px solid rgba(119, 119, 119, 0.7)
+	.sub-menu
+		display block
+		margin-left 2em
+	& > li > a
+		font-weight 700
+	li.menu-item-has-children > a::after
+		content ''
+		display inline-block
+		position relative
+		top 2px
+		left 2px
+		border 4px solid transparent
+		border-top-color currentColor
 
 .nav-toggle
-	align-self: stretch
-	position: relative
-	right: 0
-	z-index: 1000
-	width: 50px
-	height: auto
-	border: 0 transparent
-	background-color: transparent
-	cursor: pointer
-	transition: all 0.4s
-	-webkit-tap-highlight-color: transparent
-	-webkit-appearance: none
-	.bottom, .middle
-		position: absolute
-		top: 50%
-		left: 19%
-		z-index: 1001
-		width: 62%
-		height: 1px
-		background: currentColor
-		transition: all 0.4s
+	align-self stretch
+	position relative
+	right 0
+	z-index 1000
+	width 50px
+	height auto
+	border 0 transparent
+	background-color transparent
+	cursor pointer
+	transition all 0.4s
+	-webkit-tap-highlight-color transparent
+	-webkit-appearance none
+	.top, .bottom, .middle
+		position absolute
+		top 50%
+		left 19%
+		z-index 1001
+		width 62%
+		height 1px
+		background currentColor
+		transition all 0.4s
 	.top
-		position: absolute
-		top: 50%
-		left: 19%
-		z-index: 1001
-		width: 62%
-		height: 1px
-		background: currentColor
-		transition: all 0.4s
-		transform: translateY(-10px)
+		transform translateY(-10px)
 	.middle
-		transform: rotate(0)
+		transform rotate(0)
 	.bottom
-		transform: translateY(10px)
+		transform translateY(10px)
 	&.open
 		.top
-			height: 1px
-			transform: rotate(-45deg) translateY(0)
-			background-color: #f8f8f8
+			height 1px
+			transform rotate(-45deg) translateY(0)
+			background-color #f8f8f8
 		.middle
-			height: 1px
-			opacity: 0
-			visibility: hidden
+			height 1px
+			opacity 0
+			visibility hidden
 		.bottom
-			height: 1px
-			transform: rotate(45deg) translateY(0)
-			background-color: #f8f8f8
-
-.search-toggle
-	align-self: stretch
-	position: relative
-	top: 0
-	width: 0
-	height: auto
-	cursor: pointer
-	transition: all 0.4s ease-in
-
-.header-searchbar
-	position: absolute
-	top: calc(100% - 20px)
-	right: 6px
-	z-index: 1001
-	max-width: 320px
-	width: 80%
-	.search-form .search-inner
-		border-right-style: solid
-		border-radius: 1px
-
-@media screen and (min-width: 981px)
-	body.header-column:not(.header-menu-enabled) .search-toggle
-		height: 100%
-
-@media screen and (min-width: 768px)
-	.header-searchbar, .nav-toggle
-		display: none
+			height 1px
+			transform rotate(45deg) translateY(0)
+			background-color #f8f8f8
 
 .footer
-	position: relative
-	min-height: 80px
-	padding: 30px 20px
-	background: #44463b
-	color: rgba(255, 255, 255, 0.6)
-	transition: all 0.4s
+	position relative
+	min-height 80px
+	padding 30px 20px
+	background #44463b
+	color rgba(255, 255, 255, 0.6)
+	transition all 0.4s
 	.container
-		align-items: center
-		height: 100%
+		align-items center
+		height 100%
 	a
-		color: rgba(255, 255, 255, 0.9)
+		color rgba(255, 255, 255, 0.9)
 		&:hover
-			color: #fff
+			color #fff
 	.copyright
-		flex-shrink: 1
-		font-weight: 300
-		line-height: 1.6
+		flex-shrink 1
+		font-weight 300
+		line-height 1.6
 	.social-links
-		flex-grow: 1
-		padding: 0 0.7em
-		justify-content: flex-end
+		flex-grow 1
+		padding 0 0.7em
+		justify-content flex-end
 
-@media screen and (min-width: 640px) and (max-width: 980px)
-	.footer .container
-		display: flex
-
-@media screen and (max-width: 640px)
-	.footer
-		.container
-			display: flex
-			flex-flow: column wrap
-		.social-links
-			padding-top: 0.9em
-			justify-content: space-around
-		.copyright
-			text-align: center
+.footer
+	.container
+		display flex
+		flex-flow column wrap
+	.social-links
+		padding-top 0.9em
+		justify-content space-around
+	.copyright
+		text-align center
 
 .wp-caption
-	max-width: 100%
-	margin-bottom: 1em
-	padding: 5px 5px 0
+	max-width 100%
+	margin-bottom 1em
+	padding 5px 5px 0
 	.wp-caption-text
-		margin: 0
-		padding: 0.4em 4px 0.6em
-		font-size: 0.97em
-		line-height: 1.4
-		font-style: italic
+		margin 0
+		padding 0.4em 4px 0.6em
+		font-size 0.97em
+		line-height 1.4
+		font-style italic
 
 .aligncenter
-	display: block
-	max-width: 100%
-	margin-left: auto
-	margin-right: auto
+	display block
+	max-width 100%
+	margin-left auto
+	margin-right auto
 
 .alignright
-	float: right
-	max-width: 100%
-	margin-left: 1em
+	float right
+	max-width 100%
+	margin-left 1em
 
 .alignleft
-	float: left
-	max-width: 100%
-	margin-right: 1em
+	float left
+	max-width 100%
+	margin-right 1em
 
-.clearfix:after
-	content: ""
-	display: block
-	clear: both
-
-.gallery-columns-1, .gallery-columns-2
-	display: -ms-flexbox
+.clearfix::after
+	content ""
+	display block
+	clear both
 
 html body .screen-reader-text
-	position: absolute
-	width: 1px
-	height: 1px
-	clip: rect(1px, 1px, 1px, 1px)
-	overflow: hidden
+	position absolute
+	width 1px
+	height 1px
+	clip rect(1px, 1px, 1px, 1px)
+	overflow hidden
 
-.gallery-columns-1
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-2, .gallery-columns-3
-
-.gallery-columns-1 .gallery-item
-	width: 100%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-2
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-3, .gallery-columns-4
-	display: -ms-flexbox
-
-.gallery-columns-2 .gallery-item
-	width: 50%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-3
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-4, .gallery-columns-5
-
-.gallery-columns-3 .gallery-item
-	width: 33.33333%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-4
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-5, .gallery-columns-6
-	display: -ms-flexbox
-
-.gallery-columns-4 .gallery-item
-	width: 25%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-5
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-6, .gallery-columns-7
-
-.gallery-columns-5 .gallery-item
-	width: 20%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-6
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-7, .gallery-columns-8
-	display: -ms-flexbox
-
-.gallery-columns-6 .gallery-item
-	width: 16.66667%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-7
-	display: flex
-	flex-flow: row wrap
-
-.gallery-columns-8, .gallery-columns-9
-
-.gallery-columns-7 .gallery-item
-	width: 14.28571%
-	margin-bottom: 1em
-	padding: 0 0.1rem
-
-.gallery-columns-8
-	display: flex
-	flex-flow: row wrap
-	.gallery-item
-		width: 12.5%
-		margin-bottom: 1em
-		padding: 0 0.1rem
-
-.gallery-columns-9
-	display: flex
-	flex-flow: row wrap
-	.gallery-item
-		width: 11.11111%
-		margin-bottom: 1em
-		padding: 0 0.1rem
+for i in (1..9)
+	.gallery-columns-{i}
+		display flex
+		flex-flow row wrap
+		.gallery-item
+			width "calc(100% / %s)" % i
+			margin-bottom 1em
+			padding 0 .1rem
 
 .wp-caption img
-	margin: 0 auto
-	padding: 0
-	border: 0
+	margin 0 auto
+	padding 0
+	border 0
 
 .gallery-caption
-	max-width: 100%
-	padding: 5px 5px 0
-	font-size: 0.94em
-	line-height: 1.4
-
-#back-to-top
-	display: none
-	position: fixed
-	bottom: 0
-	right: 10px
-	padding: 12px 16px
-	background-color: #fff
-	border-radius: 6px 6px 0 0
-	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6)
-	transition: box-shadow 0.4s, padding 0.4s
-
-.chevron-up
-	display: inline-block
-	position: relative
-	top: 8px
-	width: 14px
-	height: 14px
-	border-top: 1px solid #44463b
-	border-left: 1px solid #44463b
-	background: 0 0
-	transform: rotate(45deg)
-	transition: all 0.4s
-
-#back-to-top
-	&.abs
-		position: absolute
-	&.clicked, &:hover
-		padding-bottom: 16px
-		box-shadow: 0 0 4px rgba(0, 0, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.4)
+	max-width 100%
+	padding 5px 5px 0
+	font-size 0.94em
+	line-height 1.4
 
 .social-links
-	display: flex
-	flex-flow: row wrap
-	box-shadow: none
-	align-items: center
+	display flex
+	flex-flow row wrap
+	box-shadow none
+	align-items center
 	li
-		position: relative
+		position relative
 	i
-		font-size: 1.55em
-	> li:not(:first-child)
-		margin-left: 0.5em
+		font-size 1.55em
+	& > li:not(:first-child)
+		margin-left 0.5em
 	a
-		box-shadow: none
+		box-shadow none
 		&:hover
-			box-shadow: none
+			box-shadow none
 		&::after
-			content: attr(title)
-			display: block
-			visibility: hidden
-			position: absolute
-			top: -35px
-			right: -5px
-			z-index: 999
-			padding: 0.1875em 0.75em
-			border-radius: 1px
-			background-color: #f8f8f8
-			color: #666
-			font-size: 0.88em
-			font-weight: 300
-			white-space: nowrap
-			box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2)
-
-.clearfix::after
-	content: ""
+			content attr(title)
+			display block
+			visibility hidden
+			position absolute
+			top -35px
+			right -5px
+			z-index 999
+			padding 0.1875em 0.75em
+			border-radius 1px
+			background-color #f8f8f8
+			color #666
+			font-size 0.88em
+			font-weight 300
+			white-space nowrap
+			box-shadow 0 0 6px 0 rgba(0, 0, 0, 0.2)
 
 .social-links
 	a
 		&::before
-			content: ""
-			visibility: hidden
-			position: absolute
-			top: -10px
-			right: calc(50% - 0.55em)
-			z-index: 998
-			width: 0
-			height: 0
-			border: 8px solid transparent
-			border-top-color: #f8f8f8
-			border-bottom-width: 0
-			box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2)
+			content ""
+			visibility hidden
+			position absolute
+			top -10px
+			right calc(50% - 0.55em)
+			z-index 998
+			width 0
+			height 0
+			border 8px solid transparent
+			border-top-color #f8f8f8
+			border-bottom-width 0
+			box-shadow 0 0 6px 0 rgba(0, 0, 0, 0.2)
 		&:hover
 			&::after, &::before
-				visibility: visible
+				visibility visible
 	.feedly .icon-feedly
-		display: block
-		bottom: -1px
-		line-height: 1.06
+		display block
+		bottom -1px
+		line-height 1.06
 		&::before
-			font-size: 1.06em
+			font-size 1.06em
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	.social-links i
-		font-size: 2em
+		font-size 2em
 
 ul.social-links
-	padding-left: 0
-	list-style: none
+	padding-left 0
+	list-style none
 
 .select-none
-	user-select: none
+	user-select none
 
 .clearfix::after
-	display: block
-	clear: both
+	display block
+	clear both
 
 .fs15
-	font-size: 0.9375em
+	font-size 0.9375em
 
 .fs17
-	font-size: 1.0625em
+	font-size 1.0625em
 
 .fs20
-	font-size: 1.25em
+	font-size 1.25em
 
 .sans-serif
-	font-family: Helvetica, Arial, sans-serif
+	font-family Helvetica, Arial, sans-serif
 
 .serif
-	font-family: Georgia, serif
+	font-family Georgia, serif
 
 .bold
-	font-weight: 700
+	font-weight 700
 
 .semibold
-	font-weight: 600
+	font-weight 600
 
 .monospace
-	font-family: "Source Code Pro", Monaco, monospace
+	font-family "Source Code Pro", Monaco, monospace
 
 .info-box
-	display: block
-	margin: 1.6em 0
-	padding: 1.2em 1.4em
-	border: 2px solid #39c
-	border-radius: 3px
-	background-color: rgba(51, 153, 204, 0.1)
+	display block
+	margin 1.6em 0
+	padding 1.2em 1.4em
+	border 2px solid #39c
+	border-radius 3px
+	background-color rgba(51, 153, 204, 0.1)
 
 .attention-box
-	padding: 1.4em
-	border: 2px solid #ff5000
-	border-radius: 3px
-	background: #ffd580
+	padding 1.4em
+	border 2px solid #ff5000
+	border-radius 3px
+	background #ffd580
 
 .link-box
-	display: block
-	padding: 4px 6px
-	background-color: #f0f0f0
-	> a
-		display: block
+	display block
+	padding 4px 6px
+	background-color #f0f0f0
+	& > a
+		display block
 
-:lang(ja) .bradcrumb, :lang(ko) .bradcrumb, :lang(zh) .bradcrumb
-			   margin-bottom: 0.2em
-
-:lang(ja)
-	.comment-body, .entry
-		line-height: 1.8
-
-:lang(ko)
-	.comment-body, .entry
-		line-height: 1.8
-
-:lang(zh)
-	.comment-body, .entry
-		line-height: 1.8
+:lang(ja) .breadcrumb, :lang(ko) .breadcrumb, :lang(zh) .breadcrumb
+	margin-bottom 0.2em
 
 :lang(ja)
 	h1, h2, h3, h4, h5, h6
-		line-height: 1.5
+		line-height 1.5
 
 :lang(ko)
 	h1, h2, h3, h4, h5, h6
-		line-height: 1.5
+		line-height 1.5
 
 :lang(zh)
 	h1, h2, h3, h4, h5, h6
-		line-height: 1.5
+		line-height 1.5
 
 :lang(ja) .related-posts .post-title, :lang(ko) .related-posts .post-title, :lang(zh) .related-posts .post-title
-			   line-height: inherit
+	line-height inherit
 
 :lang(ja) .wp-caption .wp-caption-text, :lang(ko) .wp-caption .wp-caption-text, :lang(zh) .wp-caption .wp-caption-text
-			   font-size: 0.92em
+	font-size 0.92em
 
 :lang(ja) h1
-			   font-family: Lato, 'Noto Sans CJK JP Light', 'Yu Gothic Light', 'Hiragino Sans', Arial, sans-serif
+	font-family Lato, 'Noto Sans CJK JP Light', 'Yu Gothic Light', 'Hiragino Sans', Arial, sans-serif
 
 #toc_container
-	display: block
-	background: 0 0
-	width: 80%
-	min-width: 80%
-	max-width: 80%
-	margin: 1.4em auto
-	padding: 20px 0
-	border: 1px solid #44463b
-	font-size: 0.95em
-	line-height: 1.4
+	display block
+	background 0 0
+	width 80%
+	min-width 80%
+	max-width 80%
+	margin 1.4em auto
+	padding 20px 0
+	border 1px solid #44463b
+	font-size 0.95em
+	line-height 1.4
 	a
-		text-decoration: none
-		box-shadow: none
+		text-decoration none
+		box-shadow none
 		&:hover
-			text-decoration: none
-			box-shadow: none
+			text-decoration none
+			box-shadow none
 	p.toc_title
-		margin: 0
-		text-align: center
-		font-weight: 700
+		margin 0
+		text-align center
+		font-weight 700
 	a span
-		font-weight: 300
-		font-family: Lato, Arial, sans-serif
+		font-weight 300
+		font-family Lato, Arial, sans-serif
 		&::after
-			content: "."
-			padding-left: 0.1em
+			content "."
+			padding-left 0.1em
 	ul
-		margin: 0 0 0 1em
-		padding: 0
-		list-style: none
+		margin 0 0 0 1em
+		padding 0
+		list-style none
 	.toc_list
 		a
-			display: block
-			padding: 8px 10px
-			border-bottom: 1px solid #44463b
-			transition: all 0.4s, border 0.4s 0.4s
+			display block
+			padding 8px 10px
+			border-bottom 1px solid #44463b
+			transition all 0.4s, border 0.4s 0.4s
 		ul ul a
-			border-bottom-style: dotted
+			border-bottom-style dotted
 
-@media screen and (max-width: 640px)
+@media screen and (max-width 640px)
 	#toc_container
-		width: 95%
-		min-width: 95%
-		max-width: 95%
-		padding-top: 15px
-		padding-bottom: 15px
-		font-size: 0.95em
-
-	@keyframes fadeInLeft
-		0%
-			opacity: 0
-			visibility: hidden
-			transform: translate3d(-100%, 0, 0)
-
-		100%
-			opacity: 1
-			visibility: visible
-			transform: none
-
-
-	@keyframes fadeOutleft
-		0%
-			opacity: 1
-			visibility: visible
-			transform: none
-
-		100%
-			opacity: 0
-			visibility: hidden
-			transform: translate3d(-100%, 0, 0)
-
-
-	@keyframes fadeInRight
-		0%
-			opacity: 0
-			visibility: hidden
-			transform: translate3d(100%, 0, 0)
-
-		100%
-			opacity: 1
-			visibility: visible
-			transform: none
-
-
-	@keyframes fadeOutRight
-		0%
-			opacity: 1
-			visibility: visible
-			transform: none
-
-		50%
-			transform: translate3d(50%, 0, 0)
-
-		100%
-			opacity: 0
-			visibility: hidden
-			transform: translate3d(100%, 0, 0)
-
-
-	@keyframes fadeIn
-		0%
-			opacity: 0
-			visibility: hidden
-
-		100%
-			opacity: 1
-			visibility: visible
-
-
-	@keyframes fadeOut
-		0%
-			opacity: 1
-			visibility: visible
-
-		100%
-			opacity: 0
-			visibility: hidden
+		width 95%
+		min-width 95%
+		max-width 95%
+		padding-top 15px
+		padding-bottom 15px
+		font-size 0.95em
