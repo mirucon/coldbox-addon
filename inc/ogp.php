@@ -25,7 +25,7 @@ function cd_addon_meta_ogp() {
 	} else {
 		$description = '';
 	}
-	$description = apply_filters( 'cd_addon_ogp_type', $description );
+	$description = apply_filters( 'cd_addon_ogp_description', $description );
 
 	if ( is_singular() && has_post_thumbnail() ) {
 		$image = get_the_post_thumbnail_url();
@@ -37,7 +37,7 @@ function cd_addon_meta_ogp() {
 	} else {
 		$image = esc_url( get_theme_file_uri( 'assets/img/thumb-standard.png' ) );
 	}
-	$image = apply_filters( 'cd_addon_ogp_type', $image );
+	$image = apply_filters( 'cd_addon_ogp_image', $image );
 
 	if ( is_single() ) {
 		$type = 'article';
