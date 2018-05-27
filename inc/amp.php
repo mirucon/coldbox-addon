@@ -203,11 +203,20 @@ add_action( 'cd_addon_amp_head_action', 'cd_addon_amp_ogp' );
  * @since 1.0.0
  */
 function cd_addon_amp_footer() {
+	if ( function_exists( 'the_privacy_policy_link' ) && function_exists( 'cd_is_privacy_policy_link_shown' ) ) {
+		if ( cd_is_privacy_policy_link_shown() ) {
+			$link = get_the_privacy_policy_link( ' / ', '<span role="separator" aria-hidden="true"></span>' );
+		} else {
+			$link = '';
+		}
+	} else {
+		$link = '';
+	}
 	?>
 	<footer id="footer" class="footer">
 		<div class="container">
 			<div class="copyright">
-				<p>&copy;<?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a></p>
+				<p>&copy;<?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php echo $link; // WPCS: XSS OK. ?></p>
 				<p><a href="https://coldbox.miruc.co/">Coldbox WordPress theme</a> by <a href="https://miruc.co/">Mirucon</a></p>
 			</div>
 			<?php cd_social_links(); ?>
