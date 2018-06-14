@@ -3,10 +3,10 @@
   "description": "The powered addon for the Coldbox theme.",
   "version": "1.1.5",
   "main": "gulpfile.js",
-  "author": "Mirucon",
+  "author": "Toshihiro Kanai (mirucon)",
   "devDependencies": {
     "browser-sync": "^2.24.1",
-    "gulp": "gulpjs/gulp.git#4.0",
+    "gulp": "3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.3",
     "gulp-stylus": "^2.7.0"
@@ -14,13 +14,14 @@
   "scripts": {
     "start": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "stylus": "gulp styl",
     "dist": "gulp copy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mirucon/coldbox-addon"
   },
-  "license": "GPL-2.0",
+  "license": "GPL-2.0+",
   "bugs": {
     "url": "https://github.com/Mirucon/coldbox-addon/issues"
   },
