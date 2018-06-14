@@ -1,4 +1,4 @@
-=== Coldbox Addon ===
+=== Coldbox Addons ===
 Contributors: mirucon
 Donate link: Bitcoin: 1FRoTiS4kFVP9oK8cWqrJhvAu1tC1PqVxx
 Tags: coldbox, coldbox-theme

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Coldbox Addon
+ * Plugin Name:     Coldbox Addons
  * Plugin URI:      https://coldbox.miruc.co/
  * Description:     The official addon plugin for the Coldbox theme.
  * Author:          mirucon
