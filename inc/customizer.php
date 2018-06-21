@@ -14,6 +14,8 @@
  */
 function cd_addon_czr( $wp_customize ) {
 
+	require_once 'class-cd-addon-custom-content.php';
+
 	// Adds AMP section of the customizer.
 	$wp_customize->add_section(
 		'amp_section', array(
@@ -71,6 +73,29 @@ function cd_addon_czr( $wp_customize ) {
 				'description' => __( 'Please enter your full tracking ID, like "UA-12345-6"', 'coldbox-addon' ),
 				'section'     => 'amp_section',
 				'type'        => 'text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'amp_ads_have_been_moved', array(
+			'sanitize_callback' => 'cd_sanitize_text',
+		)
+	);
+	// TODO: LINK.
+	$wp_customize->add_control(
+		new Cd_Addon_Custom_Content(
+			$wp_customize, 'amp_ads_have_been_moved', array(
+				'content'     => '<h3 class="czr-heading">' . __( 'Ads settings have been moved!', 'coldbox-addon' ) . '</h3>',
+				'description' => sprintf(
+					/* translators: 1: opening a tag, 2: closing a tag. */
+					esc_html__(
+						'AMP ads settings have been moved to the %1$sColdbox Ads Extension%2$s plugin. This plugin contains the full support of Coldbox theme\'s ad settings, including one-click auto-ads and suitable places for matched content, in-feed ads, other native ads and more! Available from $20 with the GPL license.', 'coldbox-addon'
+					),
+					'<a href="' . esc_url( __( 'https://', 'coldbox-addon' ) ) . '">',
+					'</a>'
+				),
+				'section'     => 'amp_section',
 			)
 		)
 	);
