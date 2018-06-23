@@ -82,7 +82,6 @@ function cd_addon_czr( $wp_customize ) {
 			'sanitize_callback' => 'cd_sanitize_text',
 		)
 	);
-	// TODO: LINK.
 	$wp_customize->add_control(
 		new Cd_Addon_Custom_Content(
 			$wp_customize, 'amp_ads_have_been_moved', array(
@@ -92,7 +91,7 @@ function cd_addon_czr( $wp_customize ) {
 					esc_html__(
 						'AMP ads settings have been moved to the %1$sColdbox Ads Extension%2$s plugin. This plugin contains the full support of Coldbox theme\'s ad settings, including one-click auto-ads and suitable places for matched content, in-feed ads, other native ads and more! Available from $20 with the GPL license.', 'coldbox-addon'
 					),
-					'<a href="' . esc_url( __( 'https://', 'coldbox-addon' ) ) . '">',
+					'<a href="' . esc_url( __( 'https://coldbox.miruc.co/addons/google-adsense-extension/', 'coldbox-addon' ) ) . '">',
 					'</a>'
 				),
 				'section'     => 'amp_section',
