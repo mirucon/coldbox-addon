@@ -1,7 +1,7 @@
 {
   "name": "coldbox-addon",
   "description": "The powered addon for the Coldbox theme.",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "gulpfile.js",
   "author": "Toshihiro Kanai (mirucon)",
   "devDependencies": {
@@ -19,11 +19,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mirucon/coldbox-addon"
+    "url": "git+https://github.com/mirucon/coldbox-addon"
   },
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/Mirucon/coldbox-addon/issues"
+    "url": "https://github.com/mirucon/coldbox-addon/issues"
   },
   "homepage": "https://coldbox.miruc.co/"
 }
