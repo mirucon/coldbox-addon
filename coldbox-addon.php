@@ -52,3 +52,6 @@ require_once 'inc/ogp.php';
 
 // Load meta part.
 require_once 'inc/meta.php';
+
+// Load general part.
+require_once 'inc/general.php';

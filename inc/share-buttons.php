@@ -308,8 +308,8 @@ function cd_addon_sns_buttons_list( $class = null ) {
 	$title_encode            = rawurlencode( $title );
 	$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '';
 	?>
-	<section id="sns-buttons" class="sns-buttons<?php echo ' ' . esc_attr( $class ); ?>">
-		<h4 id="sns-btn-bottom-head"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h4>
+	<section id="sns-buttons" class="content-box sns-buttons<?php echo ' ' . esc_attr( $class ); ?>">
+		<h2 id="sns-btn-bottom-head" class="content-box-heading"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h2>
 		<ul class="share-list-container">
 
 			<?php if ( cd_use_snsb_twitter() ) : ?>
