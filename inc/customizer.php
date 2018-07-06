@@ -16,6 +16,24 @@ function cd_addon_czr( $wp_customize ) {
 
 	require_once 'class-cd-addon-custom-content.php';
 
+	// Whether not to use jQuery.
+	$wp_customize->add_setting(
+		'do_not_load_jquery', array(
+			'default'           => false,
+			'sanitize_callback' => 'cd_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'do_not_load_jquery', array(
+				'label'       => esc_html__( 'Enforce not to load jQuery', 'coldbox-addon' ),
+				'description' => esc_html__( 'Since the Coldbox theme\'s scripts do not require jQuery to work, other plugin\'s scripts require jQuery to operate if the site loads jQuery. This option can enforce not to load jQuery, but please be careful as this might make some scripts inoperative. This won\'t remove it from admin pages.', 'coldbox-addon' ),
+				'section'     => 'global',
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
 	// Adds AMP section of the customizer.
 	$wp_customize->add_section(
 		'amp_section', array(
@@ -101,6 +119,17 @@ function cd_addon_czr( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'cd_addon_czr' );
+
+/**
+ * Get whether not to load jQuery or not
+ *
+ * @since 1.1.7
+ */
+function cd_do_not_load_jquery() {
+	$do_not_load_jquery = get_theme_mod( 'do_not_load_jquery', false );
+
+	return apply_filters( 'cd_do_not_load_jquery', $do_not_load_jquery );
+}
 
 /**
  * Set the page IDs not to be AMP page as a function.
