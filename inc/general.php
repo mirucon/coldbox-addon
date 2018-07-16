@@ -19,7 +19,7 @@ add_action( 'cd_social_links_attr', 'coldbox_addon_social_links_attr' );
  */
 function coldbox_addon_deregister_jquery() {
 	if ( cd_do_not_load_jquery() ) {
-			wp_deregister_script( 'jquery' );
+		wp_deregister_script( 'jquery' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cd_scripts' );
