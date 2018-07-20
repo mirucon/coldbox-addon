@@ -355,6 +355,9 @@ h6
 .author-box
 	display flex
 
+	.author-links .social-links a > .fa
+		color #777
+
 .post-meta
 	display flex
 	flex-flow row wrap
@@ -785,6 +788,12 @@ p
 	display block
 	clear both
 
+/*
+ * -------------------------------------------------------------------------
+ *  Header
+ * -------------------------------------------------------------------------
+ */
+
 #header
 	position relative
 	top 0
@@ -798,6 +807,9 @@ p
 
 .nav-toggle, .site-info
 	-webkit-transition all 0.4s
+
+.search-toggle
+	display none
 
 .header-inner
 	display flex
@@ -1034,7 +1046,7 @@ for i in (1..9)
 	align-items center
 	li
 		position relative
-	i
+	.fa
 		font-size 1.55em
 	& > li:not(:first-child)
 		margin-left 0.5em
