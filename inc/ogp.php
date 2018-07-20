@@ -46,6 +46,10 @@ function cd_addon_meta_ogp() {
 	}
 	$type = apply_filters( 'cd_addon_ogp_type', $type );
 
+	global $wp;
+	$link = home_url( $wp->request );
+	$link = apply_filters( 'coldbox_addon_ogp_url', $link );
+
 	$card = 'summary_large_image';
 	$card = apply_filters( 'cd_addon_ogp_card_type', $card );
 
@@ -54,7 +58,7 @@ function cd_addon_meta_ogp() {
 	$ogp .= '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta property="og:description" content="' . esc_attr( $description ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta property="og:type" content="' . esc_attr( $type ) . '"/>' . PHP_EOL;
-	$ogp .= '<meta property="og:url" content="' . esc_url( get_permalink() ) . '"/>' . PHP_EOL;
+	$ogp .= '<meta property="og:url" content="' . esc_url( $link ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta property="og:site_name" content="' . esc_attr( get_bloginfo() ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta property="og:image" content="' . esc_url( $image ) . '"/>' . PHP_EOL;
 	$ogp .= '<meta name="twitter:card" content="' . esc_attr( $card ) . '" />' . PHP_EOL;
