@@ -27,7 +27,7 @@ function cd_addon_meta_ogp() {
 	}
 	$description = apply_filters( 'cd_addon_ogp_description', $description );
 
-	$ogp_default_image = get_theme_mod( 'ogp_default_image' );
+	$ogp_default_image = get_theme_mod( 'ogp_default_image', '' );
 	if ( is_singular() && has_post_thumbnail() ) {
 		$image = get_the_post_thumbnail_url();
 	} elseif ( ! empty( $ogp_default_image ) ) {
@@ -123,6 +123,28 @@ add_filter( 'language_attributes', 'cd_addon_ogp_html' );
  */
 function cd_addon_meta_ogp_customizer( $wp_customize ) {
 
+	/**
+	 * Image sanitization callback.
+	 *
+	 * @see https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+	 *
+	 * @param string               $image   Image filename.
+	 * @param WP_Customize_Setting $setting Setting instance.
+	 * @return string The image filename if the extension is allowed; otherwise, the setting default.
+	 */
+	function coldbox_addon_sanitize_image( $image, $setting ) {
+		$mimes = array(
+			'jpg|jpeg|jpe' => 'image/jpeg',
+			'gif'          => 'image/gif',
+			'png'          => 'image/png',
+			'bmp'          => 'image/bmp',
+			'tif|tiff'     => 'image/tiff',
+			'ico'          => 'image/x-icon',
+		);
+		$file  = wp_check_filetype( $image, $mimes );
+		return $file['ext'] ? $image : $setting->default;
+	}
+
 	// Register OGP tags section.
 	$wp_customize->add_section(
 		'meta_ogp', array(
@@ -150,7 +172,11 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 	);
 
 	// Open Graph default image.
-	$wp_customize->add_setting( 'ogp_default_image' );
+	$wp_customize->add_setting(
+		'ogp_default_image', array(
+			'sanitize_callback' => 'coldbox_addon_sanitize_image',
+		)
+	);
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize, 'ogp_default_image', array(
