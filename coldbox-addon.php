@@ -3,11 +3,11 @@
  * Plugin Name:     Coldbox Addons
  * Plugin URI:      https://coldbox.miruc.co/
  * Description:     The official addon plugin for the Coldbox theme.
- * Author:          mirucon
+ * Author:          Toshihiro Kanai
  * Author URI:      https://miruc.co/
  * Text Domain:     coldbox-addon
  * Domain Path:     /languages
- * Version:         1.1.6
+ * Version:         1.1.7
  *
  * @package         Coldbox_Addon
  */
