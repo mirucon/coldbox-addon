@@ -30,7 +30,7 @@ function cd_addon_meta_ogp() {
 	$ogp_default_image = get_theme_mod( 'ogp_default_image' );
 	if ( is_singular() && has_post_thumbnail() ) {
 		$image = get_the_post_thumbnail_url();
-	} elseif ( !empty( $ogp_default_image ) ) {
+	} elseif ( ! empty( $ogp_default_image ) ) {
 		$image = $ogp_default_image;
 	} elseif ( has_custom_logo() ) {
 		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
@@ -149,13 +149,13 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 		)
 	);
 
-	// ogp default image
+	// Open Graph default image.
 	$wp_customize->add_setting( 'ogp_default_image' );
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize, 'ogp_default_image', array(
-				'label'       => __( 'OGP default image', 'coldbox-addon' ),
-				'description' => __( 'Set the default OGP image. (Recommended size 1200 x 630 px)', 'coldbox-addon' ),
+				'label'       => __( 'Open Graph default image', 'coldbox-addon' ),
+				'description' => __( 'The default image used as a fallback image for Open Graph (Recommended size 1200x630 px)', 'coldbox-addon' ),
 				'section'     => 'meta_ogp',
 				'settings'    => 'ogp_default_image',
 			)
