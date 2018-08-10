@@ -223,8 +223,8 @@ h6
 			top 15px
 			left 16px
 			color #aaa
-			font-family FontAwesome
-			font-weight 300
+			font-family "Font Awesome 5 Free"
+			font-weight 900
 			font-size 1.6em
 			line-height 1
 			font-style normal
@@ -304,16 +304,28 @@ h6
 	display block
 	clear both
 
+/*
+ * -------------------------------------------------------------------------
+ *  General styling for single page
+ * -------------------------------------------------------------------------
+ */
+	
 .content-inside
 	background-color #fff
 	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.1)
 
-.content-box, .sns-buttons.single-bottom
+.content-box
 	padding 2em 40px
 	border-bottom 1px solid #eaeaea
 
-.content-box:last-child, .sns-buttons.single-bottom:last-child
+.content-box:last-child
 	border-bottom 0
+
+.content-box-heading
+	position relative
+	margin 0.2em 0 0.7em
+	text-transform capitalize
+	font-weight 300
 
 @media screen and (max-width 640px)
 	.content-box, .sns-buttons.single-bottom
@@ -363,6 +375,37 @@ h6
 
 	.author-links .social-links a > .fa
 		color #777
+/*   Post meta
+/* -------------------------------------------------- */
+.post-format
+	font-family "Font Awesome 5 Free"
+
+.format-aside .post-format::before
+	content "\f111"
+
+.format-gallery .post-format::before
+	content "\f1c5"
+
+.format-link .post-format::before
+	content "\f0c1"
+
+.format-image .post-format::before
+	content "\f03e"
+
+.format-quote .post-format::before
+	content "\f10d"
+
+.format-status .post-format::before
+	content "\f005"
+
+.format-video .post-format::before
+	content "\f008"
+
+.format-audio .post-format::before
+	content "\f028"
+
+.format-chat .post-format::before
+	content "\f086"
 
 .post-meta
 	display flex
@@ -376,7 +419,6 @@ h6
 	line-height 1.6
 	text-transform uppercase
 
-.post-meta
 	a
 		white-space nowrap
 		&:hover
@@ -384,45 +426,25 @@ h6
 	& > [class^=post-]
 		display inline-block
 		padding-right 10px
-	.post-comment a::before, > [class^=post-]::before
-		padding-right 0.2em
-		font-family FontAwesome
-		line-height 1
-		display inline-block
-		position relative
-	.post-date::before
-		content "\f017"
-	.post-category::before
-		content "\f07b"
-	.post-modified::before
-		content "\f1da"
-	.post-tag::before
-		content "\f02b"
-	.post-author::before
-		content "\f007"
-	.post-edit::before
-		content "\f040"
-	.post-update::before
-		content "\f021"
-	.post-comment a::before
-		content "\f075"
-	&.content-box a, &.sns-buttons.single-bottom a
+	&.content-box a
 		color #333
 		box-shadow 0 1px 0 0 currentColor
-	&.content-box a:hover, &.sns-buttons.single-bottom a:hover
+	&.content-box a:hover
 		color #00619f
-	&.content-box .post-category a, &.sns-buttons.single-bottom .post-category a
+	&.content-box .post-category a
 		margin 0 0 0.3em
-	&.content-box .post-category a:hover, &.sns-buttons.single-button .post-category a:hover
+	&.content-box .post-category a:hover
 		box-shadow 0 2px 0 0 rgba(216, 87, 25, 0.4)
-	&.content-box .post-author a:hover, &.sns-buttons.single-bottom .post-author a:hover
+	&.content-box .post-author a:hover
 		box-shadow 0 2px 0 0 rgba(0, 97, 159, 0.4)
-	&.content-box .post-comment a:hover, &.sns-buttons.single-button .post-comment a:hover
+	&.content-box .post-comment a:hover
 		box-shadow 0 2px 0 0 rgba(10, 74, 18, 0.4)
 
 .entry .post-meta
 	margin-bottom 3em
 
+/*   Bottom post meta
+/* -------------------------------------------------- */
 .btm-post-meta
 	margin-top 3em
 	clear both
@@ -456,6 +478,8 @@ p
 .post-btm-tags a:hover
 	box-shadow 0 2px 0 0 rgba(25, 216, 49, 0.4)
 
+/*   Author box
+/* -------------------------------------------------- */
 .author-box
 	display flex
 	flex-flow row wrap
@@ -476,9 +500,6 @@ p
 		align-items center
 		margin-bottom 0.3em
 
-.header-inner, .related-posts .related-posts-list
-	flex-flowrow wrap;
-
 .author-box
 	.author-name
 		display inline-block
@@ -495,9 +516,9 @@ p
 			margin-bottom 0
 			font-size 0.82em
 			a
-				> i
+				> .fab, > .fas
 					color #777
-				&:hover > i
+				&:hover > .fab, &:hover > .fas
 					color #222
 		a
 			&::after, &::before
@@ -510,12 +531,10 @@ p
 		.author-links
 			margin-left 0
 
-.content-box > h4, .sns-buttons.single-bottom > h4
-	position relative
-	margin 0.2em 0 0.7em
-	text-transform capitalize
-	font-weight 300
+/*  Related posts
+/* -------------------------------------------------- */
 
+.header-inner
 .related-posts
 	.related-posts-list
 		display flex
@@ -580,6 +599,8 @@ p
 			transform none
 			opacity 0.9
 
+/*   Post nav
+/* -------------------------------------------------- */
 .post-nav
 	box-shadow 0 1px 3px 0 rgba(0, 0, 0, 0.1)
 	ul
@@ -636,13 +657,6 @@ p
 	.next a:hover, .prev a:hover
 		background rgba(0, 0, 0, 0.55)
 
-.post-pages
-	border-bottom 2px solid #ddd
-	position relative
-	span
-		border-bottom 2px solid #ddd
-		position relative
-
 .post-nav
 	.next .nav-title
 		right -8px
@@ -667,24 +681,32 @@ p
 	#header
 		background-position center
 
+/*   Multipages navigator
+/* -------------------------------------------------- */
 .post-pages
 	display flex
 	align-items center
 	justify-content center
+	position relative
 	width 100%
 	margin 10px auto
+	border-bottom 2px solid #ddd
 	color #00619f
 	font-weight 700
 	span
 		display inline-block
+		position relative
 		bottom -2px
 		padding 6px 10px
+		border-bottom 2px solid #ddd
 		transition border 0.4s
 	a:hover > span, & > span
 		border-bottom 2px solid #00619f
 	& > span
 		color #000
 
+/*   Share buttons
+/* -------------------------------------------------- */
 .sns-buttons ul
 	margin-bottom 0
 	padding-left 0
@@ -698,7 +720,7 @@ p
 	position relative
 	.share
 		transition all 0.4s
-		i
+		.share-icon
 			position relative
 			left calc(50% - 1.2rem)
 			z-index 999
@@ -759,36 +781,8 @@ p
 	.share-list-container
 		justify-content center
 
-.header-inner
-	display flex
 
-.format-aside .post-format::before
-	content "\f111"
-
-.format-gallery .post-format::before
-	content "\f1c5"
-
-.format-link .post-format::before
-	content "\f0c1"
-
-.format-image .post-format::before
-	content "\f03e"
-
-.format-quote .post-format::before
-	content "\f10d"
-
-.format-status .post-format::before
-	content "\f005"
-
-.format-video .post-format::before
-	content "\f008"
-
-.format-audio .post-format::before
-	content "\f028"
-
-.format-chat .post-format::before
-	content "\f086"
-
+// clearfix
 .entry-content::after, .entry-footer::after, .entry-header::after
 	content ""
 	display block
@@ -799,7 +793,6 @@ p
  *  Header
  * -------------------------------------------------------------------------
  */
-
 #header
 	position relative
 	top 0
@@ -1035,7 +1028,7 @@ html body .screen-reader-text
 	clip rect(1px, 1px, 1px, 1px)
 	overflow hidden
 
-for i in (1..9)
+for i in (1..5)
 	.gallery-columns-{i}
 		display flex
 		flex-flow row wrap
@@ -1055,6 +1048,11 @@ for i in (1..9)
 	font-size 0.94em
 	line-height 1.4
 
+/*
+ * -------------------------------------------------------------------------
+ *  Social links
+ * -------------------------------------------------------------------------
+ */
 .social-links
 	display flex
 	flex-flow row wrap
@@ -1062,7 +1060,7 @@ for i in (1..9)
 	align-items center
 	li
 		position relative
-	.fa
+	.fab, .fas
 		font-size 1.55em
 	& > li:not(:first-child)
 		margin-left 0.5em
@@ -1086,8 +1084,6 @@ for i in (1..9)
 			font-weight 300
 			white-space nowrap
 			box-shadow 0 0 6px 0 rgba(0, 0, 0, 0.2)
-
-.social-links
 	a
 		&::before
 			content ""
@@ -1105,21 +1101,20 @@ for i in (1..9)
 		&:hover
 			&::after, &::before
 				visibility visible
-	.feedly .icon-feedly
-		display block
-		bottom -1px
-		line-height 1.06
-		&::before
-			font-size 1.06em
-
-@media screen and (max-width 640px)
-	.social-links i
-		font-size 2em
 
 ul.social-links
 	padding-left 0
 	list-style none
 
+@media screen and (max-width 640px)
+	.social-links i
+		font-size 2em
+	
+/*
+ * -------------------------------------------------------------------------
+ *  General classes
+ * -------------------------------------------------------------------------
+ */
 .select-none
 	user-select none
 
@@ -1178,30 +1173,33 @@ ul.social-links
 	& > a
 		display block
 
-:lang(ja) .breadcrumb, :lang(ko) .breadcrumb, :lang(zh) .breadcrumb
-	margin-bottom 0.2em
+/*
+ * -------------------------------------------------------------------------
+ *  CJK Things
+ * -------------------------------------------------------------------------
+ */
+:lang(ja), :lang(ko), :lang(zh)
+	.breadcrumb
+		margin-bottom .2em
+
+	.entry, .comment-body
+		line-height 1.8
+
+	h1, h2, h3, h4, h5, h6
+		line-height 1.5
+
+	.related-posts .post-title
+		line-height inherit
 
 :lang(ja)
-	h1, h2, h3, h4, h5, h6
-		line-height 1.5
+	h1
+		font-family Lato, 'Noto Sans CJK JP Light', 'Yu Gothic Light', 'Hiragino Sans', Arial, sans-serif
 
-:lang(ko)
-	h1, h2, h3, h4, h5, h6
-		line-height 1.5
-
-:lang(zh)
-	h1, h2, h3, h4, h5, h6
-		line-height 1.5
-
-:lang(ja) .related-posts .post-title, :lang(ko) .related-posts .post-title, :lang(zh) .related-posts .post-title
-	line-height inherit
-
-:lang(ja) .wp-caption .wp-caption-text, :lang(ko) .wp-caption .wp-caption-text, :lang(zh) .wp-caption .wp-caption-text
-	font-size 0.92em
-
-:lang(ja) h1
-	font-family Lato, 'Noto Sans CJK JP Light', 'Yu Gothic Light', 'Hiragino Sans', Arial, sans-serif
-
+/*
+ * -------------------------------------------------------------------------
+ *  Table of Content plus plugin
+ * -------------------------------------------------------------------------
+ */
 #toc_container
 	display block
 	background 0 0
