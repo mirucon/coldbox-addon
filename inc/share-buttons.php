@@ -316,7 +316,9 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="twitter balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="http://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank">
-							<i class="icon-twitter fa fa-twitter"></i>
+							<span class="share-icon icon-twitter fab fa-twitter">
+								<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', 'coldbox-addon' ); ?></span>
+							</span>
 						</a>
 					</div>
 					<?php if ( function_exists( 'scc_get_share_twitter' ) && cd_addon_show_count_badge() ) : ?>
@@ -333,7 +335,9 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="hatena balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-							<i class="icon-hatena"></i>
+							<span class="share-icon icon-hatena">
+								<span class="screen-reader-text"><?php esc_html_e( 'Save to Hatena Bookmark', 'coldbox-addon' ); ?></span>
+							</span>
 						</a>
 					</div>
 					<?php if ( function_exists( 'scc_get_share_hatebu' ) ) : ?>
@@ -350,7 +354,9 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="facebook balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="http://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-							<i class="icon-facebook fa fa-facebook"></i>
+							<span class="share-icon icon-facebook fab fa-facebook">
+								<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', 'coldbox-addon' ); ?></span>
+							</span>
 						</a>
 					</div>
 					<?php if ( function_exists( 'scc_get_share_facebook' ) ) : ?>
@@ -367,7 +373,9 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="googleplus balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
-							<i class="icon-googleplus fa fa-google-plus"></i>
+							<span class="share-icon icon-googleplus fab fa-google-plus-g">
+								<span class="screen-reader-text"><?php esc_html_e( 'Share on Google Plus', 'coldbox-addon' ); ?></span>
+							</span>
 						</a>
 					</div>
 					<?php if ( function_exists( 'scc_get_share_gplus' ) ) : ?>
@@ -384,7 +392,9 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="pocket balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="https://getpocket.com/edit?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-							<i class="icon-pocket fa fa-get-pocket"></i>
+							<span class="share-icon icon-pocket fab fa-get-pocket">
+								<span class="screen-reader-text"><?php esc_html_e( 'Save to Pocket', 'coldbox-addon' ); ?></span>
+							</span>
 						</a>
 					</div>
 					<?php if ( function_exists( 'scc_get_share_pocket' ) ) : ?>
@@ -401,7 +411,9 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="feedly balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
-							<i class="icon-feedly"></i>
+							<span class="share-icon icon-feedly">
+								<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
+							</span>
 						</a>
 					</div>
 					<?php if ( function_exists( 'scc_get_follow_feedly' ) ) : ?>

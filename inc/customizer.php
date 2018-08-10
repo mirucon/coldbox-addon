@@ -16,7 +16,7 @@ function cd_addon_czr( $wp_customize ) {
 
 	require_once 'class-cd-addon-custom-content.php';
 
-	// Whether not to use jQuery.
+	// Whether to use jQuery or not.
 	$wp_customize->add_setting(
 		'do_not_load_jquery', array(
 			'default'           => false,
@@ -27,7 +27,7 @@ function cd_addon_czr( $wp_customize ) {
 		new WP_Customize_Control(
 			$wp_customize, 'do_not_load_jquery', array(
 				'label'       => esc_html__( 'Enforce not to load jQuery', 'coldbox-addon' ),
-				'description' => esc_html__( 'Since the Coldbox theme\'s scripts do not require jQuery to work, other plugin\'s scripts require jQuery to operate if the site loads jQuery. This option can enforce not to load jQuery, but please be careful as this might make some scripts inoperative. This won\'t remove it from admin pages.', 'coldbox-addon' ),
+				'description' => esc_html__( 'Although the Coldbox theme\'s scripts do not require jQuery to work, other plugins scripts require jQuery to operate. This option can enforce not to load jQuery and can make your website faster, but please be careful as this might make some scripts inoperative. This won\'t remove it from admin screens.', 'coldbox-addon' ),
 				'section'     => 'global',
 				'type'        => 'checkbox',
 			)
