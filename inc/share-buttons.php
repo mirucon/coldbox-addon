@@ -280,20 +280,6 @@ function cd_twitter_username() {
 	return ( get_theme_mod( 'twitter_username', '' ) );
 }
 
-
-if ( cd_use_snsb() || cd_use_snsb_hatena() || cd_use_snsb_feedly() ) {
-
-	/**
-	 * Load Icomoon Web font
-	 *
-	 * @since 1.0.0
-	 */
-	function cd_addon_load_icomoon() {
-		wp_enqueue_style( 'icomoon', get_theme_file_uri( 'assets/fonts/icomoon/icomoon.min.css' ), array(), '1.0.0' );
-	}
-	add_action( 'wp_enqueue_scripts', 'cd_addon_load_icomoon' );
-}
-
 /**
  * Defines the function that output social buttons
  *
@@ -335,7 +321,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="hatena balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
-							<span class="share-icon icon-hatena">
+							<span class="share-icon si si-hatenabookmark">
 								<span class="screen-reader-text"><?php esc_html_e( 'Save to Hatena Bookmark', 'coldbox-addon' ); ?></span>
 							</span>
 						</a>
@@ -411,7 +397,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				<li class="feedly balloon-btn">
 					<div class="share">
 						<a class="share-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
-							<span class="share-icon icon-feedly">
+							<span class="share-icon si si-feedly">
 								<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
 							</span>
 						</a>
