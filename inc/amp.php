@@ -454,6 +454,22 @@ add_filter( 'cd_middle_thumbnail', 'cd_addon_amp_related_posts' );
 
 
 /**
+ * Make post thumbnail shown in a post AMP compatible.
+ *
+ * @since 1.1.8
+ * @param string $thumbnail The thumbnail image.
+ * @return string
+ */
+function cd_addon_amp_large_thumbs( $thumbnail ) {
+	if ( cd_is_amp() ) {
+		$thumbnail = preg_replace( '/<img/i', '<amp-img layout="responsive"', $thumbnail );
+	}
+	return $thumbnail;
+}
+add_filter( 'cd_large_thumbnail_template', 'cd_addon_amp_large_thumbs' );
+
+
+/**
  * Remove menus on AMP pages.
  *
  * @since 1.0.0
