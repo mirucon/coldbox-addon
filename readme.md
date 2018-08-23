@@ -1,10 +1,10 @@
-# Coldbox Addons v1.1.7
+# Coldbox Addons v1.1.8
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Donate link:** https://gumroad.com/l/coldbox-ads-extension   
 **Tags:** coldbox, coldbox-theme  
 **Requires at least:** 4.7  
 **Tested up to:** 4.9  
-**Stable tag:** 1.1.7  
+**Stable tag:** 1.1.8  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,13 @@ You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them o
 If you don't want the buttons to show at the end of content automatically, go and uncheck "Use social buttons" option in the theme customizer. You can call the share buttons using the shortcode function in that case.
 
 ## Changelog
+
+1.1.8
+
+* Fixed: Make large size thumbnail AMP compatible
+* Fixed: Fix AMP styling due to the upgrade of Font Awesome 5
+* refactor: Upgrade to Font Awesome version 5
+* refactor: Replace IcoMoon icons with Simple Icons
 
 1.1.7
 

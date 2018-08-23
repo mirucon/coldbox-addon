@@ -7,7 +7,7 @@
  * Author URI:      https://miruc.co/
  * Text Domain:     coldbox-addon
  * Domain Path:     /languages
- * Version:         1.1.7
+ * Version:         1.1.8
  *
  * @package         Coldbox_Addon
  */

@@ -1,9 +1,9 @@
 {
   "name": "coldbox-addon",
   "description": "The powered addon for the Coldbox theme.",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "main": "gulpfile.js",
-  "author": "Toshihiro Kanai",
+  "author": "Toshihiro Kanai <i@miruc.co>",
   "devDependencies": {
     "browser-sync": "^2.24.1",
     "gulp": "3.9.1",
