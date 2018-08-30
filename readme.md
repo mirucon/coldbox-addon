@@ -1,4 +1,7 @@
 # Coldbox Addons v1.1.8
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/mirucon/coldbox-addon.svg)](https://greenkeeper.io/)
+
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Donate link:** https://gumroad.com/l/coldbox-ads-extension   
 **Tags:** coldbox, coldbox-theme  
