@@ -400,9 +400,11 @@ add_action( 'wp', 'cd_addon_amp_iframe', 12 );
 function cd_addon_amp_video() {
 	if ( cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
-		if ( strpos( $post_content, '<video' ) !== false ||
-			 strpos( $post_content, '[video' ) !== false ||
-			 strpos( $post_content, '<amp-video' ) !== false ) {
+		if (
+			strpos( $post_content, '<video' ) !== false ||
+			strpos( $post_content, '[video' ) !== false ||
+			strpos( $post_content, '<amp-video' ) !== false
+		) {
 			return true;
 		}
 	}

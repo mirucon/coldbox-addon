@@ -27,21 +27,25 @@ function cd_addon_sns_buttons( $wp_customize ) {
 
 	// Adds the section for the social buttons.
 	$wp_customize->add_section(
-		'sns_buttons', array(
+		'sns_buttons',
+		array(
 			'title'    => __( 'Coldbox Add-on: Social Buttons', 'coldbox-addon' ),
 			'priority' => 11,
 		)
 	);
 	// Whether or not use the share buttons.
 	$wp_customize->add_setting(
-		'use_sns_buttons', array(
+		'use_sns_buttons',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'use_sns_buttons', array(
+			$wp_customize,
+			'use_sns_buttons',
+			array(
 				'label'   => __( 'Use Social Buttons', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -50,14 +54,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 	// Twitter.
 	$wp_customize->add_setting(
-		'sns_button_twitter', array(
+		'sns_button_twitter',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_twitter', array(
+			$wp_customize,
+			'sns_button_twitter',
+			array(
 				'label'   => __( ' - Twitter', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -66,14 +73,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 	// Facebook.
 	$wp_customize->add_setting(
-		'sns_button_facebook', array(
+		'sns_button_facebook',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_facebook', array(
+			$wp_customize,
+			'sns_button_facebook',
+			array(
 				'label'   => __( ' - Facebook', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -82,14 +92,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 	// hatena Bookmark.
 	$wp_customize->add_setting(
-		'sns_button_hatena', array(
+		'sns_button_hatena',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_hatena', array(
+			$wp_customize,
+			'sns_button_hatena',
+			array(
 				'label'   => __( ' - Hatena Bookmark', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -98,14 +111,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 	// Google Plus.
 	$wp_customize->add_setting(
-		'sns_button_googleplus', array(
+		'sns_button_googleplus',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_googleplus', array(
+			$wp_customize,
+			'sns_button_googleplus',
+			array(
 				'label'   => __( ' - Google Plus', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -114,14 +130,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 	// Pocket.
 	$wp_customize->add_setting(
-		'sns_button_pocket', array(
+		'sns_button_pocket',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_pocket', array(
+			$wp_customize,
+			'sns_button_pocket',
+			array(
 				'label'   => __( ' - Pocket', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -130,14 +149,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 	// Feedly.
 	$wp_customize->add_setting(
-		'sns_button_feedly', array(
+		'sns_button_feedly',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_feedly', array(
+			$wp_customize,
+			'sns_button_feedly',
+			array(
 				'label'   => __( ' - Feedly', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
@@ -147,14 +169,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 
 	// Whether show count badges or not.
 	$wp_customize->add_setting(
-		'sns_button_count_badges', array(
+		'sns_button_count_badges',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'sns_button_count_badges', array(
+			$wp_customize,
+			'sns_button_count_badges',
+			array(
 				'label'       => __( 'Show count badges', 'coldbox-addon' ),
 				'description' => sprintf( /* Translators: %s: Plugin URL */ __( 'Requires %s plugin is installed and enabled.', 'coldbox-addon' ), '<a href="' . esc_url( home_url() . '/wp-admin/plugin-install.php?s=sns+count+cache&tab=search&type=term' ) . '" target="_blank">SNS Count Cache</a>' ),
 				'section'     => 'sns_buttons',
@@ -165,14 +190,17 @@ function cd_addon_sns_buttons( $wp_customize ) {
 
 	// Twitter username.
 	$wp_customize->add_setting(
-		'twitter_username', array(
+		'twitter_username',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'twitter_username', array(
+			$wp_customize,
+			'twitter_username',
+			array(
 				'label'       => __( 'Twitter Username', 'coldbox-addon' ),
 				'description' => __( 'Enter your Twitter username without "@" suffix. The username will be shown in tweets.', 'coldbox-addon' ),
 				'section'     => 'sns_buttons',

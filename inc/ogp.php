@@ -147,7 +147,8 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 
 	// Register OGP tags section.
 	$wp_customize->add_section(
-		'meta_ogp', array(
+		'meta_ogp',
+		array(
 			'title'    => __( 'Coldbox Add-on: OGP/Meta Settings', 'coldbox-addon' ),
 			'priority' => 11,
 		)
@@ -155,14 +156,17 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 
 	// Whether or not output ogp tags.
 	$wp_customize->add_setting(
-		'use_ogp', array(
+		'use_ogp',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'use_ogp', array(
+			$wp_customize,
+			'use_ogp',
+			array(
 				'label'       => __( 'Output Open Graph tags', 'coldbox-addon' ),
 				'description' => __( 'Whether or not use Open Graph for normal pages. They are always active for AMP pages.', 'coldbox-addon' ),
 				'section'     => 'meta_ogp',
@@ -173,13 +177,16 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 
 	// Open Graph default image.
 	$wp_customize->add_setting(
-		'ogp_default_image', array(
+		'ogp_default_image',
+		array(
 			'sanitize_callback' => 'coldbox_addon_sanitize_image',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
-			$wp_customize, 'ogp_default_image', array(
+			$wp_customize,
+			'ogp_default_image',
+			array(
 				'label'       => __( 'Open Graph default image', 'coldbox-addon' ),
 				'description' => __( 'The default image used as a fallback image for Open Graph (Recommended size 1200x630 px)', 'coldbox-addon' ),
 				'section'     => 'meta_ogp',
@@ -190,14 +197,17 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 
 	// Twitter username.
 	$wp_customize->add_setting(
-		'ogp_twitter_username', array(
+		'ogp_twitter_username',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'ogp_twitter_username', array(
+			$wp_customize,
+			'ogp_twitter_username',
+			array(
 				'label'       => __( 'Twitter username', 'coldbox-addon' ),
 				'description' => __( 'Enter your Twitter username without "@" suffix.', 'coldbox-addon' ),
 				'section'     => 'meta_ogp',
@@ -207,14 +217,17 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 	);
 	// Facebook ID.
 	$wp_customize->add_setting(
-		'ogp_facebook_id', array(
+		'ogp_facebook_id',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'ogp_facebook_id', array(
+			$wp_customize,
+			'ogp_facebook_id',
+			array(
 				'label'   => __( 'Facebook page ID', 'coldbox-addon' ),
 				'section' => 'meta_ogp',
 				'type'    => 'text',
