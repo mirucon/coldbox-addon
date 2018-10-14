@@ -18,14 +18,17 @@ function cd_addon_czr( $wp_customize ) {
 
 	// Whether to use jQuery or not.
 	$wp_customize->add_setting(
-		'do_not_load_jquery', array(
+		'do_not_load_jquery',
+		array(
 			'default'           => false,
 			'sanitize_callback' => 'cd_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'do_not_load_jquery', array(
+			$wp_customize,
+			'do_not_load_jquery',
+			array(
 				'label'       => esc_html__( 'Enforce not to load jQuery', 'coldbox-addon' ),
 				'description' => esc_html__( 'Although the Coldbox theme\'s scripts do not require jQuery to work, other plugins scripts require jQuery to operate. This option can enforce not to load jQuery and can make your website faster, but please be careful as this might make some scripts inoperative. This won\'t remove it from admin screens.', 'coldbox-addon' ),
 				'section'     => 'global',
@@ -36,7 +39,8 @@ function cd_addon_czr( $wp_customize ) {
 
 	// Adds AMP section of the customizer.
 	$wp_customize->add_section(
-		'amp_section', array(
+		'amp_section',
+		array(
 			'title'    => __( 'Coldbox Add-on: AMP', 'coldbox-addon' ),
 			'priority' => 10,
 		)
@@ -44,14 +48,17 @@ function cd_addon_czr( $wp_customize ) {
 
 	// Whether or not use AMP pages.
 	$wp_customize->add_setting(
-		'use_amp', array(
+		'use_amp',
+		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'use_amp', array(
+			$wp_customize,
+			'use_amp',
+			array(
 				'label'   => __( 'Use AMP pages', 'coldbox-addon' ),
 				'section' => 'amp_section',
 				'type'    => 'checkbox',
@@ -61,14 +68,17 @@ function cd_addon_czr( $wp_customize ) {
 
 	// Pages you don't want to generate AMP.
 	$wp_customize->add_setting(
-		'no_amp_pages', array(
+		'no_amp_pages',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'no_amp_pages', array(
+			$wp_customize,
+			'no_amp_pages',
+			array(
 				'label'       => __( 'Pages you don\'t want to generate AMP', 'coldbox-addon' ),
 				'description' => __( 'The page IDs articles will not be generated the AMP pages. You can set it like: 1, 12, 43.', 'coldbox-addon' ),
 				'section'     => 'amp_section',
@@ -79,14 +89,17 @@ function cd_addon_czr( $wp_customize ) {
 
 	// Adds Analytics settings for AMP pages.
 	$wp_customize->add_setting(
-		'amp_analytics', array(
+		'amp_analytics',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'amp_analytics', array(
+			$wp_customize,
+			'amp_analytics',
+			array(
 				'label'       => __( 'Analytics Tracking ID', 'coldbox-addon' ),
 				'description' => __( 'Please enter your full tracking ID, like "UA-12345-6"', 'coldbox-addon' ),
 				'section'     => 'amp_section',
@@ -96,18 +109,22 @@ function cd_addon_czr( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'amp_ads_have_been_moved', array(
+		'amp_ads_have_been_moved',
+		array(
 			'sanitize_callback' => 'cd_sanitize_text',
 		)
 	);
 	$wp_customize->add_control(
 		new Cd_Addon_Custom_Content(
-			$wp_customize, 'amp_ads_have_been_moved', array(
+			$wp_customize,
+			'amp_ads_have_been_moved',
+			array(
 				'content'     => '<h3 class="czr-heading">' . __( 'Ads settings have been moved!', 'coldbox-addon' ) . '</h3>',
 				'description' => sprintf(
 					/* translators: 1: opening a tag, 2: closing a tag. */
 					esc_html__(
-						'AMP ads settings have been moved to the %1$sColdbox Ads Extension%2$s plugin. This plugin contains the full support of Coldbox theme\'s ad settings, including one-click auto-ads and suitable places for matched content, in-feed ads, other native ads and more! Available from $20 with the GPL license.', 'coldbox-addon'
+						'AMP ads settings have been moved to the %1$sColdbox Ads Extension%2$s plugin. This plugin contains the full support of Coldbox theme\'s ad settings, including one-click auto-ads and suitable places for matched content, in-feed ads, other native ads and more! Available from $20 with the GPL license.',
+						'coldbox-addon'
 					),
 					'<a href="' . esc_url( __( 'https://coldbox.miruc.co/addons/google-adsense-extension/', 'coldbox-addon' ) ) . '">',
 					'</a>'

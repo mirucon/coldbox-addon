@@ -142,14 +142,17 @@ function cd_addon_meta_customizer( $wp_customize ) {
 
 	// Getting Google Analytics tracking code.
 	$wp_customize->add_setting(
-		'ga_tracking_code', array(
+		'ga_tracking_code',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'ga_tracking_code', array(
+			$wp_customize,
+			'ga_tracking_code',
+			array(
 				'label'       => __( 'Google Analytics tracking code', 'coldbox-addon' ),
 				'description' => __( 'Please enter your full tracking ID, like "UA-12345-6". You may use the same code set in the AMP section.', 'coldbox-addon' ),
 				'section'     => 'meta_ogp',
@@ -159,19 +162,23 @@ function cd_addon_meta_customizer( $wp_customize ) {
 	);
 	// Getting Google site verification code.
 	$wp_customize->add_setting(
-		'site_verification_code', array(
+		'site_verification_code',
+		array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
-			$wp_customize, 'site_verification_code', array(
+			$wp_customize,
+			'site_verification_code',
+			array(
 				'label'       => __( 'Google site verification', 'coldbox-addon' ),
 				'description' => sprintf( /* Translators: %s: line break. */
 					__(
 						'Google site verification code is used to make sure that this site is owned by you.%s
-						This will be the content of google-site-verification tag.', 'coldbox-addon'
+						This will be the content of google-site-verification tag.',
+						'coldbox-addon'
 					),
 					'<br />'
 				),
