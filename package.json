@@ -8,7 +8,7 @@
     "browser-sync": "^2.24.1",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^3.9.3",
+    "gulp-clean-css": "^4.0.0",
     "gulp-stylus": "^2.7.0"
   },
   "scripts": {
