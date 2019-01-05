@@ -6,7 +6,7 @@
 **Donate link:** https://gumroad.com/l/coldbox-ads-extension   
 **Tags:** coldbox, coldbox-theme  
 **Requires at least:** 4.7  
-**Tested up to:** 4.9  
+**Tested up to:** 5.0  
 **Stable tag:** 1.1.8  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
