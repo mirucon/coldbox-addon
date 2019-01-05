@@ -336,9 +336,12 @@ function cd_addon_amp_post_content() {
 		global $post;
 		setup_postdata( $post );
 		$post_content = $post->post_content;
+		// phpcs:ignore WordPress.NamingConventions
+		$post_content = apply_filters( 'the_content', $post_content );
 		wp_reset_postdata();
 		return $post_content;
 	}
+	return '';
 }
 
 /**

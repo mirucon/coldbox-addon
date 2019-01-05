@@ -3,7 +3,7 @@ Contributors: mirucon
 Donate link: https://gumroad.com/l/coldbox-ads-extension
 Tags: coldbox, coldbox-theme
 Requires at least: 4.7
-Tested up to: 4.9
+Tested up to: 5.0
 Requires PHP: 5.2
 Stable tag: 1.1.8
 License: GPLv2 or later
