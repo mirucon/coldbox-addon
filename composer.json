@@ -3,7 +3,8 @@
     "description": "The powered addon for the Coldbox theme.",
     "type": "wordpress-plugin",
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "wp-coding-standards/wpcs": "dev-master"
     },
     "license": "GPL-2.0+",
     "authors": [
@@ -12,5 +13,11 @@
             "email": "i@miruc.co"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+      "lint": [
+        "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+        "./vendor/bin/phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')"
+      ]
+    }
 }

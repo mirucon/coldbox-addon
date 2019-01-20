@@ -28,10 +28,10 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Cd_Addon_Custom_
 		 */
 		public function render_content() {
 			if ( isset( $this->content ) ) {
-				echo $this->content; // WPCS: XSS OK.
+				echo $this->content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			if ( isset( $this->description ) ) {
-				echo '<span class="description customize-control-description">' . $this->description . '</span>'; // WPCS: XSS OK.
+				echo '<span class="description customize-control-description">' . $this->description . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 	}

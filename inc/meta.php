@@ -21,7 +21,7 @@ function cd_addon_google_analytics() {
 	}
 	$ga = "<script type=\"text/javascript\">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', '" . esc_js( $tracking_code ) . "', 'auto'); ga('send', 'pageview');</script>" . PHP_EOL;
 
-	echo apply_filters( 'cd_addon_google_analytics', $ga ); // WPCS: XSS OK.
+	echo apply_filters( 'cd_addon_google_analytics', $ga ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	return apply_filters( 'cd_addon_google_analytics', $ga );
 }
 add_action( 'wp_head', 'cd_addon_google_analytics' );
@@ -38,7 +38,7 @@ function cd_addon_google_site_verification() {
 		return;
 	}
 	$verify = '<meta name="google-site-verification" content="' . esc_attr( $verification_code ) . '" />' . PHP_EOL;
-	echo apply_filters( 'cd_addon_google_site_verification', $verify ); // WPCS: XSS OK.
+	echo apply_filters( 'cd_addon_google_site_verification', $verify ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	return apply_filters( 'cd_addon_google_site_verification', $verify );
 }
 add_action( 'wp_head', 'cd_addon_google_analytics' );
@@ -125,7 +125,7 @@ function cd_addon_meta_prev_next() {
 	}
 
 	$meta = apply_filters( 'cd_addon_meta_prev_next', $meta );
-	echo $meta; // WPCS: XSS OK.
+	echo $meta; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	return $meta;
 }
 
