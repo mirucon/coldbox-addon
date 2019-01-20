@@ -89,7 +89,7 @@ function cd_addon_meta_ogp() {
 	$ogp .= '<!-- /Coldbox Addon Open Graph -->' . PHP_EOL;
 
 	if ( cd_use_ogp() ) {
-		echo apply_filters( 'cd_addon_meta_ogp_single', $ogp ); // WPCS: XSS OK.
+		echo apply_filters( 'cd_addon_meta_ogp_single', $ogp ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	} else {
 		return apply_filters( 'cd_addon_meta_ogp_single', $ogp );
 	}
