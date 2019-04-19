@@ -424,7 +424,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_feedly() && ! cd_is_amp() ) : ?>
 				<li class="feedly balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
+						<a class="share-inner" href="https://feedly.com/i/subscription/feed/<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
 							<span class="share-icon si si-feedly">
 								<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
 							</span>
