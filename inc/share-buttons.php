@@ -109,25 +109,6 @@ function cd_addon_sns_buttons( $wp_customize ) {
 			)
 		)
 	);
-	// Google Plus.
-	$wp_customize->add_setting(
-		'sns_button_googleplus',
-		array(
-			'default'           => true,
-			'sanitize_callback' => 'wp_validate_boolean',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'sns_button_googleplus',
-			array(
-				'label'   => __( ' - Google Plus', 'coldbox-addon' ),
-				'section' => 'sns_buttons',
-				'type'    => 'checkbox',
-			)
-		)
-	);
 	// Pocket.
 	$wp_customize->add_setting(
 		'sns_button_pocket',
@@ -253,16 +234,6 @@ function cd_use_snsb_hatena() {
 }
 
 /**
- * Checks Google Plus button is set
- *
- * @since 1.0.0
- * @return bool True or false
- */
-function cd_use_snsb_googleplus() {
-	return ( get_theme_mod( 'sns_button_googleplus', true ) );
-}
-
-/**
  * Checks Pocket button is set
  *
  * @since 1.0.0
@@ -377,25 +348,6 @@ function cd_addon_sns_buttons_list( $class = null ) {
 						<span class="count">
 							<a class="count-inner" href="http://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
 								<?php echo absint( scc_get_share_facebook() ); ?>
-							</a>
-						</span>
-					<?php endif; ?>
-				</li>
-			<?php endif; ?>
-
-			<?php if ( cd_use_snsb_googleplus() ) : ?>
-				<li class="googleplus balloon-btn">
-					<div class="share">
-						<a class="share-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
-							<span class="share-icon icon-googleplus fab fa-google-plus-g">
-								<span class="screen-reader-text"><?php esc_html_e( 'Share on Google Plus', 'coldbox-addon' ); ?></span>
-							</span>
-						</a>
-					</div>
-					<?php if ( function_exists( 'scc_get_share_gplus' ) ) : ?>
-						<span class="count">
-							<a class="count-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
-								<?php echo absint( scc_get_share_gplus() ); ?>
 							</a>
 						</span>
 					<?php endif; ?>
