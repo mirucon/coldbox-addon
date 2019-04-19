@@ -17,8 +17,7 @@ function cd_addon_meta_ogp() {
 	if ( is_singular() ) {
 		global $post;
 		setup_postdata( $post );
-		$content     = get_the_content();
-		$description = wp_trim_words( $content, 95, '...' );
+		$description = wp_trim_words( get_the_excerpt( $post ), 95, '...' );
 		wp_reset_postdata();
 	} elseif ( is_front_page() ) {
 		$description = get_bloginfo( 'description' );
