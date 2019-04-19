@@ -18,6 +18,10 @@
       "lint": [
         "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
         "./vendor/bin/phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')"
+      ],
+      "fix": [
+        "./vendor/bin/phpcbf --config-set installed_paths vendor/wp-coding-standards/wpcs",
+        "./vendor/bin/phpcbf --standard=phpcs.ruleset.xml $(find . -name '*.php')"
       ]
     }
 }

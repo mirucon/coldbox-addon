@@ -17,7 +17,7 @@ function cd_addon_meta_ogp() {
 	if ( is_singular() ) {
 		global $post;
 		setup_postdata( $post );
-		$excerpt = has_excerpt( $post ) ? get_the_excerpt( $post ) : get_the_content( $post );
+		$excerpt     = has_excerpt( $post ) ? get_the_excerpt( $post ) : get_the_content( $post );
 		$description = wp_trim_words( $excerpt, 95, '...' );
 		wp_reset_postdata();
 	} elseif ( is_front_page() ) {
@@ -51,7 +51,16 @@ function cd_addon_meta_ogp() {
 
 	global $wp;
 	$link = home_url( $wp->request );
+	/**
+	 * Hook coldbox_addon_ogp_url.
+	 *
+	 * @deprecated Hook `coldbox_addon_ogp_url` is replaced with `cd_addon_ogp_url` in 1.1.10.
+	 */
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 	$link = apply_filters( 'coldbox_addon_ogp_url', $link );
+	// phpcs:ignore Generic.Commenting.DocComment.MissingShort
+	/** @since 1.1.10 Hook `cd_addon_ogp_url` */
+	$link = apply_filters( 'cd_addon_ogp_url', $link );
 
 	$card = 'summary_large_image';
 	$card = apply_filters( 'cd_addon_ogp_card_type', $card );
