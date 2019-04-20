@@ -255,7 +255,7 @@ function cd_use_snsb_hatena() {
 /**
  * Checks LINE button is set.
  *
- * @since 1.1.10
+ * @since 1.2.0
  * @return bool True or false
  */
 function cd_use_snsb_line() {

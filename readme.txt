@@ -5,7 +5,7 @@ Tags: coldbox, coldbox-theme
 Requires at least: 4.7
 Tested up to: 5.0
 Requires PHP: 5.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,15 @@ If you don't want the buttons to show at the end of content automatically, go an
 2. AMP page sample
 
 == Changelog ==
+
+= 1.2.0 =
+
+* feat: Add share button support for LINE
+* fix: "amphtml" href is broken when the URL includes query parameter
+* fix: Correct Feedly button URL
+* fix: Delete Google Plus things
+* fix: Use custom excerpt for og:description content
+* fix: "Not to use jQuery" option is not working in some cases
 
 = 1.1.9 =
 
