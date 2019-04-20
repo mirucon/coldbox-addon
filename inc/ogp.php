@@ -54,12 +54,12 @@ function cd_addon_meta_ogp() {
 	/**
 	 * Hook coldbox_addon_ogp_url.
 	 *
-	 * @deprecated Hook `coldbox_addon_ogp_url` is replaced with `cd_addon_ogp_url` in 1.1.10.
+	 * @deprecated Hook `coldbox_addon_ogp_url` is replaced with `cd_addon_ogp_url` in 1.2.0.
 	 */
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 	$link = apply_filters( 'coldbox_addon_ogp_url', $link );
 	// phpcs:ignore Generic.Commenting.DocComment.MissingShort
-	/** @since 1.1.10 Hook `cd_addon_ogp_url` */
+	/** @since 1.2.0 Hook `cd_addon_ogp_url` */
 	$link = apply_filters( 'cd_addon_ogp_url', $link );
 
 	$card = 'summary_large_image';
