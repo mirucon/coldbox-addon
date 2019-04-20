@@ -109,9 +109,9 @@ function cd_addon_sns_buttons( $wp_customize ) {
 			)
 		)
 	);
-	// Google Plus.
+	// LINE.
 	$wp_customize->add_setting(
-		'sns_button_googleplus',
+		'sns_button_line',
 		array(
 			'default'           => true,
 			'sanitize_callback' => 'wp_validate_boolean',
@@ -120,9 +120,9 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'sns_button_googleplus',
+			'sns_button_line',
 			array(
-				'label'   => __( ' - Google Plus', 'coldbox-addon' ),
+				'label'   => __( ' - LINE', 'coldbox-addon' ),
 				'section' => 'sns_buttons',
 				'type'    => 'checkbox',
 			)
@@ -253,13 +253,13 @@ function cd_use_snsb_hatena() {
 }
 
 /**
- * Checks Google Plus button is set
+ * Checks LINE button is set.
  *
- * @since 1.0.0
+ * @since 1.1.10
  * @return bool True or false
  */
-function cd_use_snsb_googleplus() {
-	return ( get_theme_mod( 'sns_button_googleplus', true ) );
+function cd_use_snsb_line() {
+	return get_theme_mod( 'sns_button_line', true );
 }
 
 /**
@@ -364,6 +364,18 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				</li>
 			<?php endif; ?>
 
+			<?php if ( cd_use_snsb_line() ) : ?>
+				<li class="line balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="https://social-plugins.line.me/lineit/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+							<span class="share-icon icon-line fab fa-line">
+								<span class="screen-reader-text"><?php esc_html_e( 'Share on LINE', 'coldbox-addon' ); ?></span>
+							</span>
+						</a>
+					</div>
+				</li>
+			<?php endif; ?>
+
 			<?php if ( cd_use_snsb_facebook() ) : ?>
 				<li class="facebook balloon-btn">
 					<div class="share">
@@ -377,25 +389,6 @@ function cd_addon_sns_buttons_list( $class = null ) {
 						<span class="count">
 							<a class="count-inner" href="http://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
 								<?php echo absint( scc_get_share_facebook() ); ?>
-							</a>
-						</span>
-					<?php endif; ?>
-				</li>
-			<?php endif; ?>
-
-			<?php if ( cd_use_snsb_googleplus() ) : ?>
-				<li class="googleplus balloon-btn">
-					<div class="share">
-						<a class="share-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
-							<span class="share-icon icon-googleplus fab fa-google-plus-g">
-								<span class="screen-reader-text"><?php esc_html_e( 'Share on Google Plus', 'coldbox-addon' ); ?></span>
-							</span>
-						</a>
-					</div>
-					<?php if ( function_exists( 'scc_get_share_gplus' ) ) : ?>
-						<span class="count">
-							<a class="count-inner" href="https://plus.google.com/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>" target="_blank">
-								<?php echo absint( scc_get_share_gplus() ); ?>
 							</a>
 						</span>
 					<?php endif; ?>
@@ -424,7 +417,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_feedly() && ! cd_is_amp() ) : ?>
 				<li class="feedly balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://cloud.feedly.com/#subscription%2Ffeed%2F<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
+						<a class="share-inner" href="https://feedly.com/i/subscription/feed/<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
 							<span class="share-icon si si-feedly">
 								<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
 							</span>
