@@ -109,6 +109,25 @@ function cd_addon_sns_buttons( $wp_customize ) {
 			)
 		)
 	);
+	// LINE.
+	$wp_customize->add_setting(
+		'sns_button_line',
+		array(
+			'default'           => true,
+			'sanitize_callback' => 'wp_validate_boolean',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sns_button_line',
+			array(
+				'label'   => __( ' - LINE', 'coldbox-addon' ),
+				'section' => 'sns_buttons',
+				'type'    => 'checkbox',
+			)
+		)
+	);
 	// Pocket.
 	$wp_customize->add_setting(
 		'sns_button_pocket',
@@ -234,6 +253,16 @@ function cd_use_snsb_hatena() {
 }
 
 /**
+ * Checks LINE button is set.
+ *
+ * @since 1.1.10
+ * @return bool True or false
+ */
+function cd_use_snsb_line() {
+	return get_theme_mod( 'sns_button_line', true );
+}
+
+/**
  * Checks Pocket button is set
  *
  * @since 1.0.0
@@ -332,6 +361,18 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							</a>
 						</span>
 					<?php endif; ?>
+				</li>
+			<?php endif; ?>
+
+			<?php if ( cd_use_snsb_line() ) : ?>
+				<li class="line balloon-btn">
+					<div class="share">
+						<a class="share-inner" href="https://social-plugins.line.me/lineit/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+							<span class="share-icon icon-line fab fa-line">
+								<span class="screen-reader-text"><?php esc_html_e( 'Share on LINE', 'coldbox-addon' ); ?></span>
+							</span>
+						</a>
+					</div>
 				</li>
 			<?php endif; ?>
 
