@@ -61,6 +61,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 * fix: Correct Feedly button URL
 * fix: Delete Google Plus things
 * fix: Use custom excerpt for og:description content
+* fix: "Not to use jQuery" option is not working in some cases
 
 = 1.1.9 =
 
