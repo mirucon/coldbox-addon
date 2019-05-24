@@ -5,8 +5,9 @@
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Donate link:** https://gumroad.com/l/coldbox-ads-extension   
 **Tags:** coldbox, coldbox-theme  
+**Requires PHP**: 5.6    
 **Requires at least:** 4.7  
-**Tested up to:** 5.0  
+**Tested up to:** 5.2  
 **Stable tag:** 1.2.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
