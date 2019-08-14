@@ -22,4 +22,4 @@ function coldbox_addon_deregister_jquery() {
 		wp_deregister_script( 'jquery' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'cd_scripts', 999 );
+add_action( 'wp_enqueue_scripts', 'coldbox_addon_deregister_jquery', 999 );
