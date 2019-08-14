@@ -54,6 +54,10 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 == Changelog ==
 
+= 1.2.1 =
+
+* fix: PHP Warning when Coldbox theme is not activated
+
 = 1.2.0 =
 
 * feat: Add share button support for LINE
