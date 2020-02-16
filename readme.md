@@ -2,14 +2,14 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mirucon/coldbox-addon.svg)](https://greenkeeper.io/)
 
-**Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
-**Donate link:** https://gumroad.com/l/coldbox-ads-extension   
-**Tags:** coldbox, coldbox-theme  
-**Requires PHP**: 5.6    
-**Requires at least:** 4.7  
-**Tested up to:** 5.2  
-**Stable tag:** 1.2.1      
-**License:** GPLv2 or later  
+**Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)
+**Donate link:** https://gumroad.com/l/coldbox-ads-extension
+**Tags:** coldbox, coldbox-theme
+**Requires PHP**: 5.6
+**Requires at least:** 4.7
+**Tested up to:** 5.3
+**Stable tag:** 1.2.1
+**License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 Now available from the WordPress plugin directory! [https://wordpress.org/plugins/coldbox-addon/](https://wordpress.org/plugins/coldbox-addon/)
@@ -25,7 +25,7 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
 * **Share Buttons** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
 
   * *[SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to **show share counts.***
-  
+
 * **Open Graph tags** - It's the most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
 
 * **Other meta tags** - Not only open graph tags, but it supports even more meta features, such as Google Analytics, and other SEO-related tags too!
