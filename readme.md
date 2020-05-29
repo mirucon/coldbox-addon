@@ -2,15 +2,15 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mirucon/coldbox-addon.svg)](https://greenkeeper.io/)
 
-**Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)
-**Donate link:** https://gumroad.com/l/coldbox-ads-extension
-**Tags:** coldbox, coldbox-theme
-**Requires PHP**: 5.6
-**Requires at least:** 4.7
-**Tested up to:** 5.3
-**Stable tag:** 1.2.1
-**License:** GPLv2 or later
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+**Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
+**Donate link:** https://gumroad.com/l/coldbox-ads-extension  
+**Tags:** coldbox, coldbox-theme  
+**Requires PHP**: 5.6  
+**Requires at least:** 5.0  
+**Tested up to:** 5.4  
+**Stable tag:** 1.2.1  
+**License:** GPLv2 or later  
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
 Now available from the WordPress plugin directory! [https://wordpress.org/plugins/coldbox-addon/](https://wordpress.org/plugins/coldbox-addon/)
 
