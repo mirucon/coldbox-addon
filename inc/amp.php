@@ -281,6 +281,10 @@ function cd_addon_amp_img( $content ) {
 		$content = preg_replace( '/ +contenteditable=["][^"]*?["]/i', '', $content );
 		$content = preg_replace( '/ +contenteditable=[\'][^\']*?[\']/i', '', $content );
 
+		// Remove mozallowfullscreen attrs.
+		$content = preg_replace( '/ +mozallowfullscreen=["][^"]*?["]/i', '', $content );
+		$content = preg_replace( '/ +mozallowfullscreen=[\'][^\']*?[\']/i', '', $content );
+
 		// Remove font tags.
 		$content = preg_replace( '/<font[^>]+?>/i', '', $content );
 		$content = preg_replace( '/<\/font>/i', '', $content );
@@ -308,7 +312,7 @@ function cd_addon_amp_img( $content ) {
 
 		// Replace iframe tags to <amp-iframe>.
 		$pattern = '/<iframe/i';
-		$append  = '<amp-iframe layout="responsive"';
+		$append  = '<amp-iframe sandbox="allow-scripts allow-same-origin" layout="responsive"';
 		$content = preg_replace( $pattern, $append, $content );
 		$pattern = '/<\/iframe>/i';
 		$append  = '</amp-iframe>';
