@@ -35,12 +35,6 @@ gulp.task("stylus", function() {
 	return gulp
 		.src("inc/amp-style.styl")
 		.pipe(stylus())
-		.pipe(
-			autoprefixer({
-				browsers: ["> 1%", "not ie 11"],
-				cascade: false
-			})
-		)
 		.pipe(gulp.dest("inc/"));
 });
 
