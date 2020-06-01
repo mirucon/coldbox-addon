@@ -5,7 +5,7 @@ Tags: coldbox, coldbox-theme
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,11 @@ If you don't want the buttons to show at the end of content automatically, go an
 2. AMP page sample
 
 == Changelog ==
+
+= 1.2.2 =
+
+* fix: Better amp-iframe setting for default in AMP pages
+* fix: Delete incompatible attribute `mozallowfullscreen` in AMP pages
 
 = 1.2.1 =
 
