@@ -216,8 +216,13 @@ function cd_addon_amp_footer() {
 	<footer id="footer" class="footer">
 		<div class="container">
 			<div class="copyright">
-				<p>&copy;<?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php echo $link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<p><a href="https://coldbox.miruc.co/">Coldbox WordPress theme</a> by <a href="https://miruc.co/">Mirucon</a></p>
+				<p>
+					&copy;
+					<?php echo esc_html( date( 'Y' ) ); // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date ?>
+					<a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+					<?php echo $link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</p>
+				<p><a href="https://coldbox.miruc.co/">Coldbox WordPress theme</a> by <a href="https://miruc.co/">mirucon</a></p>
 			</div>
 			<?php cd_social_links(); ?>
 		</div>
