@@ -1,6 +1,4 @@
-sudo: false
 language: php
-dist: precise
 notifications:
   slack:
     rooms:
@@ -33,9 +31,9 @@ cache:
 
 matrix:
   include:
-    - php: 7.3
+    - php: 7.4
       env: WP_VERSION=latest
-    - php: 7.1
+    - php: 7.2
       env: WP_VERSION=latest
     - php: 7.0
       env: WP_VERSION=latest
