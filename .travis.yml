@@ -47,7 +47,7 @@ matrix:
       env: WP_TRAVISCI=phpcs
 
 before_script:
-- nvm install 6
+- nvm install 12
 - npm install
 - export PATH="$HOME/.composer/vendor/bin:$PATH"
 - |

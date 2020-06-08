@@ -6,12 +6,7 @@
   "author": "Toshihiro Kanai <i@miruc.co>",
   "devDependencies": {
     "autoprefixer": "^9.8.0",
-    "browser-sync": "2.26.7",
     "cssnano": "^4.1.10",
-    "gulp": "3.9.1",
-    "gulp-autoprefixer": "6.1.0",
-    "gulp-clean-css": "4.3.0",
-    "gulp-stylus": "2.7.0",
     "postcss-cli": "^7.1.1",
     "postcss-for": "^2.1.1",
     "postcss-nested": "^4.2.1",
