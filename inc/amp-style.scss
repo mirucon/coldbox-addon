@@ -977,7 +977,7 @@ p {
     border-bottom: 2px solid #ddd;
     transition: border 0.4s;
   }
-  a: hover > span;
+  a:hover > span,
   & > span {
     border-bottom: 2px solid #00619f;
   }
@@ -1377,12 +1377,13 @@ html body .screen-reader-text {
   overflow: hidden;
 }
 
-@for $i from 1 through 5 {
-  .gallery-columns-#{i} {
+// This is invalid for SCSS, though it is proper way for postcss-for.
+@for $i from 1 to 5 {
+  .gallery-columns-$i {
     display: flex;
     flex-flow: row wrap;
     .gallery-item {
-      width: "calc(100% / %s)" % $i;
+      width: calc(100% / $i);
       margin-bottom: 1em;
       padding: 0 0.1rem;
     }
