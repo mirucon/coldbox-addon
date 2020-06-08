@@ -15,17 +15,17 @@
     "postcss-cli": "^7.1.1",
     "postcss-for": "^2.1.1",
     "postcss-nested": "^4.2.1",
-    "postcss-simple-vars": "^5.0.2"
+    "postcss-simple-vars": "^5.0.2",
+    "prettier": "^2.0.5"
   },
   "resolutions": {
     "natives": "^1.1.6"
   },
   "scripts": {
-    "start": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylus": "gulp styl",
-    "sass": "postcss inc/amp-style.scss -o inc/amp-style.css",
-    "dist": "gulp copy"
+    "build": "postcss inc/amp-style.scss -o inc/amp-style.css",
+    "watch": "postcss inc/amp-style.scss -o inc/amp-style.css -w",
+    "dist": "mkdir -p dist/ && mkdir -p dist/inc && cp inc/*.php dist/inc/ && cp coldbox-addon.php dist/coldbox-addon.php && cp readme.txt dist/readme.txt"
   },
   "repository": {
     "type": "git",
@@ -39,8 +39,5 @@
   "browserslist": [
     "> 1%",
     "not ie 11"
-  ],
-  "dependencies": {
-    "prettier": "^2.0.5"
-  }
+  ]
 }

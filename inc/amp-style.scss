@@ -1377,7 +1377,7 @@ html body .screen-reader-text {
   overflow: hidden;
 }
 
-// This is invalid for SCSS, though it is proper way for postcss-for.
+/* This is invalid for SCSS, though it is proper way for `postcss-for`. */
 @for $i from 1 to 5 {
   .gallery-columns-$i {
     display: flex;
@@ -1392,7 +1392,7 @@ html body .screen-reader-text {
 .wp-caption img {
   margin: 0 auto;
   padding: 0;
-  border: 0;
+  border: 0px;
 }
 .gallery-caption {
   max-width: 100%;
