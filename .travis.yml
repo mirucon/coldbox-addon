@@ -9,6 +9,9 @@ notifications:
     on_success: never
     on_failure: change
 
+services:
+  - mysql
+
 env:
   global:
   - GIT_COMMITTER_NAME=travis-ci
