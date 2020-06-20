@@ -302,7 +302,8 @@ function cd_addon_amp_img( $content ) {
 
 		// Replace embedded tweets to <amp-twitter>.
 		// @codingStandardsIgnoreStart
-		$pattern = '/<blockquote class="twitter-tweet".*?>.+?<a href="https:\/\/twitter.com\/.*?\/status\/(.*?)">.+?<\/blockquote>.*?<script async src="\/\/platform.twitter.com\/widgets.js" charset="utf-8"><\/script>/is';
+		$pattern = '/<blockquote class="twitter-tweet".*?>.+?<a href="https:\/\/twitter.com\/.*?\/status\/(.*?)">.+?<\/blockquote>.*?' .
+				   '<script async src="https:\/\/platform\.twitter\.com\/widgets\.js" charset="utf-8"><\/script>/is';
 		$append  = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
 		$content = preg_replace( $pattern, $append, $content );
 		// @codingStandardsIgnoreEnd
