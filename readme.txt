@@ -2,10 +2,10 @@
 Contributors: mirucon
 Donate link: https://gumroad.com/l/coldbox-ads-extension
 Tags: coldbox, coldbox-theme
-Requires at least: 4.7
+Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,10 @@ If you don't want the buttons to show at the end of content automatically, go an
 2. AMP page sample
 
 == Changelog ==
+
+= 1.2.3 =
+
+* fix: Twitter embedding in AMP pages
 
 = 1.2.2 =
 
