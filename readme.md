@@ -1,4 +1,4 @@
-# Coldbox Addons v1.2.2
+# Coldbox Addons v1.2.3
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mirucon/coldbox-addon.svg)](https://greenkeeper.io/)
 
@@ -8,7 +8,7 @@
 **Requires PHP**: 5.6  
 **Requires at least:** 5.0  
 **Tested up to:** 5.4  
-**Stable tag:** 1.2.2  
+**Stable tag:** 1.2.3  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -51,6 +51,10 @@ You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them o
 If you don't want the buttons to show at the end of content automatically, go and uncheck "Use social buttons" option in the theme customizer. You can call the share buttons using the shortcode function in that case.
 
 ## Changelog
+
+1.2.3
+
+* fix: Twitter embedding in AMP pages
 
 1.2.2
 
