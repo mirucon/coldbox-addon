@@ -54,6 +54,10 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 == Changelog ==
 
+= 1.2.4 =
+
+* fix: PHP undefined index notice for specific permalink setting
+
 = 1.2.3 =
 
 * fix: Twitter embedding in AMP pages
