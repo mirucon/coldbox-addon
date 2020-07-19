@@ -561,10 +561,12 @@ add_filter( 'cd_get_avatar', 'cd_addon_amp_avatar' );
 function cd_addon_amp_meta() {
 	if ( ! cd_is_amp() && is_single() && ! is_single( cd_addon_amp_no_generate() ) ) {
 		$parsed_url = wp_parse_url( get_the_permalink() );
-		$separator  = null === $parsed_url['query'] ? '?' : '&';
-		$tag        = '<link rel="amphtml" href="' . esc_url( get_the_permalink() ) . $separator . 'amp=1">' . PHP_EOL;
+		$separator  = '?';
+		if ( key_exists( 'query', $parsed_url ) && $parsed_url['query'] ) {
+			$separator = '&';
+		}
+		$tag = '<link rel="amphtml" href="' . esc_url( get_the_permalink() ) . $separator . 'amp=1">' . PHP_EOL;
 		echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 	}
 }
 add_action( 'wp_head', 'cd_addon_amp_meta' );
