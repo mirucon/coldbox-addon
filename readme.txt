@@ -5,7 +5,7 @@ Tags: coldbox, coldbox-theme
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.2.3
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,10 @@ If you don't want the buttons to show at the end of content automatically, go an
 2. AMP page sample
 
 == Changelog ==
+
+= 1.2.5 =
+
+* fix: Do not include amphtml meta tag if AMP is disabled
 
 = 1.2.4 =
 
