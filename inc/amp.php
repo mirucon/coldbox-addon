@@ -559,7 +559,7 @@ add_filter( 'cd_get_avatar', 'cd_addon_amp_avatar' );
  * @since 1.0.0
  */
 function cd_addon_amp_meta() {
-	if ( ! cd_is_amp() && is_single() && ! is_single( cd_addon_amp_no_generate() ) ) {
+	if ( ! cd_is_amp() && is_single() && ! is_single( cd_addon_amp_no_generate() && cd_addon_use_amp_pages() ) ) {
 		$parsed_url = wp_parse_url( get_the_permalink() );
 		$separator  = '?';
 		if ( key_exists( 'query', $parsed_url ) && $parsed_url['query'] ) {
