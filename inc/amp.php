@@ -241,7 +241,7 @@ function cd_addon_amp_footer() {
  */
 function cd_addon_amp_img( $content ) {
 
-	if ( cd_is_amp() ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 
 		// Replace special character spaces to normal spaces.
 		$content = str_replace( '\xc2\xa0', ' ', $content );
@@ -342,7 +342,7 @@ add_filter( 'the_content', 'cd_addon_amp_img', 60 );
  * @since 1.0.0
  */
 function cd_addon_amp_post_content() {
-	if ( cd_is_amp() ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 		global $post;
 		setup_postdata( $post );
 		$post_content = $post->post_content;
@@ -360,7 +360,7 @@ function cd_addon_amp_post_content() {
  * @since 1.0.0
  */
 function cd_addon_amp_embedded_tweets() {
-	if ( cd_is_amp() ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
 		if ( strpos( $post_content, 'twitter-tweet' ) !== false ||
 		strpos( $post_content, '<amp-twitter' ) !== false ||
@@ -377,7 +377,7 @@ add_action( 'wp', 'cd_addon_amp_embedded_tweets', 12 );
  * @since 1.0.0
  */
 function cd_addon_amp_embedded_youtube() {
-	if ( cd_is_amp() ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
 		if ( preg_match( '<iframe.+?src="https:\/\/www.youtube.com\/embed\/(.+?)(\?feature=oembed)?".*?>', $post_content ) !== 0 ||
 		strpos( $post_content, '<amp-youtube' ) !== false ) {
@@ -393,7 +393,7 @@ add_action( 'wp', 'cd_addon_amp_embedded_youtube', 12 );
  * @since 1.0.0
  */
 function cd_addon_amp_iframe() {
-	if ( cd_is_amp() ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
 		if ( strpos( $post_content, '<iframe' ) !== false ||
 		strpos( $post_content, '<amp-iframe' ) !== false ||
@@ -411,7 +411,7 @@ add_action( 'wp', 'cd_addon_amp_iframe', 12 );
  * @since 1.0.0
  */
 function cd_addon_amp_video() {
-	if ( cd_is_amp() ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 		$post_content = cd_addon_amp_post_content();
 		if (
 			strpos( $post_content, '<video' ) !== false ||
@@ -528,7 +528,7 @@ if ( function_exists( 'cd_is_amp' ) ) {
 	 * @return bool
 	 */
 	function cd_addon_amp_remove_sidebar( $is_active_sidebar ) {
-		if ( cd_is_amp() ) {
+		if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
 			return false;
 		}
 		return $is_active_sidebar;
@@ -559,6 +559,10 @@ add_filter( 'cd_get_avatar', 'cd_addon_amp_avatar' );
  * @since 1.0.0
  */
 function cd_addon_amp_meta() {
+	if ( ! function_exists( 'cd_is_amp' ) ) {
+		return;
+	}
+
 	if ( ! cd_is_amp() && is_single() && ! is_single( cd_addon_amp_no_generate() && cd_addon_use_amp_pages() ) ) {
 		$parsed_url = wp_parse_url( get_the_permalink() );
 		$separator  = '?';
@@ -641,6 +645,10 @@ add_action( 'cd_addon_amp_body_action', 'cd_addon_amp_analytics' );
  * @return array.
  */
 function cd_addon_amp_allow_amp_tags( $allowedposttags ) {
+	if ( ! function_exists( 'cd_is_amp' ) ) {
+		return $allowedposttags;
+	}
+
 	$amp_img         = array(
 		'amp-img' => array(
 			'class'  => true,
