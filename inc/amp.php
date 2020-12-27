@@ -588,6 +588,22 @@ function cd_addon_amp_replace_logo_tag( $logo ) {
 }
 add_filter( 'cd_custom_logo', 'cd_addon_amp_replace_logo_tag' );
 
+
+/**
+ * Remove loading="lazy" from AMP pages.
+ *
+ * @since 1.2.6
+ * @param string $default Default value.
+ * @return string
+ */
+function cd_addon_disable_lazy( $default ) {
+	if ( function_exists( 'cd_is_amp' ) && cd_is_amp() ) {
+		return false;
+	}
+	return $default;
+}
+add_filter( 'wp_lazy_loading_enabled', 'cd_addon_disable_lazy' );
+
 /**
  * Adds Google Analytics for AMP pages.
  *
