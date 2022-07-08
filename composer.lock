@@ -507,12 +507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "117043c3dc8afcae8e2cb9aeaba09fb03ad8e13b"
+                "reference": "754c19e25f2a479d975a246677ea5a8551c6956b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/117043c3dc8afcae8e2cb9aeaba09fb03ad8e13b",
-                "reference": "117043c3dc8afcae8e2cb9aeaba09fb03ad8e13b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/754c19e25f2a479d975a246677ea5a8551c6956b",
+                "reference": "754c19e25f2a479d975a246677ea5a8551c6956b",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +572,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-09T06:28:26+00:00"
+            "time": "2022-07-08T05:55:54+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1803,12 +1803,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619"
+                "reference": "f3a83428055642b09d14ec216ceae7107817c117"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1359e176e9307e906dc3d890bcc9603ff6d90619",
-                "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f3a83428055642b09d14ec216ceae7107817c117",
+                "reference": "f3a83428055642b09d14ec216ceae7107817c117",
                 "shasum": ""
             },
             "require": {
@@ -1846,7 +1846,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2022-06-18T07:21:10+00:00"
+            "time": "2022-06-27T22:52:37+00:00"
         },
         {
             "name": "theseer/tokenizer",
