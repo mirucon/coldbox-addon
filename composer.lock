@@ -345,12 +345,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "9455bde915e322a823d464a2c41e5c0de03512a6"
+                "reference": "3032f88c16e0f659826caaba86eb5cceab4c7726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/9455bde915e322a823d464a2c41e5c0de03512a6",
-                "reference": "9455bde915e322a823d464a2c41e5c0de03512a6",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/3032f88c16e0f659826caaba86eb5cceab4c7726",
+                "reference": "3032f88c16e0f659826caaba86eb5cceab4c7726",
                 "shasum": ""
             },
             "require": {
@@ -390,7 +390,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2022-04-02T20:16:01+00:00"
+            "time": "2022-07-22T14:19:31+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -507,12 +507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "754c19e25f2a479d975a246677ea5a8551c6956b"
+                "reference": "f6267f4aaab6cc1c5457ea7be2984828aa93daeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/754c19e25f2a479d975a246677ea5a8551c6956b",
-                "reference": "754c19e25f2a479d975a246677ea5a8551c6956b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f6267f4aaab6cc1c5457ea7be2984828aa93daeb",
+                "reference": "f6267f4aaab6cc1c5457ea7be2984828aa93daeb",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +572,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-07-08T05:55:54+00:00"
+            "time": "2022-07-16T05:44:48+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
