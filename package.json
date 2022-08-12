@@ -4,9 +4,9 @@
   "version": "1.2.5",
   "author": "Toshihiro Kanai <i@miruc.co>",
   "devDependencies": {
-    "autoprefixer": "10.4.7",
-    "cssnano": "5.1.12",
-    "postcss": "8.4.14",
+    "autoprefixer": "10.4.8",
+    "cssnano": "5.1.13",
+    "postcss": "8.4.16",
     "postcss-cli": "10.0.0",
     "postcss-for": "2.1.1",
     "postcss-nested": "5.0.6",
