@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "5dafc638b7c15a7f1472d705320924410adf6b64"
+                "reference": "74b7413e8d9788df77e296adabd7c1f6ca801a99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/5dafc638b7c15a7f1472d705320924410adf6b64",
-                "reference": "5dafc638b7c15a7f1472d705320924410adf6b64",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/74b7413e8d9788df77e296adabd7c1f6ca801a99",
+                "reference": "74b7413e8d9788df77e296adabd7c1f6ca801a99",
                 "shasum": ""
             },
             "require": {
@@ -361,7 +361,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-19T07:33:28+00:00"
+            "time": "2022-10-21T12:10:51+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1592,12 +1592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "d7864cb3d5446565348de80441643bd7c4056215"
+                "reference": "cd5acaa651df870e8a3207926f236400361219e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7864cb3d5446565348de80441643bd7c4056215",
-                "reference": "d7864cb3d5446565348de80441643bd7c4056215",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/cd5acaa651df870e8a3207926f236400361219e0",
+                "reference": "cd5acaa651df870e8a3207926f236400361219e0",
                 "shasum": ""
             },
             "require": {
@@ -1636,7 +1636,7 @@
                 "standards",
                 "static analysis"
             ],
-            "time": "2022-09-26T02:14:32+00:00"
+            "time": "2022-10-21T05:57:32+00:00"
         },
         {
             "name": "theseer/tokenizer",
