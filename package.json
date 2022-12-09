@@ -7,11 +7,11 @@
     "autoprefixer": "10.4.13",
     "cssnano": "5.1.14",
     "postcss": "8.4.19",
-    "postcss-cli": "10.0.0",
+    "postcss-cli": "10.1.0",
     "postcss-for": "2.1.1",
     "postcss-nested": "5.0.6",
     "postcss-simple-vars": "6.0.3",
-    "prettier": "2.8.0"
+    "prettier": "2.8.1"
   },
   "resolutions": {
     "natives": "^1.1.6"
