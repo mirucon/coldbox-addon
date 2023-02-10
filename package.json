@@ -10,7 +10,7 @@
     "postcss-cli": "10.1.0",
     "postcss-for": "2.1.1",
     "postcss-nested": "5.0.6",
-    "postcss-simple-vars": "6.0.3",
+    "postcss-simple-vars": "7.0.1",
     "prettier": "2.8.4"
   },
   "resolutions": {
