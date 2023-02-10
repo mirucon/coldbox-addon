@@ -11,7 +11,7 @@
     "postcss-for": "2.1.1",
     "postcss-nested": "5.0.6",
     "postcss-simple-vars": "6.0.3",
-    "prettier": "2.8.3"
+    "prettier": "2.8.4"
   },
   "resolutions": {
     "natives": "^1.1.6"
