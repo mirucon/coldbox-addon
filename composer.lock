@@ -296,19 +296,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "670b5b2efa46eb58bb101661d478e6d1fc3d736e"
+                "reference": "6ab30987855d16b1134b545925b8c6a8460c3b7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/670b5b2efa46eb58bb101661d478e6d1fc3d736e",
-                "reference": "670b5b2efa46eb58bb101661d478e6d1fc3d736e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6ab30987855d16b1134b545925b8c6a8460c3b7d",
+                "reference": "6ab30987855d16b1134b545925b8c6a8460c3b7d",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^4.14",
+                "nikic/php-parser": "^4.15",
                 "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
@@ -361,7 +361,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-09T14:11:18+00:00"
+            "time": "2023-02-24T17:09:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1592,12 +1592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "add95a74551c3ba8fc99ef7651ad05f553b3fbbf"
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/add95a74551c3ba8fc99ef7651ad05f553b3fbbf",
-                "reference": "add95a74551c3ba8fc99ef7651ad05f553b3fbbf",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879",
                 "shasum": ""
             },
             "require": {
@@ -1636,7 +1636,7 @@
                 "standards",
                 "static analysis"
             ],
-            "time": "2022-12-22T21:46:41+00:00"
+            "time": "2023-02-22T23:07:41+00:00"
         },
         {
             "name": "theseer/tokenizer",
