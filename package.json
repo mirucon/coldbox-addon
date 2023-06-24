@@ -4,14 +4,14 @@
   "version": "1.2.5",
   "author": "Toshihiro Kanai <i@miruc.co>",
   "devDependencies": {
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "10.4.14",
     "cssnano": "6.0.1",
-    "postcss": "8.4.21",
+    "postcss": "8.4.24",
     "postcss-cli": "10.1.0",
     "postcss-for": "2.1.1",
     "postcss-nested": "5.0.6",
     "postcss-simple-vars": "7.0.1",
-    "prettier": "2.8.4"
+    "prettier": "2.8.8"
   },
   "resolutions": {
     "natives": "^1.1.6"
