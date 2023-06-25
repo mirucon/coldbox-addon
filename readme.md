@@ -1,4 +1,4 @@
-# Coldbox Addons v1.2.4
+# Coldbox Addons v1.2.5
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mirucon/coldbox-addon.svg)](https://greenkeeper.io/)
 
@@ -7,7 +7,7 @@
 **Tags:** coldbox, coldbox-theme  
 **Requires PHP**: 5.6  
 **Requires at least:** 5.0  
-**Tested up to:** 5.4  
+**Tested up to:** 6.2  
 **Stable tag:** 1.2.5  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
