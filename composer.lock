@@ -135,12 +135,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "1d0748ad35201d483816634dd4bfe55a6f26d857"
+                "reference": "19526a33fb561ef417e822e85f08a00db4059c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1d0748ad35201d483816634dd4bfe55a6f26d857",
-                "reference": "1d0748ad35201d483816634dd4bfe55a6f26d857",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/19526a33fb561ef417e822e85f08a00db4059c17",
+                "reference": "19526a33fb561ef417e822e85f08a00db4059c17",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +179,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2023-06-24T15:59:08+00:00"
+            "time": "2023-06-25T14:52:30+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -297,12 +297,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "8f263c84015903a032ed6b32a2734bfb5770d6cd"
+                "reference": "bf35465b14a46f592a314e77c2aba4ded0c04138"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/8f263c84015903a032ed6b32a2734bfb5770d6cd",
-                "reference": "8f263c84015903a032ed6b32a2734bfb5770d6cd",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/bf35465b14a46f592a314e77c2aba4ded0c04138",
+                "reference": "bf35465b14a46f592a314e77c2aba4ded0c04138",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +362,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-24T12:54:36+00:00"
+            "time": "2023-07-06T09:16:17+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
