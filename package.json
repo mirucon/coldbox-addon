@@ -9,7 +9,7 @@
     "postcss": "8.4.31",
     "postcss-cli": "10.1.0",
     "postcss-for": "2.1.1",
-    "postcss-nested": "6.0.1",
+    "postcss-nested": "7.0.2",
     "postcss-simple-vars": "7.0.1",
     "prettier": "3.0.1"
   },
