@@ -34,14 +34,14 @@ add_action( 'wp_head', 'cd_addon_google_analytics' );
  */
 function cd_addon_google_site_verification() {
 	$verification_code = cd_addon_verification_code();
-	if ( empty( $tracking_code ) ) {
+	if ( empty( $verification_code ) ) {
 		return;
 	}
 	$verify = '<meta name="google-site-verification" content="' . esc_attr( $verification_code ) . '" />' . PHP_EOL;
 	echo apply_filters( 'cd_addon_google_site_verification', $verify ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	return apply_filters( 'cd_addon_google_site_verification', $verify );
 }
-add_action( 'wp_head', 'cd_addon_google_analytics' );
+add_action( 'wp_head', 'cd_addon_google_site_verification' );
 
 /**
  * Remove WP default prev/next tags.

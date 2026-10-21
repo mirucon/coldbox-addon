@@ -1,9 +1,7 @@
 # Coldbox Addons v1.2.5
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/mirucon/coldbox-addon.svg)](https://greenkeeper.io/)
 
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
-**Donate link:** https://gumroad.com/l/coldbox-ads-extension  
 **Tags:** coldbox, coldbox-theme  
 **Requires PHP**: 5.6  
 **Requires at least:** 5.0  
@@ -104,7 +102,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 1.1.6
 
-* Moved AMP AdSense features to the Coldbox Ads Extension plugin: https://coldbox.miruc.co/addons/google-adsense-extension/
+* Moved AMP AdSense features to the Coldbox Ads Extension plugin: https://coldbox.miruc.co/google-adsense-extension/
 
 1.1.5
 
@@ -147,3 +145,15 @@ If you don't want the buttons to show at the end of content automatically, go an
 1.0
 
 * Initial Release
+
+## Development checks
+
+CI builds a candidate package and exercises it in disposable WordPress instances.
+See [AGENTS.md](AGENTS.md) for commands and coverage. CI does not publish releases
+or update the distribution branch. Changes on this branch are unreleased.
+
+The legacy CSS build toolchain still has audit findings (checked 2026-10-21),
+including the old PostCSS used internally by `postcss-for` and file-matching
+dependencies. These Node tools are not shipped in the WordPress plugin. CI builds
+repository inputs without release credentials; this maintenance does not claim
+a clean dependency audit or a complete security review.
