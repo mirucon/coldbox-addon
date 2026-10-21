@@ -10,3 +10,9 @@ node_modules/
 /vendor/
 /.idea/
 /dist/
+
+/.test-runtime/
+/test-results/
+/playwright-report/
+/.phpunit.result.cache
+/languages/*.pot

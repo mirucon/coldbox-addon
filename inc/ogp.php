@@ -17,7 +17,7 @@ function cd_addon_meta_ogp() {
 	if ( is_singular() ) {
 		global $post;
 		setup_postdata( $post );
-		$excerpt     = has_excerpt( $post ) ? get_the_excerpt( $post ) : get_the_content( $post );
+		$excerpt     = has_excerpt( $post ) ? get_the_excerpt( $post ) : get_the_content( null, false, $post );
 		$description = wp_trim_words( $excerpt, 95, '...' );
 		wp_reset_postdata();
 	} elseif ( is_front_page() ) {
@@ -115,7 +115,7 @@ add_action( 'wp_head', 'cd_addon_meta_ogp' );
  */
 function cd_addon_ogp_html( $output ) {
 	if ( ! cd_use_ogp() ) {
-		return;
+		return $output;
 	}
 	$output .= ' prefix="og: http://ogp.me/ns#"';
 	return $output;

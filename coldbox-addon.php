@@ -7,6 +7,8 @@
  * Author URI:      https://miruc.co/
  * Text Domain:     coldbox-addon
  * Domain Path:     /languages
+ * Requires at least: 7.0
+ * Requires PHP:    7.4
  * Version:         1.2.5
  *
  * @package         Coldbox_Addon
@@ -23,7 +25,7 @@ function cd_addon_is_active_addon( $is_active ) {
 	$is_active = true;
 	return $is_active;
 }
-add_filter( 'cd_is_active_addon', 'cd_is_active_addon', 1 );
+add_filter( 'cd_is_active_addon', 'cd_addon_is_active_addon', 1 );
 
 /**
  * Register the language pack.
@@ -43,9 +45,6 @@ require_once 'inc/customizer.php';
 
 // Load the AMP part.
 require_once 'inc/amp.php';
-
-// Load the amp ads part.
-require_once 'inc/amp-ads.php';
 
 // Load ogp part.
 require_once 'inc/ogp.php';

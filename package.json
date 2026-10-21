@@ -3,24 +3,11 @@
   "description": "The powered addon for the Coldbox theme.",
   "version": "1.2.5",
   "author": "Toshihiro Kanai <i@miruc.co>",
-  "devDependencies": {
-    "autoprefixer": "10.4.14",
-    "cssnano": "6.0.1",
-    "postcss": "8.5.31",
-    "postcss-cli": "10.1.0",
-    "postcss-for": "2.1.1",
-    "postcss-nested": "6.0.1",
-    "postcss-simple-vars": "7.0.1",
-    "prettier": "3.0.1"
-  },
-  "resolutions": {
-    "natives": "^1.1.6"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "npm test --prefix tests",
-    "build": "postcss inc/amp-style.scss -o inc/amp-style.css",
-    "watch": "postcss inc/amp-style.scss -o inc/amp-style.css -w",
-    "dist": "bash bin/package.sh"
+    "build": "node bin/package.mjs",
+    "dist": "node bin/package.mjs",
+    "pot": "wp i18n make-pot . languages/coldbox-addon.pot --exclude=node_modules,vendor,dist,tests --skip-js"
   },
   "repository": {
     "type": "git",
@@ -30,9 +17,5 @@
   "bugs": {
     "url": "https://github.com/mirucon/coldbox-addon/issues"
   },
-  "homepage": "https://coldbox.miruc.co/",
-  "browserslist": [
-    "> 1%",
-    "not ie 11"
-  ]
+  "homepage": "https://coldbox.miruc.co/"
 }

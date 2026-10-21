@@ -1,31 +1,20 @@
 {
   "name": "mirucon/coldbox-addon",
-  "description": "The powered addon for the Coldbox theme.",
-  "type": "wordpress-plugin",
+  "description": "Coldbox WordPress addon",
+  "license": "GPL-2.0-or-later",
   "require": {
-    "php": "> 5.6.0"
+    "php": ">=7.4"
   },
   "require-dev": {
-    "phpunit/phpunit": "9.6.10",
-    "wp-coding-standards/wpcs": "dev-master"
+    "phpunit/phpunit": "^9.6",
+    "yoast/phpunit-polyfills": "^4.0"
   },
-  "license": "GPL-2.0+",
-  "authors": [
-    {
-      "name": "mirucon",
-      "email": "i@miruc.co"
-    }
-  ],
-  "minimum-stability": "dev",
   "scripts": {
-    "lint": [
-      "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
-      "./vendor/bin/phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')"
-    ],
-    "fix": [
-      "./vendor/bin/phpcbf --config-set installed_paths vendor/wp-coding-standards/wpcs",
-      "./vendor/bin/phpcbf --standard=phpcs.ruleset.xml $(find . -name '*.php')"
-    ],
-    "test": "npm test --prefix tests"
+    "test": "phpunit"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4.33"
+    }
   }
 }

@@ -3,9 +3,9 @@
 
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Tags:** coldbox, coldbox-theme  
-**Requires PHP**: 5.6  
-**Requires at least:** 5.0  
-**Tested up to:** 6.2  
+**Requires PHP**: 7.4
+**Requires at least:** WordPress 7.0
+**Tested up to:** WordPress 7.1
 **Stable tag:** 1.2.5  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -14,20 +14,13 @@ Now available from the WordPress plugin directory! [https://wordpress.org/plugin
 
 ## Description
 
-The powered addon for the Coldbox theme. It brings you AMP HTML and social features which help increasing your website's engagements. It is designed just for the Coldbox theme. Lightweight and safety, works perfectly with the theme.
+Optional additions for the Coldbox theme.
 
 ### Features
 
-* **AMP Pages** - The fastest HTML format - AMP. The plugin provides the easiest way to use AMP pages without any setting or coding. You can still use Google Analytics, Adsense etc. in the AMP pages.
-
-* **Share Buttons** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
-
-  * *[SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to **show share counts.***
-
-* **Open Graph tags** - It's the most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
-
-* **Other meta tags** - Not only open graph tags, but it supports even more meta features, such as Google Analytics, and other SEO-related tags too!
-
+* Social share links for Twitter, Facebook, LINE, Hatena Bookmark and Feedly.
+* Open Graph metadata and Google site verification.
+* An opt-in setting to stop loading jQuery.
 
 ## Installation Instructions
 
@@ -37,9 +30,10 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
 
 ## Frequently Asked Questions
 
-### How can I access to AMP pages?
+### What happens to old AMP links?
 
-You may access AMP page by adding "?amp=1" at the end of your articles URL. When visitors use Google search on mobile, they will automatically access to your AMP pages.
+Old article links containing `?amp=1` redirect to the ordinary page. AMP rendering,
+Universal Analytics, Pocket and share-count integration have been retired.
 
 ### Where are the share buttons shown?
 
@@ -146,14 +140,6 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 * Initial Release
 
-## Development checks
+## Maintenance
 
-CI builds a candidate package and exercises it in disposable WordPress instances.
-See [AGENTS.md](AGENTS.md) for commands and coverage. CI does not publish releases
-or update the distribution branch. Changes on this branch are unreleased.
-
-The legacy CSS build toolchain still has audit findings (checked 2026-10-21),
-including the old PostCSS used internally by `postcss-for` and file-matching
-dependencies. These Node tools are not shipped in the WordPress plugin. CI builds
-repository inputs without release credentials; this maintenance does not claim
-a clean dependency audit or a complete security review.
+See [MAINTENANCE.md](MAINTENANCE.md) for current scope, build, tests and publication boundaries.
