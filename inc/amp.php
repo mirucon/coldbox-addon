@@ -32,9 +32,16 @@ if ( ! function_exists( 'cd_retired_amp_url' ) ) {
 // Prevent discovery links from a still-installed, older Add-on release.
 remove_action( 'wp_head', 'cd_addon_amp_meta' );
 
-// The theme and the existing Ads extension still call this helper.
-if ( ! function_exists( 'cd_is_amp' ) ) {
-	function cd_is_amp() {
-		return false;
+// Old themes still apply this filter. Retiring AMP must also work addon-first.
+add_filter( 'cd_is_amp', '__return_false', PHP_INT_MAX );
+
+// Keep the original timing: child themes may declare the helper before the
+// parent theme loads. Define a fallback only after the theme has had that chance.
+function cd_addon_is_amp_force() {
+	if ( ! function_exists( 'cd_is_amp' ) ) {
+		function cd_is_amp() {
+			return false;
+		}
 	}
 }
+add_action( 'wp', 'cd_addon_is_amp_force', 1 );
