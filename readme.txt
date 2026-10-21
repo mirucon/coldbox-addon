@@ -1,6 +1,5 @@
 === Coldbox Addons ===
 Contributors: mirucon
-Donate link: https://gumroad.com/l/coldbox-ads-extension
 Tags: coldbox, coldbox-theme
 Requires at least: 5.0
 Tested up to: 6.2
@@ -106,7 +105,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.1.6 =
 
-* Moved AMP AdSense features to the Coldbox Ads Extension plugin: https://coldbox.miruc.co/addons/google-adsense-extension/
+* Moved AMP AdSense features to the Coldbox Ads Extension plugin: https://coldbox.miruc.co/google-adsense-extension/
 
 = 1.1.5 =
 

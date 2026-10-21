@@ -6,7 +6,7 @@
   "devDependencies": {
     "autoprefixer": "10.4.14",
     "cssnano": "6.0.1",
-    "postcss": "8.4.31",
+    "postcss": "8.5.31",
     "postcss-cli": "10.1.0",
     "postcss-for": "2.1.1",
     "postcss-nested": "6.0.1",
@@ -17,10 +17,10 @@
     "natives": "^1.1.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm test --prefix tests",
     "build": "postcss inc/amp-style.scss -o inc/amp-style.css",
     "watch": "postcss inc/amp-style.scss -o inc/amp-style.css -w",
-    "dist": "mkdir -p dist/ && mkdir -p dist/inc && cp inc/*.php dist/inc/ && cp coldbox-addon.php dist/coldbox-addon.php && cp readme.txt dist/readme.txt"
+    "dist": "bash bin/package.sh"
   },
   "repository": {
     "type": "git",
