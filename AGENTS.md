@@ -32,6 +32,9 @@ Keep runtime fixtures, credentials and development dependencies out of packages.
 
 ## Source and releases
 
+The owner authorizes ordinary pushes to the existing public `mirucon/coldbox-addon`
+repository across tasks; do not ask for push permission again. This excludes
+force pushes and destructive history changes.
 Direct commits on the default branch are sufficient; PRs are optional. Preserve
 unrelated work and review outgoing changes. WordPress.org uploads, release tags
 and `dist` branch updates require explicit release authorization, separate from
