@@ -1,47 +1,41 @@
-# Maintenance scope
+# Working on Coldbox Add-on
 
-Keep Coldbox useful for existing occasional users with little owner involvement.
-This is bounded upkeep, not a growth effort or a commitment to preserve every
-legacy feature. Preserve unrelated work and inspect evidence before editing.
+This optional plugin extends the [Coldbox theme](https://github.com/mirucon/coldbox).
+Keep it useful for existing sites with little owner involvement. Add machinery
+only when it solves a concrete maintenance or user problem.
 
-- AMP rendering, Universal Analytics, Pocket, share-count integration and TGMPA
-  are retired. Keep old `?amp=1` article URLs working via ordinary-page redirects.
-- Keep normal Ads extension hooks, saved settings and opt-in jQuery deregistration.
-  No Ads promotion, support solicitations or promises of ongoing maintenance.
-- Preserve PHP function names, HTML/CSS/JS classes and script ordering where a
-  change has little practical benefit; these are potential customization points.
-- Current verification targets: WP 7.0/7.1 patches and PHP 7.4–8.5, with CI on
-  7.4/8.3/8.5. Browsers: latest two Chrome, Edge, Firefox and Safari releases,
-  including iOS Safari. IE and Opera Mini are outside scope. This is not a
-  promise to add versions automatically without another maintenance decision.
-- Build tools may change. Use plain CSS and the small esbuild pipeline in the
-  theme; the addon has no production build dependencies. Do not add generic
-  frameworks, dashboards, scheduled work or scanners without a specific benefit.
-- Keep existing gettext msgids/domains/context unchanged when meaning is unchanged.
-  Remove obsolete paragraphs/controls as a whole. Accept limited fallback English
-  for necessary new meaning; never reuse a translation with the wrong meaning.
+## Editing
 
-## Validation and ownership
+- `coldbox-addon.php` loads the plugin. `inc/` owns share buttons, metadata,
+  Customizer controls and theme integration. `bin/package.mjs` copies release
+  files into `dist/`; edit source files, not the package output.
+- WordPress loads plugins before the active child and parent themes. Check load
+  order when using or defining theme helpers. Verify activation/deactivation and
+  behavior with the theme absent when changing integration.
+- Assess compatibility by user impact. Preserve saved setting keys, public hooks
+  and functions when there is no useful reason to change them. Removing an old
+  feature can be appropriate; account for existing content and URLs rather than
+  maintaining every historical implementation.
+- Preserve gettext msgids, domains and contexts when meaning is unchanged.
+  New meaning needs accurate wording and an explicit translation consideration.
 
-See MAINTENANCE.md for repeatable commands. `composer test` runs native PHP with
-WordPress's PHPUnit framework and MySQL/MariaDB. Browser tests run in Playwright.
-Do not replace PHP tests with an npm command or source-text assertions. Test
-observable behavior at the relevant boundary; avoid exhaustive feature matrices.
-Test fixtures, dependencies, credentials and runtime files must not ship in dist.
+## Verification
 
-Routine source maintenance is authorized. Direct commits on the default branch
-are sufficient; PRs are optional. Preserve recoverable history and unrelated work.
-Do not assign/request owner review as a notification. If an AI maintenance PR is
-touched, remove its individual subscription at the end; preserve human subscriptions.
+Use [MAINTENANCE.md](MAINTENANCE.md) for setup and supported targets.
+`node bin/package.mjs` builds the installable plugin. `composer test` runs native
+PHP tests against WordPress and a real database. Shared Playwright checks live
+in the theme repository; test the two built packages together for integration
+changes. For settings, verify save/reload and the resulting frontend behavior.
+Complete available checks and repair findings without handing local environment
+setup to the owner. Add focused regression tests for meaningful failure modes.
+Keep runtime fixtures, credentials and development dependencies out of packages.
 
-## Publication and deferred translation work
+## Source and releases
 
-Do not publish to WordPress.org, update dist branches, create releases or deploy
-websites without explicit approval. CI creates temporary candidate artifacts only.
-Do not bump release versions just to signal maintenance. Existing release metadata
-does not mean this source has been published.
+Direct commits on the default branch are sufficient; PRs are optional. Preserve
+unrelated work and review outgoing changes. WordPress.org uploads, release tags
+and `dist` branch updates require explicit release authorization, separate from
+source maintenance.
 
-After a separately approved publication, the owner wants the agent to revise the
-currently supported translations and submit them on WordPress.org. That submission
-is explicitly outside this cleanup. Verify available locales at that time; preserve
-unchanged translation keys now and record the extraction comparison.
+Keep reusable agent guidance here, operational commands in MAINTENANCE.md, and
+dated investigations and verification evidence in `docs/history/`.
