@@ -1,7 +1,7 @@
 {
   "name": "coldbox-addon",
   "description": "The powered addon for the Coldbox theme.",
-  "version": "1.2.5",
+  "version": "1.3.0",
   "author": "Toshihiro Kanai <i@miruc.co>",
   "devDependencies": {},
   "scripts": {

@@ -4,7 +4,7 @@ Tags: coldbox, coldbox-theme
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.2.5
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,14 @@ If you don't want the buttons to show at the end of content automatically, go an
 1. Share Buttons sample
 
 == Changelog ==
+
+= 1.3.0 =
+
+* Requires WordPress 7.0 or later and PHP 7.4 or later.
+* Removed AMP rendering, Universal Analytics, Pocket and share-count integration. Existing Coldbox ?amp=1 article links redirect to the ordinary page.
+* Preserved saved settings, normal Ads extension hooks, social share links, site verification and the opt-in jQuery setting.
+* Fixed Open Graph escaping and content handling, shortcode output placement and theme/child-theme integration.
+* Removed obsolete recommendations and general support solicitations.
 
 = 1.2.5 =
 
@@ -149,3 +157,9 @@ If you don't want the buttons to show at the end of content automatically, go an
 = 1.0 =
 
 * Initial Release
+
+== Upgrade Notice ==
+
+= 1.3.0 =
+
+Requires WordPress 7.0+ and PHP 7.4+. AMP is retired; old ?amp=1 links redirect to ordinary pages. Saved settings are retained. Universal Analytics, Pocket and share counts are also removed.

@@ -1,4 +1,4 @@
-# Coldbox Addons v1.2.5
+# Coldbox Addons v1.3.0
 
 
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
@@ -6,7 +6,7 @@
 **Requires PHP**: 7.4
 **Requires at least:** WordPress 7.0
 **Tested up to:** WordPress 7.1
-**Stable tag:** 1.2.5  
+**Stable tag:** 1.3.0\
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -43,6 +43,14 @@ You can also use `<?php cd_addon_sns_buttons_list(); ?>` function to show them o
 If you don't want the buttons to show at the end of content automatically, go and uncheck "Use social buttons" option in the theme customizer. You can call the share buttons using the shortcode function in that case.
 
 ## Changelog
+
+### 1.3.0
+
+* Requires WordPress 7.0 or later and PHP 7.4 or later.
+* Removed AMP rendering, Universal Analytics, Pocket and share-count integration. Existing Coldbox ?amp=1 article links redirect to the ordinary page.
+* Preserved saved settings, normal Ads extension hooks, social share links, site verification and the opt-in jQuery setting.
+* Fixed Open Graph escaping and content handling, shortcode output placement and theme/child-theme integration.
+* Removed obsolete recommendations and general support solicitations.
 
 1.2.5
 

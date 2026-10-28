@@ -9,7 +9,7 @@
  * Domain Path:     /languages
  * Requires at least: 7.0
  * Requires PHP:    7.4
- * Version:         1.2.5
+ * Version:         1.3.0
  *
  * @package         Coldbox_Addon
  */
