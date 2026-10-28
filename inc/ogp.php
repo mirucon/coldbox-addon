@@ -177,7 +177,6 @@ function cd_addon_meta_ogp_customizer( $wp_customize ) {
 			'use_ogp',
 			array(
 				'label'       => __( 'Output Open Graph tags', 'coldbox-addon' ),
-				'description' => __( 'Whether or not use Open Graph for normal pages. They are always active for AMP pages.', 'coldbox-addon' ),
 				'section'     => 'meta_ogp',
 				'type'        => 'checkbox',
 			)
