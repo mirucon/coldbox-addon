@@ -1,7 +1,7 @@
 === Coldbox Addons ===
 Contributors: mirucon
 Tags: coldbox, coldbox-theme
-Requires at least: 7.0
+Requires at least: 5.2
 Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.3.0
@@ -50,7 +50,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.3.0 =
 
-* Plugin now requires WordPress 7.0 and PHP 7.4 or higher
+* Plugin now requires WordPress 5.2 and PHP 7.4 or higher
 * Removed AMP, Universal Analytics, Pocket and share counts. AMP links now open normal pages
 * fix: Share buttons appear outside the shortcode position
 * fix: Google site verification tag is not output
@@ -162,4 +162,4 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.3.0 =
 
-Requires WordPress 7.0+ and PHP 7.4+. AMP, Universal Analytics, Pocket and share counts have been removed. AMP links now open normal pages.
+Requires WordPress 5.2+ and PHP 7.4+. AMP, Universal Analytics, Pocket and share counts have been removed. AMP links now open normal pages.

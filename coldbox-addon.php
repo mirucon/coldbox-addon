@@ -7,7 +7,7 @@
  * Author URI:      https://miruc.co/
  * Text Domain:     coldbox-addon
  * Domain Path:     /languages
- * Requires at least: 7.0
+ * Requires at least: 5.2
  * Requires PHP:    7.4
  * Version:         1.3.0
  *

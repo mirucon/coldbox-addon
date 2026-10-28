@@ -4,7 +4,7 @@
 **Contributors:** [@mirucon](https://profiles.wordpress.org/mirucon/)    
 **Tags:** coldbox, coldbox-theme  
 **Requires PHP**: 7.4
-**Requires at least:** WordPress 7.0
+**Requires at least:** WordPress 5.2
 **Tested up to:** WordPress 7.1
 **Stable tag:** 1.3.0\
 **License:** GPLv2 or later  
@@ -47,7 +47,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 1.3.0
 
-* Plugin now requires WordPress 7.0 and PHP 7.4 or higher
+* Plugin now requires WordPress 5.2 and PHP 7.4 or higher
 * Removed AMP, Universal Analytics, Pocket and share counts. AMP links now open normal pages
 * fix: Share buttons appear outside the shortcode position
 * fix: Google site verification tag is not output
