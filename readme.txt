@@ -50,11 +50,11 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.3.0 =
 
-* Requires WordPress 7.0 or later and PHP 7.4 or later.
-* Removed AMP rendering, Universal Analytics, Pocket and share-count integration. Existing Coldbox ?amp=1 article links redirect to the ordinary page.
-* Preserved saved settings, normal Ads extension hooks, social share links, site verification and the opt-in jQuery setting.
-* Fixed Open Graph descriptions, HTML language attributes when Open Graph is disabled, shortcode output placement and theme/child-theme integration.
-* Removed obsolete recommendations and general support solicitations.
+* Plugin now requires WordPress 7.0 and PHP 7.4 or higher
+* Removed AMP, Universal Analytics, Pocket and share counts. AMP links now open normal pages
+* fix: Share buttons appear outside the shortcode position
+* fix: Google site verification tag is not output
+* And some small bug fixes
 
 = 1.2.5 =
 
@@ -162,4 +162,4 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.3.0 =
 
-Requires WordPress 7.0+ and PHP 7.4+. AMP is retired; old ?amp=1 links redirect to ordinary pages. Saved settings are retained. Universal Analytics, Pocket and share counts are also removed.
+Requires WordPress 7.0+ and PHP 7.4+. AMP, Universal Analytics, Pocket and share counts have been removed. AMP links now open normal pages.
