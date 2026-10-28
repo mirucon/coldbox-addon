@@ -31,9 +31,9 @@ Google site verification and an opt-in setting to stop loading jQuery.
 
 = What happens to old AMP links? =
 
-Coldbox no longer generates AMP pages. Existing article links ending in ?amp=1
-redirect to the ordinary page. Universal Analytics, Pocket and share-count
-integration have also been removed.
+Since version 1.3.0, Coldbox Add-on no longer generates AMP pages. Existing article
+links containing ?amp=1 redirect to the ordinary page. Universal Analytics, Pocket
+and share-count integration were also removed in 1.3.0.
 
 = Where are the share buttons shown? =
 
