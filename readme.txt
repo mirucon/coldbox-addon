@@ -53,7 +53,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 * Requires WordPress 7.0 or later and PHP 7.4 or later.
 * Removed AMP rendering, Universal Analytics, Pocket and share-count integration. Existing Coldbox ?amp=1 article links redirect to the ordinary page.
 * Preserved saved settings, normal Ads extension hooks, social share links, site verification and the opt-in jQuery setting.
-* Fixed Open Graph escaping and content handling, shortcode output placement and theme/child-theme integration.
+* Fixed Open Graph descriptions, HTML language attributes when Open Graph is disabled, shortcode output placement and theme/child-theme integration.
 * Removed obsolete recommendations and general support solicitations.
 
 = 1.2.5 =
