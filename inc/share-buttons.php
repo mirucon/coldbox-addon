@@ -266,6 +266,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							<span class="share-icon icon-twitter fab fa-twitter">
 								<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', 'coldbox-addon' ); ?></span>
 							</span>
+							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
 				</li>
@@ -278,6 +279,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							<span class="share-icon si si-hatenabookmark">
 								<span class="screen-reader-text"><?php esc_html_e( 'Save to Hatena Bookmark', 'coldbox-addon' ); ?></span>
 							</span>
+							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
 				</li>
@@ -290,6 +292,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							<span class="share-icon icon-line fab fa-line">
 								<span class="screen-reader-text"><?php esc_html_e( 'Share on LINE', 'coldbox-addon' ); ?></span>
 							</span>
+							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
 				</li>
@@ -302,6 +305,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							<span class="share-icon icon-facebook fab fa-facebook">
 								<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', 'coldbox-addon' ); ?></span>
 							</span>
+							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
 				</li>
@@ -314,6 +318,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 							<span class="share-icon si si-feedly">
 								<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
 							</span>
+							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
 				</li>
@@ -324,8 +329,16 @@ function cd_addon_sns_buttons_list( $class = null ) {
 	<?php
 }
 
+/** Visible and screen-reader notice for share destinations. */
+function coldbox_addon_new_window_notice() {
+	?>
+	<span class="new-window-notice" aria-hidden="true">&#8599;</span>
+	<span class="screen-reader-text"> (<?php esc_html_e( 'Opens in a new tab', 'coldbox-addon' ); ?>)</span>
+	<?php
+}
+
 /**
- * Adds social buttons shortcode
+ * Adds social buttons shortcode.
  *
  * @since 1.0.0
  */
