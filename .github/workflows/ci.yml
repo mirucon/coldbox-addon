@@ -2,7 +2,13 @@ name: CI
 on:
   push:
     branches: [master]
+    paths:
+      - '.github/workflows/**'
   pull_request:
+    paths-ignore:
+      - 'AGENTS.md'
+      - 'MAINTENANCE.md'
+      - 'docs/**'
   workflow_dispatch:
 permissions:
   contents: read
