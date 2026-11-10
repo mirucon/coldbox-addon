@@ -262,7 +262,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_twitter() ) : ?>
 				<li class="twitter balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank">
+						<a class="share-inner" href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon icon-twitter fab fa-twitter" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -274,7 +274,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_hatena() ) : ?>
 				<li class="hatena balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+						<a class="share-inner" href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon si si-hatenabookmark" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Save to Hatena Bookmark', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -286,7 +286,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_line() ) : ?>
 				<li class="line balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://social-plugins.line.me/lineit/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+						<a class="share-inner" href="https://social-plugins.line.me/lineit/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon icon-line fab fa-line" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Share on LINE', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -298,7 +298,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_facebook() ) : ?>
 				<li class="facebook balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank">
+						<a class="share-inner" href="https://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon icon-facebook fab fa-facebook" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -310,7 +310,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_feedly() ) : ?>
 				<li class="feedly balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://feedly.com/i/subscription/feed/<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
+						<a class="share-inner" href="https://feedly.com/i/subscription/feed/<?php bloginfo( 'rss2_url' ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon si si-feedly" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -324,10 +324,21 @@ function cd_addon_sns_buttons_list( $class = null ) {
 	<?php
 }
 
+/** Whether the active Coldbox theme provides new-window notice styles and keeps icons enabled. */
+function coldbox_addon_show_new_window_icon() {
+	return defined( 'CD_VER' )
+		&& version_compare( CD_VER, '1.10.0', '>=' )
+		&& (bool) get_theme_mod( 'social_links_new_tab_icon', true );
+}
+
 /** Visible and screen-reader notice for share destinations. */
 function coldbox_addon_new_window_notice() {
-	?>
+	if ( coldbox_addon_show_new_window_icon() ) :
+		?>
 	<svg class="new-window-notice" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true" focusable="false"><path d="M9.2 7.2V9.8C9.2 10.46 8.66 11 8 11H2.2C1.54 11 1 10.46 1 9.8V4C1 3.34 1.54 2.8 2.2 2.8H4.8M6.8 1H11V5.2M10.6 1.4L5.2 6.8" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		<?php
+	endif;
+	?>
 	<span class="screen-reader-text"> (<?php esc_html_e( 'Opens in a new tab', 'coldbox-addon' ); ?>)</span>
 	<?php
 }

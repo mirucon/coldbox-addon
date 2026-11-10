@@ -4,7 +4,10 @@
 
 AMP, Universal Analytics, Pocket and share counts are not provided.
 Normal article display, settings, share links, OGP, verification tags and Ads
-extension hooks remain. Old Coldbox `?amp=1` links redirect to ordinary pages.
+extension hooks remain. Share buttons render their visible new-tab indicator
+when Coldbox 1.10.0+ is active and `Show new-tab icons` is enabled in Customizer;
+link targets and screen-reader notices remain active regardless. Old Coldbox
+`?amp=1` links redirect to ordinary pages.
 Unrelated AMP plugins' `/amp/` paths are not intercepted. Saved retired settings
 are left in the database; no user data migration or deletion is required.
 

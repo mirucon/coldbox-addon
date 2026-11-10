@@ -63,6 +63,22 @@ class AddonTest extends WP_UnitTestCase {
     $this->assertTrue( cd_is_active_addon() );
   }
 
+  public function test_share_new_tab_icon_respects_customizer_toggle_and_preserves_sr_notice() {
+    $id = self::factory()->post->create();
+    $this->go_to( get_permalink( $id ) );
+    remove_theme_mod( 'social_links_new_tab_icon' );
+    $default_html = do_shortcode( '[sns_buttons]' );
+    $this->assertStringContainsString( 'class="new-window-notice"', $default_html );
+    $this->assertStringContainsString( 'Opens in a new tab', $default_html );
+
+    set_theme_mod( 'social_links_new_tab_icon', false );
+    $hidden_html = do_shortcode( '[sns_buttons]' );
+    $this->assertStringNotContainsString( 'class="new-window-notice"', $hidden_html );
+    $this->assertStringContainsString( 'target="_blank"', $hidden_html );
+    $this->assertStringContainsString( 'Opens in a new tab', $hidden_html );
+    remove_theme_mod( 'social_links_new_tab_icon' );
+  }
+
   public function test_retired_amp_redirects_without_reenabling_saved_amp_setting() {
     $id = self::factory()->post->create();
     $this->go_to( get_permalink( $id ) );
