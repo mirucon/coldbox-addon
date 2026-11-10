@@ -48,11 +48,13 @@ If you don't want the buttons to show at the end of content automatically, go an
 1.3.0
 
 * Plugin now requires WordPress 5.2 and PHP 7.4 or higher
-* Removed AMP, Universal Analytics, Pocket, Feedly share button and share counts. AMP links now open normal pages
-* Added a Copy link share button and support for displaying Twitter as X
-* fix: Share buttons appear outside the shortcode position
+* Removed AMP, Universal Analytics, Pocket, Feedly share button, and share counts; old `?amp=1` URLs now redirect to normal pages
+* feat: Add "Copy link" share button and tooltips on share buttons
+* feat: Support displaying Twitter as X and hiding new-tab icons via Customizer
+* fix: Share buttons appear outside the `[sns_buttons]` shortcode position
+* fix: HTML `lang` attribute disappears when Open Graph output is disabled
 * fix: Google site verification tag is not output
-* And some small bug fixes
+* And some small bug fixes and improvements
 
 1.2.5
 
