@@ -1,32 +1,25 @@
 === Coldbox Addons ===
 Contributors: mirucon
-Donate link: https://gumroad.com/l/coldbox-ads-extension
 Tags: coldbox, coldbox-theme
-Requires at least: 5.0
-Tested up to: 6.2
-Requires PHP: 5.6
-Stable tag: 1.2.5
+Requires at least: 5.2
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The powered addons for the Coldbox theme - AMP pages, Google Analytics integrations, social buttons and more!
-
+Social sharing, Open Graph metadata and site verification for the Coldbox theme.
 
 == Description ==
 
-The powered addon for the Coldbox theme. It brings you AMP HTML and social features which help increasing your website's engagements. It's designed just for the Coldbox theme. Lightweight and safety, works perfectly with the theme.
+Optional additions for the Coldbox theme: social share buttons, Open Graph tags,
+Google site verification and an opt-in setting to stop loading jQuery.
 
 == Features ==
 
-* **AMP Pages** - The fastest HTML format - AMP. The plugin is the easiest way to use AMP pages unless any setting or coding. Of course, you can use Google Analytics, Adsense etc. in AMP pages, so that you won't loose any opportunities.
-
-* **Share Buttons** - You want your website to be shared by someone? The plugin efficiently increases the social engagement by showing social buttons.
-
-  * *[SNS Count Cache](https://wordpress.org/plugins/sns-count-cache/) plugin is required to **show share counts.***
-
-* **Open Graph tags** - It's the most important thing to get engagements on the social networks, including Twitter and Facebook! This is the simplest way to add Open Graph tags for the Coldbox users.
-
-* **Other meta tags** - Not only open graph tags, but it supports even more meta features, like Google Analytics, and other SEO-related tags too!
+* Share buttons for Twitter / X, Facebook, LINE, Hatena Bookmark and Copy link.
+* Open Graph and related metadata.
+* Google site verification.
 
 == Installation Instructions ==
 
@@ -36,9 +29,11 @@ The powered addon for the Coldbox theme. It brings you AMP HTML and social featu
 
 == Frequently Asked Questions ==
 
-= How can I access to AMP pages? =
+= What happens to old AMP links? =
 
-You may access AMP page by adding "?amp=1" at the end of your articles URL. When visitors use Google search on mobile, they will automatically access to your AMP pages.
+Since version 1.3.0, Coldbox Add-on no longer generates AMP pages. Existing article
+links containing ?amp=1 redirect to the ordinary page. Universal Analytics, Pocket,
+Feedly share buttons and share-count integration were also removed in 1.3.0.
 
 = Where are the share buttons shown? =
 
@@ -50,9 +45,19 @@ If you don't want the buttons to show at the end of content automatically, go an
 == Screenshots ==
 
 1. Share Buttons sample
-2. AMP page sample
 
 == Changelog ==
+
+= 1.3.0 =
+
+* Plugin now requires WordPress 5.2 and PHP 7.4 or higher
+* Removed AMP, Universal Analytics, Pocket, Feedly share button, and share counts; old ?amp=1 URLs now redirect to normal pages
+* feat: Add "Copy link" share button and tooltips on share buttons
+* feat: Support displaying Twitter as X and hiding new-tab icons via Customizer
+* fix: Share buttons appear outside the [sns_buttons] shortcode position
+* fix: HTML lang attribute disappears when Open Graph output is disabled
+* fix: Google site verification tag is not output
+* And some small bug fixes and improvements
 
 = 1.2.5 =
 
@@ -106,7 +111,7 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.1.6 =
 
-* Moved AMP AdSense features to the Coldbox Ads Extension plugin: https://coldbox.miruc.co/addons/google-adsense-extension/
+* Moved AMP AdSense features to the Coldbox Ads Extension plugin: https://coldbox.miruc.co/google-adsense-extension/
 
 = 1.1.5 =
 
@@ -155,3 +160,9 @@ If you don't want the buttons to show at the end of content automatically, go an
 = 1.0 =
 
 * Initial Release
+
+== Upgrade Notice ==
+
+= 1.3.0 =
+
+Requires WordPress 5.2+ and PHP 7.4+. AMP, Universal Analytics, Pocket, Feedly share button, and share counts have been removed; old ?amp=1 URLs redirect to normal pages.
