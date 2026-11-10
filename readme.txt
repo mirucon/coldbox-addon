@@ -165,4 +165,4 @@ If you don't want the buttons to show at the end of content automatically, go an
 
 = 1.3.0 =
 
-Requires WordPress 5.2+ and PHP 7.4+. AMP, Universal Analytics, Pocket and share counts have been removed. AMP links now open normal pages.
+Requires WordPress 5.2+ and PHP 7.4+. AMP, Universal Analytics, Pocket, Feedly share button, and share counts have been removed; old ?amp=1 URLs redirect to normal pages.
