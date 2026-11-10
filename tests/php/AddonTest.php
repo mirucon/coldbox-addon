@@ -48,6 +48,7 @@ class AddonTest extends WP_UnitTestCase {
     $this->go_to( get_permalink( $id ) );
     set_theme_mod( 'sns_button_twitter', false );
     set_theme_mod( 'sns_button_pocket', true );
+    set_theme_mod( 'sns_button_feedly', true );
     $before = get_theme_mods();
     ob_start();
     $html = do_shortcode( 'before[sns_buttons]after' );
@@ -56,11 +57,35 @@ class AddonTest extends WP_UnitTestCase {
     $this->assertStringStartsWith( 'before', $html );
     $this->assertStringEndsWith( 'after', $html );
     $this->assertStringContainsString( 'si-hatenabookmark', $html );
-    $this->assertStringContainsString( 'si-feedly', $html );
+    $this->assertStringContainsString( 'js-copy-url', $html );
     $this->assertStringNotContainsString( 'twitter balloon-btn', $html );
-    $this->assertDoesNotMatchRegularExpression( '/pocket|class="count"|scc_/', $html );
+    $this->assertDoesNotMatchRegularExpression( '/pocket|feedly|class="count"|scc_/', $html );
     $this->assertSame( $before, get_theme_mods() );
     $this->assertTrue( cd_is_active_addon() );
+  }
+
+  public function test_share_x_toggle_and_copy_button_settings() {
+    $id = self::factory()->post->create();
+    $this->go_to( get_permalink( $id ) );
+    set_theme_mod( 'sns_button_twitter', true );
+    remove_theme_mod( 'social_links_twitter_as_x' );
+    remove_theme_mod( 'sns_button_copy' );
+
+    $default_html = do_shortcode( '[sns_buttons]' );
+    $this->assertStringContainsString( 'fab fa-twitter', $default_html );
+    $this->assertStringContainsString( 'Share on Twitter', $default_html );
+    $this->assertStringContainsString( 'js-copy-url', $default_html );
+
+    set_theme_mod( 'social_links_twitter_as_x', true );
+    set_theme_mod( 'sns_button_copy', false );
+    $updated_html = do_shortcode( '[sns_buttons]' );
+    $this->assertStringContainsString( 'x-twitter balloon-btn', $updated_html );
+    $this->assertStringContainsString( 'fab fa-x-twitter', $updated_html );
+    $this->assertStringContainsString( 'Share on X', $updated_html );
+    $this->assertStringNotContainsString( 'js-copy-url', $updated_html );
+
+    remove_theme_mod( 'social_links_twitter_as_x' );
+    remove_theme_mod( 'sns_button_copy' );
   }
 
   public function test_share_new_tab_icon_respects_customizer_toggle_and_preserves_sr_notice() {

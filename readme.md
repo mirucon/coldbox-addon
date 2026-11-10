@@ -18,7 +18,7 @@ Optional additions for the Coldbox theme.
 
 ### Features
 
-* Social share links for Twitter, Facebook, LINE, Hatena Bookmark and Feedly.
+* Social share buttons for Twitter / X, Facebook, LINE, Hatena Bookmark and Copy link.
 * Open Graph metadata and Google site verification.
 * An opt-in setting to stop loading jQuery.
 
@@ -33,8 +33,8 @@ Optional additions for the Coldbox theme.
 ### What happens to old AMP links?
 
 Since version 1.3.0, Coldbox Add-on no longer generates AMP pages. Existing article
-links containing `?amp=1` redirect to the ordinary page. Universal Analytics, Pocket
-and share-count integration were also removed in 1.3.0.
+links containing `?amp=1` redirect to the ordinary page. Universal Analytics, Pocket,
+Feedly share buttons and share-count integration were also removed in 1.3.0.
 
 ### Where are the share buttons shown?
 
@@ -48,7 +48,8 @@ If you don't want the buttons to show at the end of content automatically, go an
 1.3.0
 
 * Plugin now requires WordPress 5.2 and PHP 7.4 or higher
-* Removed AMP, Universal Analytics, Pocket and share counts. AMP links now open normal pages
+* Removed AMP, Universal Analytics, Pocket, Feedly share button and share counts. AMP links now open normal pages
+* Added a Copy link share button and support for displaying Twitter as X
 * fix: Share buttons appear outside the shortcode position
 * fix: Google site verification tag is not output
 * And some small bug fixes

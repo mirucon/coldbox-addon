@@ -10,7 +10,7 @@
 /**
  * -----------------------------------------------------------------------------
  *  Share Buttons add-on for the Coldbox Theme
- *  Followed SNS : Twitter, Hatena Bookmark, Facebook, LINE, Feedly.
+ *  Followed SNS : Twitter / X, Hatena Bookmark, Facebook, LINE, Copy link.
  *  Reference: https://coldbox.miruc.co/addons/share-buttons/
  * -----------------------------------------------------------------------------
  */
@@ -127,25 +127,43 @@ function cd_addon_sns_buttons( $wp_customize ) {
 			)
 		)
 	);
-	// Feedly.
-	$wp_customize->add_setting(
-		'sns_button_feedly',
-		array(
-			'default'           => true,
-			'sanitize_callback' => 'wp_validate_boolean',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'sns_button_feedly',
+	// Copy link (requires Coldbox 1.10.0+ button styles and clipboard script).
+	if ( coldbox_addon_supports_modern_share() ) {
+		$wp_customize->add_setting(
+			'sns_button_copy',
 			array(
-				'label'   => __( ' - Feedly', 'coldbox-addon' ),
-				'section' => 'sns_buttons',
-				'type'    => 'checkbox',
+				'default'           => true,
+				'sanitize_callback' => 'wp_validate_boolean',
 			)
-		)
-	);
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'sns_button_copy',
+				array(
+					'label'   => __( ' - Copy link', 'coldbox-addon' ),
+					'section' => 'sns_buttons',
+					'type'    => 'checkbox',
+				)
+			)
+		);
+
+		if ( $wp_customize->get_setting( 'social_links_twitter_as_x' ) ) {
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'sns_twitter_as_x',
+					array(
+						'label'       => __( 'Use X icon and name for Twitter', 'coldbox-addon' ),
+						'description' => __( 'Applies to social links and share buttons.', 'coldbox-addon' ),
+						'section'     => 'sns_buttons',
+						'settings'    => 'social_links_twitter_as_x',
+						'type'        => 'checkbox',
+					)
+				)
+			);
+		}
+	}
 
 	// Twitter username.
 	$wp_customize->add_setting(
@@ -169,7 +187,7 @@ function cd_addon_sns_buttons( $wp_customize ) {
 	);
 
 }
-add_action( 'customize_register', 'cd_addon_sns_buttons' );
+add_action( 'customize_register', 'cd_addon_sns_buttons', 20 );
 
 /**
  * Checks social buttons are used
@@ -222,13 +240,33 @@ function cd_use_snsb_line() {
 }
 
 /**
- * Checks Feedly button is set
+ * Whether the active Coldbox theme provides 1.10.0+ share button assets.
  *
- * @since 1.0.0
- * @return bool True or false
+ * @since 1.3.0
+ * @return bool
  */
-function cd_use_snsb_feedly() {
-	return ( get_theme_mod( 'sns_button_feedly', true ) );
+function coldbox_addon_supports_modern_share() {
+	return defined( 'CD_VER' ) && version_compare( CD_VER, '1.10.0', '>=' );
+}
+
+/**
+ * Checks Copy link button is enabled.
+ *
+ * @since 1.3.0
+ * @return bool
+ */
+function cd_use_snsb_copy() {
+	return coldbox_addon_supports_modern_share() && (bool) get_theme_mod( 'sns_button_copy', true );
+}
+
+/**
+ * Whether Twitter share button should render as X.
+ *
+ * @since 1.3.0
+ * @return bool
+ */
+function coldbox_addon_use_x_for_twitter() {
+	return coldbox_addon_supports_modern_share() && (bool) get_theme_mod( 'social_links_twitter_as_x', false );
 }
 
 /**
@@ -254,17 +292,18 @@ function cd_addon_sns_buttons_list( $class = null ) {
 	$canonical_url_encode    = rawurlencode( $canonical_url );
 	$title_encode            = rawurlencode( $title );
 	$cd_twitter_via_username = cd_twitter_username() ? '&via=' . cd_twitter_username() : '';
+	$use_x_twitter           = coldbox_addon_use_x_for_twitter();
 	?>
 	<section id="sns-buttons" class="content-box sns-buttons<?php echo ' ' . esc_attr( $class ); ?>">
 		<h2 id="sns-btn-bottom-head" class="content-box-heading"><?php esc_html_e( 'Share', 'coldbox-addon' ); ?></h2>
 		<ul class="share-list-container">
 
 			<?php if ( cd_use_snsb_twitter() ) : ?>
-				<li class="twitter balloon-btn">
+				<li class="<?php echo esc_attr( $use_x_twitter ? 'twitter x-twitter balloon-btn' : 'twitter balloon-btn' ); ?>">
 					<div class="share">
 						<a class="share-inner" href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank" rel="noopener">
-							<span class="share-icon icon-twitter fab fa-twitter" aria-hidden="true"></span>
-							<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', 'coldbox-addon' ); ?></span>
+							<span class="share-icon icon-twitter <?php echo esc_attr( $use_x_twitter ? 'fab fa-x-twitter' : 'fab fa-twitter' ); ?>" aria-hidden="true"></span>
+							<span class="screen-reader-text"><?php echo esc_html( $use_x_twitter ? __( 'Share on X', 'coldbox-addon' ) : __( 'Share on Twitter', 'coldbox-addon' ) ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
@@ -307,14 +346,14 @@ function cd_addon_sns_buttons_list( $class = null ) {
 				</li>
 			<?php endif; ?>
 
-			<?php if ( cd_use_snsb_feedly() ) : ?>
-				<li class="feedly balloon-btn">
+			<?php if ( cd_use_snsb_copy() ) : ?>
+				<li class="copy balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://feedly.com/i/subscription/feed/<?php bloginfo( 'rss2_url' ); ?>" target="_blank" rel="noopener">
-							<span class="share-icon si si-feedly" aria-hidden="true"></span>
-							<span class="screen-reader-text"><?php esc_html_e( 'Subscribe on Feedly', 'coldbox-addon' ); ?></span>
-							<?php coldbox_addon_new_window_notice(); ?>
-						</a>
+						<button type="button" class="share-inner js-copy-url" data-copy-url="<?php echo esc_url( $canonical_url ); ?>" data-copied-label="<?php esc_attr_e( 'Link copied', 'coldbox-addon' ); ?>">
+							<span class="share-icon icon-copy fas fa-link" aria-hidden="true"></span>
+							<span class="screen-reader-text"><?php esc_html_e( 'Copy link', 'coldbox-addon' ); ?></span>
+						</button>
+						<span class="screen-reader-text js-copy-status" role="status" aria-live="polite"></span>
 					</div>
 				</li>
 			<?php endif; ?>
@@ -326,8 +365,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 
 /** Whether the active Coldbox theme provides new-window notice styles and keeps icons enabled. */
 function coldbox_addon_show_new_window_icon() {
-	return defined( 'CD_VER' )
-		&& version_compare( CD_VER, '1.10.0', '>=' )
+	return coldbox_addon_supports_modern_share()
 		&& (bool) get_theme_mod( 'social_links_new_tab_icon', true );
 }
 

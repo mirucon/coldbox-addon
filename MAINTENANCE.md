@@ -2,8 +2,8 @@
 
 ## Runtime behavior and support
 
-AMP, Universal Analytics, Pocket and share counts are not provided.
-Normal article display, settings, share links, OGP, verification tags and Ads
+AMP, Universal Analytics, Pocket, Feedly share buttons and share counts are not provided.
+Normal article display, settings, share links (including Copy link and Twitter/X switching), OGP, verification tags and Ads
 extension hooks remain. Share buttons render their visible new-tab indicator
 when Coldbox 1.10.0+ is active and `Show new-tab icons` is enabled in Customizer;
 link targets and screen-reader notices remain active regardless. Old Coldbox
