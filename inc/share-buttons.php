@@ -299,11 +299,12 @@ function cd_addon_sns_buttons_list( $class = null ) {
 		<ul class="share-list-container">
 
 			<?php if ( cd_use_snsb_twitter() ) : ?>
+				<?php $twitter_label = $use_x_twitter ? __( 'Share on X', 'coldbox-addon' ) : __( 'Share on Twitter', 'coldbox-addon' ); ?>
 				<li class="<?php echo esc_attr( $use_x_twitter ? 'twitter x-twitter balloon-btn' : 'twitter balloon-btn' ); ?>">
 					<div class="share">
-						<a class="share-inner" href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" target="_blank" rel="noopener">
+						<a class="share-inner" href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( $canonical_url_encode ); ?>&text=<?php echo esc_attr( $title_encode ); ?>&tw_p=tweetbutton<?php echo esc_attr( $cd_twitter_via_username ); ?>" title="<?php echo esc_attr( $twitter_label ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon icon-twitter <?php echo esc_attr( $use_x_twitter ? 'fab fa-x-twitter' : 'fab fa-twitter' ); ?>" aria-hidden="true"></span>
-							<span class="screen-reader-text"><?php echo esc_html( $use_x_twitter ? __( 'Share on X', 'coldbox-addon' ) : __( 'Share on Twitter', 'coldbox-addon' ) ); ?></span>
+							<span class="screen-reader-text"><?php echo esc_html( $twitter_label ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
 						</a>
 					</div>
@@ -313,7 +314,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_hatena() ) : ?>
 				<li class="hatena balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank" rel="noopener">
+						<a class="share-inner" href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" title="<?php esc_attr_e( 'Save to Hatena Bookmark', 'coldbox-addon' ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon si si-hatenabookmark" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Save to Hatena Bookmark', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -325,7 +326,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_line() ) : ?>
 				<li class="line balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://social-plugins.line.me/lineit/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" target="_blank" rel="noopener">
+						<a class="share-inner" href="https://social-plugins.line.me/lineit/share?url=<?php echo esc_attr( $canonical_url_encode ); ?>&title=<?php echo esc_attr( $title_encode ); ?>" title="<?php esc_attr_e( 'Share on LINE', 'coldbox-addon' ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon icon-line fab fa-line" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Share on LINE', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -337,7 +338,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_facebook() ) : ?>
 				<li class="facebook balloon-btn">
 					<div class="share">
-						<a class="share-inner" href="https://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" target="_blank" rel="noopener">
+						<a class="share-inner" href="https://www.facebook.com/sharer.php?src=bm&u=<?php echo esc_attr( $canonical_url_encode ); ?>&t=<?php echo esc_attr( $title_encode ); ?>" title="<?php esc_attr_e( 'Share on Facebook', 'coldbox-addon' ); ?>" target="_blank" rel="noopener">
 							<span class="share-icon icon-facebook fab fa-facebook" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', 'coldbox-addon' ); ?></span>
 							<?php coldbox_addon_new_window_notice(); ?>
@@ -349,7 +350,7 @@ function cd_addon_sns_buttons_list( $class = null ) {
 			<?php if ( cd_use_snsb_copy() ) : ?>
 				<li class="copy balloon-btn">
 					<div class="share">
-						<button type="button" class="share-inner js-copy-url" data-copy-url="<?php echo esc_url( $canonical_url ); ?>" data-copied-label="<?php esc_attr_e( 'Link copied', 'coldbox-addon' ); ?>">
+						<button type="button" class="share-inner js-copy-url" title="<?php esc_attr_e( 'Copy link', 'coldbox-addon' ); ?>" data-copy-url="<?php echo esc_url( $canonical_url ); ?>" data-copied-label="<?php esc_attr_e( 'Link copied', 'coldbox-addon' ); ?>">
 							<span class="share-icon icon-copy fas fa-link" aria-hidden="true"></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'Copy link', 'coldbox-addon' ); ?></span>
 						</button>
